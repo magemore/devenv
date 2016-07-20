@@ -88,6 +88,7 @@ alias ln='ln -s '
 edit_bashrc_source_after_and_push_to_github() {
   PWD=$(pwd)
   xgit
+  git_commit_empty
   cd ~/mage/devenv/
   vim ~/mage/devenv/.bashrc
   source ~/.bashrc

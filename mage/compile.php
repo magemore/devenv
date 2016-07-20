@@ -15,14 +15,15 @@ class file {
     $a = explode("\n",$contents);
     return $a;
   }
-  public function set($value) {
-    $value = implode("\n",$value);
-    file_put_contents($this->path,$value);
+  public function set($value,$filename_append='') {
+    if (is_array($value)) $value = implode("\n",$value);
+    $fn = $this->path.$filename_append;
+    #echo $fn."\n";
+    file_put_contents($fn,$value);
   }
 }
 
-$file = new file($argv[1]);
-$a = $file->get();
+
 
 
 function getOffset($s) {
@@ -43,9 +44,16 @@ function isCommand($s) {
 
 function subShift($a) {
   foreach ($a as $i => $d) {
-    $a[$i]=substr($d,2,-1);
+    $len = strlen($d)-2;
+    $a[$i]=substr($d,2,$len);
   }
   return $a;
+}
+
+function isSystemCommand($s) {
+  $s=trim($s);
+  static $list=['ls','pwd','cat'];
+  return (in_array($s, $list));
 }
 
 function proc($a) {
@@ -74,8 +82,86 @@ function proc($a) {
   return $ra;
 }
 
+function tab($level) {
+  return str_repeat('  ',$level);
+}
 
+function firstWord($s) {
+  $a=explode(' ', $s);
+  if (!$a) return false;
+  return $a[0];
+}
+
+function replaceFirstWord($subject,$replace) {
+  $a=explode(' ', $subject);
+  if (!$a) return '';
+  $a[0]=$replace;
+  return implode(' ',$a);
+}
+
+function replaceVars($s) {
+  // todo improtve parser
+  return str_replace('$', 's', $s);
+}
+
+function replaceSystemVars($s) {
+  // todo improtve parser
+  return str_replace('$', "\"'+s+'\"", $s);
+}
+
+function makeCode($s,$sub,$level) {
+  if (!$s) return '';
+  $loop=false;
+  if (isSystemCommand(firstWord($s)) ) {
+    $s = replaceSystemVars($s);
+    $c = "exec('$s')";
+    $c.=".then (result) ->\n".tab($level).'r=result.stdout'."\n".transform($sub,$level);
+  }
+  else {
+    if ($s=='loop') {
+      $loop=true;
+      $c = 'for s in r';
+    }
+    elseif (firstWord($s)=='echo') {
+      $c = replaceFirstWord($s,'console.log');
+    }
+    else {
+      $c = $s;
+    }
+    $c = replaceVars($c);
+    $c.="\n".transform($sub,$level);
+    if ($loop) {
+      $c.="\n".tab($level-1)."return";
+    }
+  }
+  return $c;
+}
+
+function transform($a,$level=0) {
+  $s='';
+  foreach ($a as $d) {
+    $c=makeCode($d['code'],$d['sub'],$level+1)."\n";
+    $c = tab($level).$c;
+    $s.=$c;
+  }
+  // hack to clean returns
+  while (strpos($s,"\n\n"))
+    $s = str_replace("\n\n","\n",$s);
+
+  return $s;
+}
+
+$file = new file($argv[1]);
+$a = $file->get();
 
 $commands=proc($a);
-print_r($commands);
-echo "\n";
+$code = transform($commands);
+
+$r = "exec = require('process-promises').exec\n";
+$r.= $code;
+$r.= "\n";
+
+#echo $r;
+
+$file->set($r,'.coffee');
+

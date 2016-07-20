@@ -1,8 +1,9 @@
 exec = require('process-promises').exec
-exec('ls').then((result) ->
-  console.log 'stdout: ', result.stdout
+exec('ls').then (result) ->
+  r=result.stdout
+  for s in r
+    console.log s
+    exec('cat "'+s+'"').then (result) ->
+      r=result.stdout
   return
-)
 
-echo ls
-  log result

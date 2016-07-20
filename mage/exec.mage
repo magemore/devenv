@@ -1,13 +1,5 @@
 
-
 ls
   loop
-    echo $+' cool'
-
-fdsfs
-
-dfsfsd
-  fdssd
-    fdsfs
-      gfgdf
-fds
+    echo $
+    cat $

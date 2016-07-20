@@ -42,6 +42,11 @@ function isCommand($s) {
   return !notCommand($s);
 }
 
+function isSubCommand($s) {
+  if (!$s) return false;
+  return $s[0]==' ';
+}
+
 function subShift($a) {
   foreach ($a as $i => $d) {
     $len = strlen($d)-2;
@@ -103,12 +108,12 @@ function replaceVars($s,$with=false) {
   // todo improtve parser
   if (!$with) $with = 'r';
   $s = str_replace('$@', 'process.argv', $s);
-  return str_replace('$', $with, $s);
+  return str_replace('%', $with, $s);
 }
 
 function replaceSystemVars($s) {
   // todo improtve parser
-  return str_replace('$', "\"'+s+'\"", $s);
+  return str_replace('%', "\"'+s+'\"", $s);
 }
 
 function exceptFirstWord($subject) {
@@ -118,7 +123,8 @@ function exceptFirstWord($subject) {
   return implode(' ',$a);
 }
 
-function makeCode($s,$sub,$level,$parent_mode=false) {
+function makeCode($s,$sub,$level,$parent_mode=false,$next_is_sub=false) {
+  $next_is_sub = true;
   if (!$s) return '';
   $loop=false;
   $system=false;
@@ -126,9 +132,18 @@ function makeCode($s,$sub,$level,$parent_mode=false) {
   if (isSystemCommand(firstWord($s)) ) {
     $system=true;
     $s = replaceSystemVars($s);
-    $s = str_replace("'","\'",$s);
-    $c = "exec('$s')";
-    $c.=".then (result) ->\n".tab($level).'r=result.stdout'."\n".transform($sub,$level);
+    if (firstWord($s)=='bash') $s=exceptFirstWord($s);
+    #echo $s;
+    #$s = str_replace("'","\'",$s);
+    $t=tab($level);
+    $t1=tab($level+1);
+    $t2=tab($level+2);
+    $c = "if '$s'!=\"\"\n{$t}exec('$s')";
+    $log='';
+    if (!$next_is_sub) {
+      $log=tab($level)."\n${t1}console.log r";
+    }
+    $c.=".then (result) ->\n$t1".'r=result.stdout'."\n".$log.transform($sub,$level+1);
   }
   elseif (firstWord($s)=='exec') {
     $system=false;
@@ -136,7 +151,11 @@ function makeCode($s,$sub,$level,$parent_mode=false) {
     $s = replaceSystemVars($s);
     $c = "fs.writeFile('/tmp/testexec', $s,->\n".tab($level);
     $c.= "exec('/tmp/testexec')";
-    $c.=".then (result) ->\n".tab($level+1).'r=result.stdout'."\n".transform($sub,$level+1).tab($level+1).'return'."\n".tab($level-1).')';
+    $log='';
+    if (!$next_is_sub) {
+      $log=tab($level+1).'console.log r';
+    }
+    $c.="\n".tab($level).".then((result) ->\n".tab($level+1).'r=result.stdout'."\n".transform($sub,$level+1).tab($level).')'."\n"."\n".tab($level).'return'."\n".tab($level-1).')';
   }
   elseif (firstWord($s)=='//') {
     $c = replaceFirstWord($s,'#');
@@ -167,16 +186,15 @@ function makeCode($s,$sub,$level,$parent_mode=false) {
     }
     $c.="\n".transform($sub,$level,$mode);
   }
-  if ($system) {
-    $c.="\n".tab($level)."return";
-  }
   return $c;
 }
 
 function transform($a,$level=0,$parent_mode=false) {
   $s='';
-  foreach ($a as $d) {
-    $c=makeCode($d['code'],$d['sub'],$level+1,$parent_mode)."\n";
+  foreach ($a as $i => $d) {
+    $next_is_sub = false;
+    if (isset($d[$i])) $next_is_sub = isSubCommand($d[$i]);
+    $c=makeCode($d['code'],$d['sub'],$level+1,$parent_mode,$next_is_sub)."\n";
     $c = tab($level).$c;
     $s.=$c;
   }
@@ -200,4 +218,6 @@ $r.= "\n";
 #echo $r;
 
 $file->set($r,'.coffee');
-
+//print_r($argv);
+system('coffee --compile '.$argv[1].'.coffee');
+system('coffee '.$argv[1].'.coffee');

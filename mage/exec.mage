@@ -1,31 +1,53 @@
 fs = require('fs')
 
 
-// fs.writeFile('/tmp/testexec', 'echo 1',->
-//   bash '/tmp/testexec'
-//     echo r
-// )
-
 implode = (sep, a) ->
   Array.prototype.join.call(a,sep)
 
+explode = (sep, a) ->
+  a.split(sep)
+
+word = (number, a, sep=' ') ->
+  av = explode sep, a
+  if number<0
+    number=av.length-1
+  return av[number]
+
+subword = (start, length, subject, separator=' ') ->
+  av = explode separator, subject
+  if number<0
+    number=av.length-1
+
+  return av[number]
+
 mgvg = (keys=false) ->
-  $ = implode '  | xargs -d "\\n" ag -l ', keys
-  cmd='ag -l '+$
+  % = implode '  | xargs -d "\\n" ag -l ', keys
+  cmd='ag -l '+%
+  xa=' | xargs -d "\\n"'
+
+  cmd+=xa+' grep ^ '
 
   for keys
-    cmd+=' | ag '+s
+    cmd+=' | ag '+%
 
-  cmd+=' | xargs -d "\\n" grep ^ | '
+  return cmd
 
-  cmd+='ag '
-  $ = implode '|', keys
-  cmd+=$
-  #echo cmd
-  exec cmd
-    echo r
+filter = (subject,filt) ->
+  if Array.isArray(subject)
+    r = ''
+    for subject
+      r += filter(s,filt) + "\n"
+  if filt in subject
+    return s
+  return ''
+
+s=mgvg(['implode','log'])
+exec s
+  r = explode "\n",r
+  for r
+    if s
+      cat %
+        r=explode "\n",r
+        echo filter r,'split'
 
 
-mgvg(['implode'])
-
-echo 'works'

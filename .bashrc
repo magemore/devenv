@@ -178,3 +178,4 @@ open_nodejs_coffee_editor_compiled_js_after_coffee() {
 }
 alias nbj=open_nodejs_coffee_editor_compiled_js_after_coffee
 alias ta='task limit:page=1000'
+alias tacalltab='task limit:page=1000 calltab | gv esf | gv dorule'

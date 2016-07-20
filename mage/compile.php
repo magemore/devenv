@@ -1,5 +1,9 @@
 <?php
 
+function json_print($a) {
+  echo json_encode($a);
+}
+
 class file {
   private $path;
   public function __construct($path) {
@@ -19,18 +23,59 @@ class file {
 
 $file = new file($argv[1]);
 $a = $file->get();
-$commands = array();
-$command_index = -1;
-foreach ($a as $l) {
-  // command mode
-  if ($l[0]!=' ') {
-    $command_index++;
-    $commands[$command_index]['main']=trim($l);
+
+
+function getOffset($s) {
+  for ($i=0; $i<strlen($s); $i++) {
+    if ($i!=' ') return $i;
   }
-  else {
-    $commands[$command_index]['nodes'][]=trim($l);
-  }
+  return 0;
 }
 
+function notCommand($s) {
+  if (!$s) return true;
+  return $s[0]==' ';
+}
+
+function isCommand($s) {
+  return !notCommand($s);
+}
+
+function subShift($a) {
+  foreach ($a as $i => $d) {
+    $a[$i]=substr($d,2,-1);
+  }
+  return $a;
+}
+
+function proc($a) {
+  $r=[];
+  $ra=[];
+  $j=0;
+  $len = count($a);
+  while ($j < $len) {
+    $d=$a[$j];
+    if (isCommand($d)) {
+      $r['code']=$d;
+      $sub=[];
+      $j++;
+      while ($j < $len && notCommand($a[$j])) {
+        if (trim($a[$j])) {
+          $sub[]=$a[$j];
+        }
+        $j++;
+      }
+      $j--;
+      $r['sub']=proc(subShift($sub));
+      $ra[]=$r;
+    }
+    $j++;
+  }
+  return $ra;
+}
+
+
+
+$commands=proc($a);
 print_r($commands);
 echo "\n";

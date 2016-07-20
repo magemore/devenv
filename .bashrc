@@ -177,3 +177,4 @@ open_nodejs_coffee_editor_compiled_js_after_coffee() {
   ext_edit "/home/a/play/coffee/$1.js"
 }
 alias nbj=open_nodejs_coffee_editor_compiled_js_after_coffee
+alias ta='task limit:page=1000'

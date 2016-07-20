@@ -125,9 +125,154 @@ for variable it can use symbol to mark it as var but you don't have to type this
       say if done
 ⤷if ⟳hour > 16 & < 20 ➜ check↯
 
-hour is built in var that returns current hour
+⟳hour is built in var that returns current ⟳hour
+also ⟳ny-hour returns current hour in ny
 
 bash and system apps marked as ⇶
+
+async code
+  ↯setInterval 500
+    ↯check
+    
+i havent decided yet in what language to compile it
+maybe into coffee script or javascript better will be less confusion...
+hard choice. it can also use php functions as native
+
+file-get
+file-save
+file-set
+
+file-save=file-set
+
+as for php file_get_contents its much easier to type
+
+file-get /tmp/share
+than
+echo file_get_contents('/tmp/share');
+
+file-set ⟳hour
+it remembers last file opened with file-get in same context
+or
+file-set /tmp/share, ⟳hour
+
+also code maybe in nodejs compiled into coffee script with lots of () to be sure it compiles right
+and uses node module to execute php functions async than write native alternatives for often used functions
+nodejs executes no problem on my mobile phone
+
+need to figure how to make promises i like how it's implemented in type script
+also code maybe compiled even into rust ) if speed is critical. it maybe fun to write compilers for languages
+just need to implement basic things like exec system, parse return of system exec and include in native vars
+maybe use something like DNode and make code execution shared between my devices.
+so in this way scripts from phone maybe executed on pc when it's enabled in order to speed it up.
+conflicts only in file system that needs to be synced. possible to use hadoop... but it's too slow.
+so something like rsync with md5 checks can do. but hard to sync fast changes. too complicated.
+possible to use remote exec for things that not change current state of device file system
+so for example it's possible to call compiler of script on pc if its turned on else compile on local.
+for example
+
+maybe use - symbols instead of ^ no need to press shift)
+
+file-get test.sass
+  *sass - test.sass
+    file-set -
+
+or just
+*sass test.sass
+it will get local test.sass send it to pc and there it will execute and save on local
+local means phone
+
+it's possible to set device by command and than everything will be executed on pc and jsut execute sync that will rsync resulted files on device from where it was called
+
+device pc
+sass test.sass
+sync
+
+it can be sync by schedule anyway. calling it will speed up sync and possible make async call after it
+
+device pc
+mode async
+sass test.sass
+sync
+
+in a way like js async
+
+setTimeout(function() {
+  console.log('done1');
+  setTimeout(function() {  
+    console.log('done2');
+  },10);
+},10);
+
+so if mode async
+
+mode async
+setTimeout 10
+console.log done1
+setTimeout 10
+console.log done2
+
+so this way easier to type than to hit enter each time and possible execute async code written as regular bash scripts
+figure how to implement pipes... they are at the moment return of pipe is inside - or ^ var witch is the same as $1
+if $1 not set as param if. so ^ can equal to $1 if no pipe
+it check at the end of piped stdin for return done, etc and if it finds return done at the end stdin it places ^=done
+
+so
+mode async, bash, pipe
+find . -name *.txt
+grep foo
+grep bar
+grep -v buzz
+mode sync
+cd 1; ls
+
+it equals to bash
+find . -name *.txt | grep foo | grep bar | grep -v buzz; cd 1; ls
+
+it also possible to write in mode async
+mode bash. async
+find . -name *.txt; grep foo; grep bar; grep -v buzz;
+cd 1; ls
+
+and mixing with php
+mode async, bash, php, pipe
+file-get list.txt
+explode \n
+for
+trim
+chown a:a
+
+also for can automatically explode just as example of use of php code
+file-get list.txt
+for
+trim
+chown a:a
+
+i liked assembler for it's simplicity and registers
+
+
+mode novars
+file-get list.txt for is_file proc
+>proc file-get for trim
+
+it will get contents of files and trim every line
+if emmited when function names started with is and it uses registers as variable replacement
+
+find .
+grep foo
+file-get for is_file file-get trim
+
+maybe make it as bash alternative simple to find and change files
+just time and it executes
+define functon with
+>function
+and it replaces old definition
+it has git history of all definitions
+if need to use xargs near command than just enter x before command name
+
+
+# functions can be defined after execution
+# empty line means sync
+
 
 symbol > can be replaced with ⤷ so it just looks nicer and less confusion when read
 it is replaced after save of file and different symbols have different replacements depending on context

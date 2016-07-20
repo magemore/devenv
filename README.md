@@ -100,7 +100,17 @@ now can execute something like
 > if hour > 16 & < 20 % check
 
 because i use % rarely -> long to type)
-⤷ if hour > 16 & < 20 ➜ check
+
+↯function_name = ">function_name"
+⤷ code = "> code"
+
+" in quotes first symbol means start of the line
+
+↯check ls
+  for f
+    process_todo if todo in f
+      say if done
+⤷if hour > 16 & < 20 ➜ check
 
 symbol > can be replaced with ⤷ so it just looks nicer and less confusion when read
 it is replaced after save of file and different symbols have different replacements depending on context

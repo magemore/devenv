@@ -85,7 +85,25 @@ ls
   for f
     process_todo if todo in f
       say if done
-        
+      
+>check ls
+  for f
+    process_todo if todo in f
+      say if done
+
+now can execute something like
+> if hour > 16 & < 20 ➜ check
+
+➜ symbol can be placed instead of % in if condition
+> if hour > 16 & < 20 % check
+
+because i use % rarely -> long to type)
+⤷ if hour > 16 & < 20 ➜ check
+
+symbol > can be replaced with ⤷ so it just looks nicer and less confusion when read
+it is replaced after save of file and different symbols have different replacements depending on context
+i can make it so because i make it for myself to write and read so i don't have to care if someone else will read it
+
 or even use system scripts when they not conflict with defined functions
   defined function will override system and @ will use something like @/bin/bash
     @bash

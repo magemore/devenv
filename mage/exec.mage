@@ -1,11 +1,12 @@
 
 implode = (a,sep) ->
-  sep.replace '"\n"', '"\\n"'
-  a.join sep
+  r='';
+  for a
+    r+=s+sep
 
 mgvg = (r) ->
   keys=['foo', 'buzz', 'bar']
-  $ = implode keys, ' xargs -d "\n" ag -l | '
+  $ = implode keys, ' xargs -d "\\n" ag -l | '
   cmd='ag -l'+$
   # ag -l foo | xargs -d "\n" ag -l bar | xargs -d "\n" ag -l buzz |
 
@@ -13,11 +14,14 @@ mgvg = (r) ->
     cmd+='ag+$+'|''
   # ag foo | ag bar | ag buzz
 
-  cmd+='xargs -d "\n" grep ^'
+  cmd+='xargs -d "\\n" grep ^'
 
   cmd+='ag '
   $ = implode '|', keys
   cmd+=$
   echo cmd
+  exec cmd
+    loop
+      echo
 
 mgvg()

@@ -45,7 +45,12 @@ inoremap <F6> <ESC>:set mouse=<ENTER><ESC>
 "map <c-w> <ESC>:w!<ENTER>
 noremap <c-r> <ESC>:edit!<ENTER>
 
-noremap <c-d> <ESC>:r! date<ENTER>
+nnoremap <c-t> <ESC>:r! date<ENTER>
+
+vnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
+nnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
+inoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
+
 noremap <c-c> <ESC>Vy
 noremap <c-v> <ESC>p
 noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i

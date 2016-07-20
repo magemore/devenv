@@ -111,6 +111,13 @@ function replaceSystemVars($s) {
   return str_replace('$', "\"'+s+'\"", $s);
 }
 
+function exceptFirstWord($subject) {
+  $a=explode(' ', $subject);
+  if (!$a) return '';
+  unset($a[0]);
+  return implode(' ',$a);
+}
+
 function makeCode($s,$sub,$level,$parent_mode=false) {
   if (!$s) return '';
   $loop=false;
@@ -120,6 +127,13 @@ function makeCode($s,$sub,$level,$parent_mode=false) {
     $system=true;
     $s = replaceSystemVars($s);
     $c = "exec('$s')";
+    $c.=".then (result) ->\n".tab($level).'r=result.stdout'."\n".transform($sub,$level);
+  }
+  if (firstWord($s)=='exec') {
+    $system=true;
+    $s = exceptFirstWord($s);
+    $s = replaceSystemVars($s);
+    $c = "exec($s)";
     $c.=".then (result) ->\n".tab($level).'r=result.stdout'."\n".transform($sub,$level);
   }
   else {
@@ -174,7 +188,7 @@ $a = $file->get();
 $commands=proc($a);
 $code = transform($commands);
 
-$r = "exec = require('process-promises').exec\n";
+#$r = "exec = require('process-promises').exec\n";
 $r.= $code;
 $r.= "\n";
 

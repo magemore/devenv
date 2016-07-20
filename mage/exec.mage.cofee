@@ -1,9 +1,0 @@
-exec = require('process-promises').exec
-exec('ls').then (result) ->
-  var r=result.stdout
-  for s in r
-    console.log s+' cool'
-
-
-
-

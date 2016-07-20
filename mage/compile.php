@@ -99,9 +99,10 @@ function replaceFirstWord($subject,$replace) {
   return implode(' ',$a);
 }
 
-function replaceVars($s) {
+function replaceVars($s,$with=false) {
   // todo improtve parser
-  return str_replace('$', 's', $s);
+  if (!$with) $with = 'r';
+  return str_replace('$', $with, $s);
 }
 
 function replaceSystemVars($s) {
@@ -109,10 +110,13 @@ function replaceSystemVars($s) {
   return str_replace('$', "\"'+s+'\"", $s);
 }
 
-function makeCode($s,$sub,$level) {
+function makeCode($s,$sub,$level,$parent_mode=false) {
   if (!$s) return '';
   $loop=false;
+  $system=false;
+  $mode=false;
   if (isSystemCommand(firstWord($s)) ) {
+    $system=true;
     $s = replaceSystemVars($s);
     $c = "exec('$s')";
     $c.=".then (result) ->\n".tab($level).'r=result.stdout'."\n".transform($sub,$level);
@@ -120,7 +124,11 @@ function makeCode($s,$sub,$level) {
   else {
     if ($s=='loop') {
       $loop=true;
+      $mode='loop';
       $c = 'for s in r';
+    }
+    elseif ($s=='echo') {
+      $c = 'console.log r';
     }
     elseif (firstWord($s)=='echo') {
       $c = replaceFirstWord($s,'console.log');
@@ -128,19 +136,24 @@ function makeCode($s,$sub,$level) {
     else {
       $c = $s;
     }
-    $c = replaceVars($c);
-    $c.="\n".transform($sub,$level);
-    if ($loop) {
-      $c.="\n".tab($level-1)."return";
+    if ($parent_mode=='loop') {
+      $c = replaceVars($c,'s');
     }
+    else {
+      $c = replaceVars($c);
+    }
+    $c.="\n".transform($sub,$level,$mode);
+  }
+  if ($system) {
+    $c.="\n".tab($level)."return";
   }
   return $c;
 }
 
-function transform($a,$level=0) {
+function transform($a,$level=0,$parent_mode=false) {
   $s='';
   foreach ($a as $d) {
-    $c=makeCode($d['code'],$d['sub'],$level+1)."\n";
+    $c=makeCode($d['code'],$d['sub'],$level+1,$parent_mode)."\n";
     $c = tab($level).$c;
     $s.=$c;
   }

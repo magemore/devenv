@@ -66,6 +66,26 @@ maybe make up some short symbol for exec
       @process_todo
         if $1 == done -> say
         
+ls
+  for ^ as f
+    process_todo if todo in f
+      if ^done ➜ say
+      
+ls
+  for ^ as f
+    process_todo if todo in f
+      say if ^done
+      
+ls
+  for ^ as f
+    process_todo if todo in f
+      say if done
+      
+ls
+  for f
+    process_todo if todo in f
+      say if done
+        
 or even use system scripts when they not conflict with defined functions
   defined function will override system and @ will use something like @/bin/bash
     @bash

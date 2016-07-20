@@ -269,6 +269,123 @@ and it replaces old definition
 it has git history of all definitions
 if need to use xargs near command than just enter x before command name
 
+i have such bash script to search files contents rewrite it mage script
+
+mgvg() {
+  a='$a'
+  ag='ag -l'
+  xa='xargs -d "\n"'
+  xai='xargs -d "\n" -I{}'
+  dollar='$'
+  n='"\n"';
+  q="\'"
+  wq='"'
+  zero='0'
+  p="$a=explode(' ','$@'); \
+   echo '$ag '.implode(' | $xa $ag ',$a).$n; \
+   echo ' | $xa grep ^ | ag '.implode(' | ag ',$a).' | ag $q'.implode('|',$a).'$q';"
+   #echo $p
+   b=$(php -r "$p")
+  # echo $b
+   eval $b
+}
+
+mgvg foo bar buzz
+produces
+ag -l foo | xargs -d "\n" ag -l bar | xargs -d "\n" ag -l buzz | xargs -d "\n" grep ^ | ag foo | ag bar | ag buzz | ag 'foo|bar|buzz'
+
+
+it implodes $@ in a way to make it as bash command
+>mgvg
+# first implode with xargs -d "\n" ag -l
+# $@ places in register
+# maybe make command map instead of implode explode if map than $@ can be treated as array
+keys=$@
+explode
+implode xargs -d "\n" ag -l
+`ag -l+^
+cmd=
+
+# it was line by line because it wasnt inside loop, empty line marks end of loop
+# cmd= creates variable cmd and places content of register there
+# ` symbols marks end of bash line so it will not execute ag -l and just contact 2 strings
+# plus symbol rare inside my bash scripts so it mean contact line and end of line
+# ` because there system command ag and to be sure it is text
+for keys
+cmd+=`ag+^
+==============
+==== maybe better use $ instead of ^ and ^ may contain register that pushed after main $ overwritten
+
+>mgvg
+# \ = | easier to type
+symbol \=|
+keys=$@
+implode `xargs -d "\n" ag -l \
+cmd=`ag -l+$
+# ag -l foo | xargs -d "\n" ag -l bar | xargs -d "\n" ag -l buzz |
+
+for keys
+cmd+=`ag+$+\
+# ag foo | ag bar | ag buzz
+
+cmd+=`xargs -d "\n" grep ^
+
+# there space than close string
+# if use ' for strings it will make it harder to escape for bash scripts
+cmd+=`ag `
+implode \, keys
+cmd+=$
+# ag 'foo|bar|buzz'
+
+exec cmd
+
+
+----
+it equals to php code
+<?php
+$r = $keys = $argv;
+$r = implode("xargs -d "\n" ag -l |",$r);
+$r = $cmd = 'ag -l'+$r;
+# ag -l foo | xargs -d "\n" ag -l bar | xargs -d "\n" ag -l buzz |
+
+foreach ($keys as $r) {
+  # no $r in loops
+  # if it was for keys as key than it could be possible to use $r
+  # instead call function or maybe implement second register
+  # $r2 = $cmd+='ag'+$r+'|';
+  $cmd+='ag'+$r+'|';
+}
+# ag foo | ag bar | ag buzz
+
+$cmd+='xargs -d "\n" grep ^';
+
+# maybe make some smart parser that checks if register used in block and if not it will make cleaner php
+$r = $cmd+='ag ';
+$r = implode(' ', $keys);
+$r = $cmd+=$r;
+# ag 'foo|bar|buzz'
+
+$o=[];
+exec($cmd,$o);
+
+
+http://askubuntu.com/questions/98782/how-to-run-an-alias-in-a-shell-script
+In bash 4 you can use special variable: $BASH_ALIASES.
+>>
+and wrap aliases calls
+maybe make exec like 
+it will allow to define my script as bash alias and use bash aliases inside
+file-set /tmp/cmd-rand-id
+$o=[];
+exec('bash /tmp/cmd-rand-id',$o);
+
+<<
+For example:
+$ alias foo="echo test"
+$ echo ${BASH_ALIASES[foo]}
+echo test
+$ echo `${BASH_ALIASES[foo]}` bar
+test bar
 
 # functions can be defined after execution
 # empty line means sync

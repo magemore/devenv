@@ -6,3 +6,12 @@
 - [ ] fix bin bash path something strange path duplicates alot
   - [ ] google bash path duplicates
   - [ ] try to reboot and check
+
+
+It's easy enough to avoid adding duplicate entries.
+```bash
+case ":$PATH:" in
+  *":$new_entry:"*) :;; # already there
+  *) PATH="$new_entry:$PATH";; # or PATH="$PATH:$new_entry"
+esac
+```

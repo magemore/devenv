@@ -35,6 +35,7 @@ maybe write my language, processor based on coffee script that will work like ph
 
 <%bash:alias:process_todo
 echo do something related to processing
+echo return done
 %?>
 
 so executing some system script may look like

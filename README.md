@@ -1,5 +1,6 @@
 # devenv
 
+```
 just my development environment scripts.
 to make it easier to sync my dev scripts between devices
 
@@ -75,3 +76,4 @@ reminders should sync and have offline phone mode.
 
 code maybe random quality. it's just hacking things for fun of it and making somewhat smart pc that adapts to my activities. kinda my external mind that thinks on it's own and completes my mind. it's a vision of project a dream.
 in real expect lots of messy or even stupid scripts if you bother to read.
+```

@@ -110,7 +110,7 @@ edit_vimrc_and_push_to_github() {
   pwd
   ls
 }
-alias xr=edit_vimrc_and_push_to_github
+alias xrr=edit_vimrc_and_push_to_github
 
 f_bashn() {
   rsy

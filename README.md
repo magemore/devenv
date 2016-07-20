@@ -125,6 +125,8 @@ for variable it can use symbol to mark it as var but you don't have to type this
       say if done
 ⤷if ⟳hour > 16 & < 20 ➜ check↯
 
+hour is built in var that returns current hour
+
 bash and system apps marked as ⇶
 
 symbol > can be replaced with ⤷ so it just looks nicer and less confusion when read

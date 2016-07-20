@@ -44,6 +44,73 @@ so executing some system script may look like
       if todo in d than exec process_todo ->
         if $1 == done -> say ^
 
+maybe don't use >. use or dont. so if > at the end of if condition line its possible to use just >
+  or maybe if enter/new line than dont use > at all...
+  
+exec ls
+  for $1 as f
+    if todo in f
+      exec process_todo
+        if $1 == done -> say
+
+f for file
+d for dir
+r for results
+
+maybe make up some short symbol for exec
+  @ls
+  
+@ls
+  for $1 as f
+    if todo in f
+      @process_todo
+        if $1 == done -> say
+        
+or even use system scripts when they not conflict with defined functions
+  defined function will override system and @ will use something like @/bin/bash
+    @bash
+      if i have local function named bash
+      
+functions defined as
+>hello hello world
+
+params
+>hello(say) ^  
+will output first param
+  idea conflicts with return without autput...
+    so if function has ^ as output of $1 than also referenced by say
+    and if it is called from other function
+    >other hello hello world    
+      hm) maybe dont use params
+    
+>say ^
+# defined function named say that returns and outputs stdout first param
+
+>other a = say
+>another say hello world
+
+params in call separated with ,
+if need to execute php function strpos
+
+>some strpos data, ^
+will search ^ inside data var and return 0...
+so i replaced strpos with "in"
+btw it's possible to define and redefine functions this way as i type
+code starts with >
+>function-name
+will make function name
+> function-name
+will execute funtion name
+<%
+function-name
+%>
+is code block
+so it maybe fun to write random ideas and write code inline with ideas and change code on the fly by redefining functions
+for now when parser not implementet in may act just as pseudo code
+
+
+
+
 say ^
   will use $1 to send data to my phone text to speech and $1 contains done
   for list as d similar to php foreach

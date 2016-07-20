@@ -26,6 +26,6 @@ mgvg = (keys=false) ->
     echo r
 
 
-#mgvg(['implode'])
+mgvg(['implode'])
 
 echo 'works'

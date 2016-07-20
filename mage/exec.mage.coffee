@@ -22,6 +22,6 @@ mgvg = (keys=false) ->
       console.log r
       return
   )
-#mgvg(['implode'])
+mgvg(['implode'])
 console.log 'works'
 

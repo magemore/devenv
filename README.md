@@ -165,4 +165,10 @@ in real expect lots of messy or even stupid scripts if you bother to read.
       - [ ] mode echo on
       - [ ] mode echo off
         - inside script
+    - [ ] say will actually say with voice on my phone
+    - [ ] redirect where to say with mode
+      - [ ] my synergy devices laptops have their own speaker
+      - [ ] if status report specific to laptop it can say on it's own
+        - [ ] find out how to use text to speech on linux
+          - on android it already works
 - [ ] name my lang mage script? or just mage

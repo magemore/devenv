@@ -1,0 +1,2 @@
+echo ls
+  log result

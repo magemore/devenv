@@ -85,6 +85,18 @@ git_commit_empty() {
 alias xc=git_commit_empty
 alias ln='ln -s '
 
+edit_bashrc_sublime() {
+  rsy
+  ext_edit ~/mage/devenv/.bashrc
+}
+alias bxr=edit_bashrc_source_after_and_push_to_github
+
+edit_vimrc_sublime() {
+  rsy
+  ext_edit ~/mage/devenv/.vimrc
+}
+alias bxrr=edit_vimrc_sublime
+
 edit_bashrc_source_after_and_push_to_github() {
   PWD=$(pwd)
   xgit

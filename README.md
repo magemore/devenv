@@ -110,7 +110,22 @@ because i use % rarely -> long to type)
   for f
     process_todo if todo in f
       say if done
-⤷if hour > 16 & < 20 ➜ check
+⤷if hour > 16 & < 20 ➜ check↯
+
+"⤷if hour > 16 & < 20 ➜ check↯"="> if hour > 16 & < 20 -> check"
+↯ added after save at the function call just to read easier and as confirmation that parser sees it as function not a variable or text
+
+text can be type in 'text' or as just text
+if there variable text it will use var if not var than as text
+for variable it can use symbol to mark it as var but you don't have to type this symbol ⟳
+
+↯check ⇶ls
+  for ⟳f
+    ⇶process_todo if todo in ⟳f
+      say if done
+⤷if ⟳hour > 16 & < 20 ➜ check↯
+
+bash and system apps marked as ⇶
 
 symbol > can be replaced with ⤷ so it just looks nicer and less confusion when read
 it is replaced after save of file and different symbols have different replacements depending on context

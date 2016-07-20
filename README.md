@@ -96,6 +96,9 @@ if need to execute php function strpos
 >some strpos data, ^
 will search ^ inside data var and return 0...
 so i replaced strpos with "in"
+it acts as strpos!==FALSE
+>some ^ in data
+
 btw it's possible to define and redefine functions this way as i type
 code starts with >
 >function-name

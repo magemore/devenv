@@ -25,7 +25,7 @@ i use nootropics, modafinil, pramiracetam, phenlylpiracetam, caffeine etc.
 different drugs changes my ways of thinking so reminders can adapt to it.
 if i get hyper focused on modafinil reminder may act in different way.
 
-sometimes i mix scripts and languages. for example bash script that generates php script that generates and executes bash script
+sometimes i mix scripts and languages. for example bash script that generates php script that generates and executes bash script. it's a form of entertainment for me. i may have idea of writting my own language or using something else like coffee script that compiles into php code.
 
 
 i like idea of attaching some machine learning or it maybe fun to attach human processing units.

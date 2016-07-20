@@ -87,6 +87,7 @@ will output first param
 # defined function named say that returns and outputs stdout first param
 
 >other a = say
+will not output return of say because it returned into var
 >another say hello world
 
 params in call separated with ,
@@ -100,7 +101,7 @@ code starts with >
 >function-name
 will make function name
 > function-name
-will execute funtion name
+will execute function name
 <%
 function-name
 %>

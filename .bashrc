@@ -89,7 +89,7 @@ edit_bashrc_sublime() {
   rsy
   ext_edit ~/mage/devenv/.bashrc
 }
-alias bxr=edit_bashrc_source_after_and_push_to_github
+alias bxr=edit_bashrc_sublime
 
 edit_vimrc_sublime() {
   rsy

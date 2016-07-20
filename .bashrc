@@ -82,3 +82,4 @@ git_commit_empty() {
   return;
 }
 alias xc=git_commit_empty
+alias ln='ln -s '

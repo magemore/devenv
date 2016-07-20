@@ -115,3 +115,16 @@ dir_resolve()
   echo "`pwd -P`" # output full, link-resolved path
 }
 
+PATH=$PATH:/home/a/mage/devenv/bin
+
+
+open_php_editor_for_bash_script() {
+  rsy
+  if [ ! -f "/home/a/play/bin/$1" ]; then
+    echo "/home/a/play/php/bash_prototype.php" > "/home/a/bin/$1"
+    chmod a+x "/home/a/bin/$1"
+  fi
+  #touch "/home/a/play/coffee/$1.c" 2>/dev/null
+  ext_edit "/home/a/bin/$1.php"
+}
+alias pb=open_php_editor_for_bash_script

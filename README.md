@@ -32,6 +32,11 @@ unforunetly nodejs at the moment seems complicated to my because of it async nat
 and if even testing code that i don't like functions to have definitions of params it accepts.
 maybe write my language, processor based on coffee script that will work like php but generate async code with predefined attributes in callbacks. for the start it can be like in bash $1 $2 in function callback.
 ```
+
+<%bash:alias:process_todo
+# do something related to processing
+%?>
+
 so executing some system script may look like
   exec ls ->
     for $1 as d

@@ -89,4 +89,22 @@ edit_bashrc_source_after_and_push_to_github() {
   source ~/.bashrc
   git_commit_empty
 }
-xr=edit_bashrc_source_after_and_push_to_github
+alias xr=edit_bashrc_source_after_and_push_to_github
+
+f_bashn() {
+  rsy
+  if [ ! -f "/home/a/play/bin/$1" ]; then
+    cp "/home/a/play/bin/proto" "/home/a/play/bin/$1"
+    chmod a+x "/home/a/play/bin/$1"
+  fi
+  ext_edit "/home/a/play/bin/$1"
+}
+alias bnn=f_bashn
+
+
+dir_resolve()
+{
+  cd "$1" 2>/dev/null || return $?  # cd to desired directory; if fail, quell any error messages but return exit status
+  echo "`pwd -P`" # output full, link-resolved path
+}
+

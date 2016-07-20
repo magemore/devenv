@@ -99,6 +99,19 @@ edit_bashrc_source_after_and_push_to_github() {
 }
 alias xr=edit_bashrc_source_after_and_push_to_github
 
+edit_vimrc_and_push_to_github() {
+  PWD=$(pwd)
+  xgit
+  git_commit_empty
+  cd ~/mage/devenv/
+  vim ~/mage/devenv/.vimrc
+  git_commit_empty
+  cd $PWD
+  pwd
+  ls
+}
+alias xr=edit_vimrc_and_push_to_github
+
 f_bashn() {
   rsy
   if [ ! -f "/home/a/play/bin/$1" ]; then

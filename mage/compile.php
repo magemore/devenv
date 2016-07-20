@@ -102,6 +102,7 @@ function replaceFirstWord($subject,$replace) {
 function replaceVars($s,$with=false) {
   // todo improtve parser
   if (!$with) $with = 'r';
+  $s = str_replace('$@', 'process.argv', $s);
   return str_replace('$', $with, $s);
 }
 
@@ -133,6 +134,9 @@ function makeCode($s,$sub,$level,$parent_mode=false) {
     elseif (firstWord($s)=='echo') {
       $c = replaceFirstWord($s,'console.log');
     }
+    elseif (firstWord($s)=='for') {
+      $c = replaceFirstWord($s,'for s in');
+    }
     else {
       $c = $s;
     }
@@ -158,8 +162,8 @@ function transform($a,$level=0,$parent_mode=false) {
     $s.=$c;
   }
   // hack to clean returns
-  while (strpos($s,"\n\n"))
-    $s = str_replace("\n\n","\n",$s);
+    while (strpos($s,"\n\n"))
+      $s = str_replace("\n\n","\n",$s);
 
   return $s;
 }

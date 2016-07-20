@@ -158,3 +158,11 @@ in real expect lots of messy or even stupid scripts if you bother to read.
 - [ ] find a way to include code with comments maybe use markdown instead of making my own format
 - [ ] so markdown by itself can include code blocks. but not nested code block. it's possible to solve if make named code block and referance them by name when including. it's easier to brainstorm code from inside one file but sometimes it's better if edit separate file. easier for navigation. make file path like name space to script /test/script.js and than markdown block for code. my parser will process markdown with such blocks and update code inside files from markdown and back. it's cool to code from mark down. can be messy to read for other but for myself its nice to generate.
 - [ ] twitter message with todo creates updates github todo list in markdown in twitter.md it can contain todos and reminder states
+- [ ] write some basic script in my lang and find ouy how to preprocess it. check sources of coffee script compiler
+  - [ ] it will have implementation of 2 functions say and echo
+  - [ ] echo just display text on screen
+      - [ ] or use echo mode it will echo every line result
+      - [ ] mode echo on
+      - [ ] mode echo off
+        - inside script
+- [ ] name my lang mage script? or just mage

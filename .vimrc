@@ -1,6 +1,6 @@
-set tabstop=6 softtabstop=0 noexpandtab shiftwidth=4
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set background=dark
 
 set t_Co=256            " use 256 colors in vim

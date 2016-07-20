@@ -1,6 +1,6 @@
 # devenv
 
-```
+
 just my development environment scripts.
 to make it easier to sync my dev scripts between devices
 
@@ -31,7 +31,7 @@ i played with it recently. but it was time waste. as a review of time spent i de
 unforunetly nodejs at the moment seems complicated to my because of it async nature. if i want to use node as bash with nice syntax. need to figure how to simplify async code with lots of nesting or defining lots of functions.
 and if even testing code that i don't like functions to have definitions of params it accepts.
 maybe write my language, processor based on coffee script that will work like php but generate async code with predefined attributes in callbacks. for the start it can be like in bash $1 $2 in function callback.
-
+```
 so executing some system script may look like
   exec ls ->
     for $1 as d
@@ -64,7 +64,7 @@ say ^
               <%=var%> maybe used to past code into generator of bash scripts/aliases as static
               or if <% %> executed inside bash it will make bash wrapper for my script language
               if <% %> included from bash than script in any language has access to bash $@ params
-
+```
 
 i like idea of attaching some machine learning or it maybe fun to attach human processing units.
 amazon turk in order to help my scripts logic to act more like human. but this part seems complicated at the moment.
@@ -76,4 +76,4 @@ reminders should sync and have offline phone mode.
 
 code maybe random quality. it's just hacking things for fun of it and making somewhat smart pc that adapts to my activities. kinda my external mind that thinks on it's own and completes my mind. it's a vision of project a dream.
 in real expect lots of messy or even stupid scripts if you bother to read.
-```
+

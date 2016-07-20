@@ -115,4 +115,3 @@ dir_resolve()
   echo "`pwd -P`" # output full, link-resolved path
 }
 
-# test from left laptop 2

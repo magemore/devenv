@@ -78,8 +78,15 @@ alias x=xgit
 
 git_commit_empty() {
   git add .; git commit -m 'xc'
-  git push origin
+  git push origin >/dev/null
   return;
 }
 alias xc=git_commit_empty
 alias ln='ln -s '
+
+edit_bashrc_source_after_and_push_to_github() {
+  vim ~/mage/devenv/.bashrc
+  source ~/.bashrc
+  git_commit_empty
+}
+xr=edit_bashrc_source_after_and_push_to_github

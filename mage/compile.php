@@ -52,7 +52,7 @@ function subShift($a) {
 
 function isSystemCommand($s) {
   $s=trim($s);
-  static $list=['ls','pwd','cat'];
+  static $list=['ls','pwd','cat','bash'];
   return (in_array($s, $list));
 }
 
@@ -126,15 +126,20 @@ function makeCode($s,$sub,$level,$parent_mode=false) {
   if (isSystemCommand(firstWord($s)) ) {
     $system=true;
     $s = replaceSystemVars($s);
+    $s = str_replace("'","\'",$s);
     $c = "exec('$s')";
     $c.=".then (result) ->\n".tab($level).'r=result.stdout'."\n".transform($sub,$level);
   }
-  if (firstWord($s)=='exec') {
-    $system=true;
+  elseif (firstWord($s)=='exec') {
+    $system=false;
     $s = exceptFirstWord($s);
     $s = replaceSystemVars($s);
-    $c = "exec($s)";
-    $c.=".then (result) ->\n".tab($level).'r=result.stdout'."\n".transform($sub,$level);
+    $c = "fs.writeFile('/tmp/testexec', $s,->\n".tab($level);
+    $c.= "exec('/tmp/testexec')";
+    $c.=".then (result) ->\n".tab($level+1).'r=result.stdout'."\n".transform($sub,$level+1).tab($level+1).'return'."\n".tab($level-1).')';
+  }
+  elseif (firstWord($s)=='//') {
+    $c = replaceFirstWord($s,'#');
   }
   else {
     if ($s=='loop') {
@@ -188,7 +193,7 @@ $a = $file->get();
 $commands=proc($a);
 $code = transform($commands);
 
-#$r = "exec = require('process-promises').exec\n";
+$r = "exec = require('process-promises').exec\n";
 $r.= $code;
 $r.= "\n";
 

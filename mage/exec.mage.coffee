@@ -1,24 +1,27 @@
-implode = (a,sep) ->
-  r='';
-  for s in a
-    r+=s+sep
-mgvg = (r) ->
-  keys=['foo', 'buzz', 'bar']
-  r = implode keys, ' xargs -d "\\n" ag -l | '
-  cmd='ag -l'+r
-  # ag -l foo | xargs -d "\n" ag -l bar | xargs -d "\n" ag -l buzz |
+exec = require('process-promises').exec
+fs = require('fs')
+# fs.writeFile('/tmp/testexec', 'echo 1',->
+#   bash '/tmp/testexec'
+#     echo r
+# )
+implode = (sep, a) ->
+  Array.prototype.join.call(a,sep)
+mgvg = (keys=false) ->
+  r = implode '  | xargs -d "\\n" ag -l ', keys
+  cmd='ag -l '+r
   for s in keys
-    cmd+='ag+r+'|''
-  # ag foo | ag bar | ag buzz
-  cmd+='xargs -d "\\n" grep ^'
+    cmd+=' | ag '+s
+  cmd+=' | xargs -d "\\n" grep ^ | '
   cmd+='ag '
   r = implode '|', keys
   cmd+=r
-  console.log cmd
-  exec(cmd).then (result) ->
-    r=result.stdout
-    for s in r
+  #echo cmd
+  fs.writeFile('/tmp/testexec', cmd,->
+    exec('/tmp/testexec').then (result) ->
+      r=result.stdout
       console.log r
-    return
-mgvg()
+      return
+  )
+#mgvg(['implode'])
+console.log 'works'
 

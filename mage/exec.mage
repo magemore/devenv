@@ -1,33 +1,3 @@
-test (r) ->
-  echo
-
-ls
-  loop
-    echo $
-    cat $
-      echo $
-      test 1
-
-
-mgvg = ->
-  keys=$@
-  $ = implode keys, 'xargs -d "\n" ag -l |'
-  cmd='ag -l'+$
-  # ag -l foo | xargs -d "\n" ag -l bar | xargs -d "\n" ag -l buzz |
-
-  for keys
-    cmd+='ag+$+'|''
-  # ag foo | ag bar | ag buzz
-
-  cmd+='xargs -d "\n" grep ^'
-
-  cmd+='ag '
-  $ = implode '|', keys
-  cmd+=$
-  echo cmd
-
-mgvg()
-
 
 implode = (a,sep) ->
   sep.replace '"\n"', '"\\n"'

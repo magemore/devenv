@@ -78,7 +78,8 @@ alias x=xgit
 
 git_commit_empty() {
   git add .; git commit -m 'xc'
-  git push origin &>/dev/null
+  #git push origin &>/dev/null
+  git push origin
   return;
 }
 alias xc=git_commit_empty

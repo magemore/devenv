@@ -26,6 +26,8 @@ different drugs changes my ways of thinking so reminders can adapt to it.
 if i get hyper focused on modafinil reminder may act in different way.
 
 sometimes i mix scripts and languages. for example bash script that generates php script that generates and executes bash script
+
+
 i like idea of attaching some machine learning or it maybe fun to attach human processing units.
 amazon turk in order to help my scripts logic to act more like human. but this part seems complicated at the moment.
 i will not write all at once. it's a side project and i write it just for fun. in any direction.

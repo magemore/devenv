@@ -1,2 +1,2 @@
-exec ls
+ls
   log result

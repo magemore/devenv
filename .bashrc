@@ -232,3 +232,85 @@ list_wrap_taskwarrior() {
 
 # dont source from here make .bashrc.phone file that will source code deisgnated only for phone
 #alias a=idea_add_taskwarrior_like
+
+alias ww='watch -t -n 1'
+alias wp='watch -t -n 1 php '
+
+source /data/data/com.termux/files/home/mage/devenv/.bashrc
+
+
+say(){
+    echo $(date)
+    echo $@
+    termux-clipboard-set $@
+}
+
+# reminder with delays in text to speech
+# todo: use termux api for text to speech
+# todo: use termux api for alarms and vibrate
+remind(){
+    cd ~/
+    while true; do
+        say curent time $(date +%H:%M)
+        #sleep 3
+        #say aaaaaaaaaaa  Aaaaaaaaaaa
+        sleep 5
+        say sasha
+        sleep 2
+        say $(php ~/since.php)
+        sleep 4
+        #say Wake Up Sasha;
+        #sleep 4
+        #say aaaaaaaaaaa  Aaaaaaaaaaa
+        #sleep 5
+        say wake up;
+        sleep 3
+        say wake up;
+        sleep 5;
+        say curent time $(date +%H:%M)
+        sleep 5
+        say today is $(date +%A)
+        sleep 5
+        say 'time spent on current task'
+        sleep 3
+        say sasha
+        sleep 2
+        say $(php ~/since.php)
+        sleep 5
+        say 'install ubuntu on vlad laptop'
+        sleep 5
+        say 'fix php tags after update'
+        sleep 6
+        #say make call tab estimate;
+        #say calltab gary importent. but esf higher priority Gary sleeps
+        sleep 4
+        say 'make esf'
+        sleep 10
+        #say before everything just get up from bed
+        sleep 5
+        #say take shower
+        sleep 3
+        say 'drink water'
+        sleep 3
+        say 'eat food'
+        sleep 2 
+        say 'make sure eyes are rested and take vidisik'
+        sleep 10
+        say 'check flow alarms'
+        sleep 5
+        say 'need to make money ASAP'
+        sleep 20;
+        say 'anything i do will take much more time to make than i estimated'
+        sleep 5
+        #say 'if tired try to meditate or sleep little for next 5 min'
+        #sleep 300
+        sleep 30
+    done;
+    say 'Ooops unexpected exit';
+}
+
+smart_count(){
+    start_count $@
+    say task started $@
+
+}

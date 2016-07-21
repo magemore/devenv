@@ -255,5 +255,5 @@ remind(){
 smart_count(){
     start_count "$@"
     say task started "$@"
-
+    add_wrap_taskwarrior "$@"
 }

@@ -206,4 +206,8 @@ alias ta='task limit:page=1000'
 alias tacalltab='task limit:page=1000 calltab'
 alias h1=' head -n 1'
 alias pw='cd ~/play/timep'
+
+start_count() {
 date +%H:%M > since.txt
+echo $@ >> since.txt
+}

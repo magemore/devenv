@@ -57,7 +57,7 @@ function subShift($a) {
 
 function isSystemCommand($s) {
   $s=trim($s);
-  static $list=['ls','pwd','cat','bash'];
+  static $list=['ls','pwd','cat','bash','file-get'];
   return (in_array($s, $list));
 }
 
@@ -132,7 +132,11 @@ function makeCode($s,$sub,$level,$parent_mode=false,$next_is_sub=false) {
   if (isSystemCommand(firstWord($s)) ) {
     $system=true;
     $s = replaceSystemVars($s);
-    if (firstWord($s)=='bash') $s=exceptFirstWord($s);
+    if (firstWord($s)=='bash') { $s=exceptFirstWord($s); }
+    elseif (firstWord($s)=='file-get') { $s='php file_get_contents.php '.exceptFirstWord($s);
+    echo 123;
+  }
+  echo 132323232323232323;
     #echo $s;
     #$s = str_replace("'","\'",$s);
     $t=tab($level);
@@ -149,13 +153,12 @@ function makeCode($s,$sub,$level,$parent_mode=false,$next_is_sub=false) {
     $system=false;
     $s = exceptFirstWord($s);
     $s = replaceSystemVars($s);
-    $c = "fs.writeFile('/tmp/testexec', $s,->\n".tab($level);
-    $c.= "exec('/tmp/testexec')";
+    $c= "exec($s)";
     $log='';
     if (!$next_is_sub) {
       $log=tab($level+1).'console.log r';
     }
-    $c.="\n".tab($level).".then((result) ->\n".tab($level+1).'r=result.stdout'."\n".transform($sub,$level+1).tab($level).')'."\n"."\n".tab($level).'return'."\n".tab($level-1).')';
+    $c.="\n".tab($level).".then (result) ->\n".tab($level+1).'r=result.stdout'."\n".transform($sub,$level+1).tab($level)."\n";
   }
   elseif (firstWord($s)=='//') {
     $c = replaceFirstWord($s,'#');

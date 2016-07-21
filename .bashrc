@@ -218,3 +218,4 @@ date +%H:%M > since.txt
 echo $@ >> since.txt
 }
 
+alias a=idea_add_taskwarrior_like

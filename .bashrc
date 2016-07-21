@@ -3,7 +3,7 @@ mge() {
   ag='ag -l'
   xa='xargs -d "\n"'
   n='"\n"';
-  p="$a=explode(' ','$@'); \
+  p="$a=explode(' ','"$@"'); \
    echo '$ag '.implode(' | $xa $ag ',$a).$n;"
   b=$(php -r "$p")
   eval $b
@@ -16,7 +16,7 @@ mgv() {
   xa='xargs -d "\n"'
   n='"\n"';
   q="\'"
-  p="$a=explode(' ','$@'); \
+  p="$a=explode(' ','"$@"'); \
    echo '$ag '.implode(' | $xa $ag ',$a).$n; \
    echo ' | $xa ag $q'.implode('|',$a).'$q';"
    #echo $p
@@ -35,7 +35,7 @@ mgvg() {
   q="\'"
   wq='"'
   zero='0'
-  p="$a=explode(' ','$@'); \
+  p="$a=explode(' ','"$@"'); \
    echo '$ag '.implode(' | $xa $ag ',$a).$n; \
    echo ' | $xa grep ^ | ag '.implode(' | ag ',$a).' | ag $q'.implode('|',$a).'$q';"
    #echo $p
@@ -166,7 +166,7 @@ compile_coffe_and_run_nodejs() {
   # coffee script
   # syntax is nice to play. i like editing and improving code with it.
   # can do same thing just with php i guess
-  cs "$@"
+  cs ""$@""
 }
 alias n=compile_coffe_and_run_nodejs
 
@@ -215,16 +215,16 @@ start_count() {
   #home
   cd;
   date +%H:%M > since.txt
-  echo $@ >> since.txt
+  echo "$@" >> since.txt
 }
 
 add_wrap_taskwarrior() {
-  $@ >> ~/.tasks_wrapper
+  "$@" >> ~/.tasks_wrapper
 }
 
 list_wrap_taskwarrior() {
   CMD='cat ~/.tasks_wrapper';
-  for var in "$@"
+  for var in ""$@""
   do
     CMD+=$CMD"| grep $var"
   done
@@ -241,19 +241,19 @@ source /data/data/com.termux/files/home/mage/devenv/.bashrc
 
 say(){
     echo $(date)
-    echo $@
-    termux-clipboard-set $@
+    echo "$@"
+    termux-clipboard-set "$@"
 }
 
 # reminder with delays in text to speech
 # todo: use termux api for text to speech
 # todo: use termux api for alarms and vibrate
 remind(){
-  ~/mage/devenv/bash/remind.bash $@
+  ~/mage/devenv/bash/remind.bash "$@"
 }
 
 smart_count(){
-    start_count $@
-    say task started $@
+    start_count "$@"
+    say task started "$@"
 
 }

@@ -25,7 +25,7 @@ function mgvg ($keys='')
   $cmd='ag -l '.$r;
   $xa=' | xargs -d "\\n"';
   $cmd.=$xa.' grep ^ ';
-  foeachr $keys as $s
+  foreach $keys as $s
     $cmd.=' | ag '.s
   return $cmd
 }

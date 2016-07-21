@@ -204,3 +204,4 @@ open_nodejs_coffee_editor_compiled_js_after_coffee() {
 alias nbj=open_nodejs_coffee_editor_compiled_js_after_coffee
 alias ta='task limit:page=1000'
 alias tacalltab='task limit:page=1000 calltab'
+alias h1=' | head -n 1'

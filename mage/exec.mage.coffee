@@ -97,19 +97,44 @@ if 'php file_get_contents.php http://esf.cc'!=""
       console.log 'ESF is down'
 count = (a) -> a.length
 show_time = (x) ->
-  console.log 'test'
+  exec('php time.php')
+    .then (result) ->
+      r=result.stdout
+    
 time = (x) -> Date.now() / 1000 | 0
 FILE_APPEND='append'
 n="\n"
 DATE_FILE='/home/a/.timep_date'
-file_put_contents = (filename, value, param) ->
-  if param === FILE_APPEND
+file_put_contents = (filename, value, param, callback) ->
+  if param == FILE_APPEND
     tmpName = '/tmp/cof_tmp_'+time()
+    fs.writeFile tmpName, value,->
+      r = tmpName
+      exec('cat "'+s+'" >> '+filename)
+        .then (result) ->
+          r=result.stdout
+          callback()
+        
+    return
+  else
+    fs.writeFile filename, value,->
+      callback()
+read_logs = () -> ;
 argv=['self.js','log']
 has_args = count(argv) > 1
 if not has_args
   show_time()
 else
   command = argv[1]
-  s = time().'"stop'
+  if command=='stop'
+    s = time()+'"stop'
+    file_put_contents(DATE_FILE,'')
+    file_put_contents(LOG_FILE,'',FILE_APPEND)
+  else
+    if (command=='log')
+      read_logs()
+    else
+      # unset(0)
+      argv.splice(key, 0)
+      s = implode ' ', argv
 

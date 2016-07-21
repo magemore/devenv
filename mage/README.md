@@ -23,11 +23,11 @@ in php it will look like
 function mgvg ($keys='')
 {
   $r = implode('  | xargs -d "\\n" ag -l ', keys);
-  $cmd='ag -l '+$r;
+  $cmd='ag -l '.$r;
   $xa=' | xargs -d "\\n"';
-  $cmd+=xa+' grep ^ ';
+  $cmd.=xa.' grep ^ ';
   foeachr $keys as $s
-    $cmd+=' | ag '+s
+    $cmd.=' | ag '.s
   return $cmd
 }
 ```

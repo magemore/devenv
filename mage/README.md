@@ -22,7 +22,7 @@ in php it will look like
 <?php
 function mgvg ($keys='')
 {
-  $r = implode('  | xargs -d "\\n" ag -l ', keys);
+  $r = implode('  | xargs -d "\\n" ag -l ', $keys);
   $cmd='ag -l '.$r;
   $xa=' | xargs -d "\\n"';
   $cmd.=xa.' grep ^ ';

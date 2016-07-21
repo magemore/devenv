@@ -1,0 +1,5 @@
+
+termux-clipboard-set waku up
+sleep 10
+date
+./test2

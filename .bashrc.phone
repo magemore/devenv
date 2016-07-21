@@ -1,1 +1,2 @@
-alias a=idea_add_taskwarrior_like
+alias a=add_wrap_taskwarrior
+alias t=list_wrap_taskwarrior

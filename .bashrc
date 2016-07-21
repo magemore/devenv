@@ -219,11 +219,15 @@ start_count() {
 }
 
 add_wrap_taskwarrior() {
-  $@ >> ~/.tasks_wrapper 
+  $@ >> ~/.tasks_wrapper
 }
 
 list_wrap_taskwarrior() {
-  cat ~/.tasks_wrapper
+  CMD='cat ~/.tasks_wrapper';
+  for var in "$@"
+  do
+    CMD+=$CMD"| grep $var"
+  done
 }
 
 # dont source from here make .bashrc.phone file that will source code deisgnated only for phone

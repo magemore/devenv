@@ -159,8 +159,13 @@ dir_resolve()
 
 # echo $PATH | tr -s / | sed 's/\/:/:/g;s/:/\n/g'
 
+new=~/mage/devenv/bin
+case ":${PATH:=$new}:" in
+    *:$new:*)  ;;
+    *) PATH="$new:$PATH"  ;;
+esac
 
-export PATH="$PATH:~/mage/devenv/bin"
+#export PATH="$PATH:~/mage/devenv/bin"
 
 
 open_php_editor_for_bash_script() {

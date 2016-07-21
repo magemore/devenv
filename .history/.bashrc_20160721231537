@@ -218,12 +218,8 @@ start_count() {
   echo $@ >> since.txt
 }
 
-add_wrap_taskwarrior() {
-  $@ >> ~/.tasks_wrapper 
-}
-
-list_wrap_taskwarrior() {
-  cat ~/.tasks_wrapper
+idea_add_taskwarrior_like() {
+  $1
 }
 
 # dont source from here make .bashrc.phone file that will source code deisgnated only for phone

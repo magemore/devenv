@@ -218,11 +218,11 @@ start_count() {
   echo $@ >> since.txt
 }
 
-add_wrap_taskwarrior() {
+idea_add_wrap_taskwarrior() {
   $@ >> ~/.tasks_wrapper 
 }
 
-list_wrap_taskwarrior() {
+idea_list_taskwarrior() {
   cat ~/.tasks_wrapper
 }
 

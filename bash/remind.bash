@@ -1,16 +1,12 @@
 cd ~/
 say curent time $(date +%H:%M)
-#sleep 3
-#say aaaaaaaaaaa  Aaaaaaaaaaa
 sleep 5
-say sasha
+say 'testing editing reminders from pc over git hub'
+sleep 5
+say 'combine w and a aliases so w will start track and also add task to log that is acutally task list same time, possible to mark tasks in log as done'
 sleep 2
 say $(php ~/since.php)
 sleep 4
-#say Wake Up Sasha;
-#sleep 4
-#say aaaaaaaaaaa  Aaaaaaaaaaa
-#sleep 5
 say 'wake up';
 sleep 3
 say 'wake up';

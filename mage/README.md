@@ -5,7 +5,7 @@ Coffee hard to predict. I actually make thins faster in bash sometimes than to f
 this part was actually nice
 ```coffee
 mgvg = (keys=false) ->
-  r = implode '  | xargs -d "\\n" ag -l ', keys
+  r = keys.join('  | xargs -d "\\n" ag -l ')
   cmd='ag -l '+r
   xa=' | xargs -d "\\n"'
   cmd+=xa+' grep ^ '

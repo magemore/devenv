@@ -8,7 +8,8 @@
 
 http://php.net/manual/en/ref.filesystem.php
 
-
+- [ ] sublime start using glue
+- [ ] http://sweetme.at/2014/04/07/glue-a-terminal-for-sublime-text/
 
 
 

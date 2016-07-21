@@ -141,7 +141,26 @@ dir_resolve()
   echo "`pwd -P`" # output full, link-resolved path
 }
 
-PATH=$PATH:/home/a/mage/devenv/bin
+# example uses for to list 2 folders
+# export PATH=/opt/bin:/usr/local/bin:/usr/contrib/bin:/bin:/usr/bin:/usr/sbin:/usr/bin/X11
+# # add optional items to the path
+# for bindir in $HOME/local/bin $HOME/bin; do
+#     if [ -d $bindir ]; then
+#         PATH=$PATH:${bindir}
+#     fi
+# done
+
+
+# echo $PATH | tr -s / | sed 's/\/:/:/g;s/:/\n/g'
+# Now suppose $d contains the directory you want to check. Then pipe the previous command to check $d in $PATH.
+
+# echo $PATH | tr -s / | sed 's/\/:/:/g;s/:/\n/g' | grep -q "^$d$" || echo "missing $d"
+
+
+# echo $PATH | tr -s / | sed 's/\/:/:/g;s/:/\n/g'
+
+
+export PATH="$PATH:~/mage/devenv/bin"
 
 
 open_php_editor_for_bash_script() {

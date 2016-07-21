@@ -208,6 +208,8 @@ alias h1=' head -n 1'
 alias pw='cd ~/play/timep'
 
 start_count() {
+#home
+cd; 
 date +%H:%M > since.txt
 echo $@ >> since.txt
 }

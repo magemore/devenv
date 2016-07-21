@@ -166,7 +166,7 @@ compile_coffe_and_run_nodejs() {
   # coffee script
   # syntax is nice to play. i like editing and improving code with it.
   # can do same thing just with php i guess
-  cs ""$@""
+  cs "$@"
 }
 alias n=compile_coffe_and_run_nodejs
 
@@ -224,7 +224,7 @@ add_wrap_taskwarrior() {
 
 list_wrap_taskwarrior() {
   CMD='cat ~/.tasks_wrapper';
-  for var in ""$@""
+  for var in "$@"
   do
     CMD+=$CMD"| grep $var"
   done

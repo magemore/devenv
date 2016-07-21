@@ -39,8 +39,8 @@ mgvg() {
    echo '$ag '.implode(' | $xa $ag ',$a).$n; \
    echo ' | $xa grep ^ | ag '.implode(' | ag ',$a).' | ag $q'.implode('|',$a).'$q';"
    #echo $p
-   b=$(php -r "$p")
-   #echo $b
+   #b=$(php -r "$p")
+   echo $b
    eval $b
 }
 

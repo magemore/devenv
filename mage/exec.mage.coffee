@@ -73,24 +73,43 @@ typeIsArray = Array.isArray || ( value ) -> return {}.toString.call( value )
 filter = (subject,filt) ->
   subject.includes filt
 s=mgvg(['implode','log'])
-exec(s)
-  .then (result) ->
+some_random_check_of_filters = (x)->
+  exec(s)
+    .then (result) ->
+      r=result.stdout
+      r = explode "\n",r
+      for s in r
+        if s
+          if 'cat "'+s+'"'!=""
+            exec('cat "'+s+'"').then (result) ->
+              r=result.stdout
+              r=explode "\n",r
+              for s in r
+                if filter(s,'split')
+                  console.log trim s
+    
+if 'php file_get_contents.php http://esf.cc'!=""
+  exec('php file_get_contents.php http://esf.cc').then (result) ->
     r=result.stdout
-    r = explode "\n",r
-    for s in r
-      if s
-        if 'cat "'+s+'"'!=""
-          exec('cat "'+s+'"').then (result) ->
-            r=result.stdout
-            r=explode "\n",r
-            for s in r
-              if filter(s,'split')
-                console.log trim s
-  
-console.log 'test'
-if 'php file_get_contents.php exec.mage'!=""
-  exec('php file_get_contents.php exec.mage').then (result) ->
-    r=result.stdout
-    console.log 'test'
-    console.log r
+    if r.includes 'ESF'
+      console.log 'ESF is up'
+    else
+      console.log 'ESF is down'
+count = (a) -> a.length
+show_time = (x) ->
+  console.log 'test'
+time = (x) -> Date.now() / 1000 | 0
+FILE_APPEND='append'
+n="\n"
+DATE_FILE='/home/a/.timep_date'
+file_put_contents = (filename, value, param) ->
+  if param === FILE_APPEND
+    tmpName = '/tmp/cof_tmp_'+time()
+argv=['self.js','log']
+has_args = count(argv) > 1
+if not has_args
+  show_time()
+else
+  command = argv[1]
+  s = time().'"stop'
 

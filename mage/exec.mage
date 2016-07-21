@@ -87,21 +87,44 @@ filter = (subject,filt) ->
 
 
 s=mgvg(['implode','log'])
-exec s
-  r = explode "\n",r
-  for r
-    if s
-      cat %
-        r=explode "\n",r
-        for r
-          if filter(s,'split')
-            echo trim s
+some_random_check_of_filters = (x)->
+  exec s
+    r = explode "\n",r
+    for r
+      if s
+        cat %
+          r=explode "\n",r
+          for r
+            if filter(s,'split')
+              echo trim s
 
 
-echo 'test'
-file-get exec.mage
+file-get http://esf.cc
+  if r.includes 'ESF'
+    echo 'ESF is up'
+  else
+    echo 'ESF is down'
+
+count = (a) -> a.length
+
+show_time = (x) ->
   echo 'test'
-  echo r
+
+time = (x) -> Date.now() / 1000 | 0
+
+FILE_APPEND='append'
+n="\n"
+DATE_FILE='/home/a/.timep_date'
+file_put_contents = (filename, value, param) ->
+  if param === FILE_APPEND
+    tmpName = '/tmp/cof_tmp_'+time()
 
 
+argv=['self.js','log']
+has_args = count(argv) > 1
+if not has_args
+  show_time()
+else
+  command = argv[1]
+  s = time().'"stop'
 

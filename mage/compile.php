@@ -134,9 +134,7 @@ function makeCode($s,$sub,$level,$parent_mode=false,$next_is_sub=false) {
     $s = replaceSystemVars($s);
     if (firstWord($s)=='bash') { $s=exceptFirstWord($s); }
     elseif (firstWord($s)=='file-get') { $s='php file_get_contents.php '.exceptFirstWord($s);
-    echo 123;
   }
-  echo 132323232323232323;
     #echo $s;
     #$s = str_replace("'","\'",$s);
     $t=tab($level);

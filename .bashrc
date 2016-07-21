@@ -167,6 +167,14 @@ esac
 
 #export PATH="$PATH:~/mage/devenv/bin"
 
+#echo $PATH | grep /my/bin >/dev/null || PATH=$PATH:/my/bin
+#note that the grep pattern is overly broad. Consider using egrep -q "(^|:)/my/bin(:|\$)" instead of grep /my/bin >/dev/null.
+
+#printf '%s' ":${PATH}:" | grep -Fq ":${my_path}:"
+# if ! printf '%s' ":${PATH-}:" | grep -Fq ":${my_path-}:"
+# then
+#     PATH="${PATH-}:${my_path-}"
+# fi
 
 open_php_editor_for_bash_script() {
   rsy

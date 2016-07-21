@@ -236,7 +236,7 @@ list_wrap_taskwarrior() {
 alias ww='watch -t -n 1'
 alias wp='watch -t -n 1 php '
 
-source /data/data/com.termux/files/home/mage/devenv/.bashrc
+#source /data/data/com.termux/files/home/mage/devenv/.bashrc
 
 
 say(){

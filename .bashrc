@@ -207,8 +207,17 @@ alias tacalltab='task limit:page=1000 calltab'
 alias h1=' head -n 1'
 alias pw='cd ~/play/timep'
 
+<<<<<<< HEAD
 # idea write tool to find files save found results to favorites track opened files by vim and other editors
 # so find files will give interactive list where possible to switch between files by pressing 1, 2, 3 or arrows
 # if it is a dearictory quick switch and show contents of dir
 
+=======
+start_count() {
+#home
+cd; 
+date +%H:%M > since.txt
+echo $@ >> since.txt
+}
+>>>>>>> 64f06e9ff842b48b13d5fd20215559247f18306c
 

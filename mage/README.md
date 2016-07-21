@@ -16,7 +16,6 @@ mgvg = (keys=false) ->
 
 generation of bash search command
 
-4:43
 in php it will look like
 ```php
 <?php

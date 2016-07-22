@@ -442,3 +442,54 @@ alias ed='de'
 search_files() {
   php ~/mage/devenv/php/search_files.php
 }
+f_timep() {
+  /home/a/play/timep/timep $*
+  /home/a/play/timep/timep log | tail -n5
+}
+alias w=f_timep
+alias wl='/home/a/play/timep/timep log | tail -n5'
+alias q='watch -n 1 -t timep'
+alias r='/home/a/play/timep/task_rules'
+alias vic='cat'
+alias psg='ps -A | grep -i 'lias psg='ps -A | grep -i '
+
+
+# todo: write something for sed
+# fn php | xai sed -i -e 's/catalog_show_collectiont/catalog_show_collection/g' {}
+
+
+
+# cryptic names don't remember. make bash functions bigger
+# this one creates directory for file to edit
+make_dir_p_and_open_file_with_external_editor() {
+  rsy
+  f_mdnf $1
+  touch $1
+  ext_edit $1
+}
+alias fb=make_dir_p_and_open_file_with_external_editor
+
+
+open_file_with_external_editor_focus_on_pc() {
+  rsy
+  export DISPLAY=:0
+  sublime_text $@ 2> /dev/null
+  #ext_edit $1
+  #xdg-open $1
+}
+alias b=open_file_with_external_editor_focus_on_pc
+
+
+find_and_grep_result() {
+  find . -type f -iname "*$1*" | grep -i $1
+}
+alias fng=find_and_grep_result
+
+
+alias cx='chmod a+x'
+touch_chmod() {
+  touch $1
+  chmod a+x $1
+}
+alias tx=$1
+

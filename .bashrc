@@ -285,7 +285,13 @@ remind(){
 }
 
 smart_count(){
-    start_count "$@"
-    say task started "$@"
-    add_wrap_taskwarrior "$@"
+  if [[ -n $1 ]]; then
+    MSG="$@"
+  else
+    # make fallback for termux on pc
+    MSG=$(termux-dialog)  
+  fi
+  start_count $MSG
+  say task started $MSG
+  add_wrap_taskwarrior $MSG
 }

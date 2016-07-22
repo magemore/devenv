@@ -7,6 +7,16 @@
   - [ ] google bash path duplicates
   - [ ] try to reboot and check
 
+#termux
+```bash
+termux-vibrate 
+# for attention
+
+termux-dialog 
+#nice for text input use for todo lists adding new todo
+
+```
+
 
 It's easy enough to avoid adding duplicate entries.
 ```bash

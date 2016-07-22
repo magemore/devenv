@@ -67,7 +67,7 @@ alias de=cd_devenv
 xgit() {
   if [[ -n $1 ]]; then
     git add .; git commit -m "$@"
-    git push origin
+    git push origin 2>/dev/null
     return;
   fi
   clear

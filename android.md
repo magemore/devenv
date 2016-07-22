@@ -10,4 +10,6 @@ http://www.pandorawiki.org/Formatting_SD_cards
 ## how to format the new disk
 - cant format it access denied
 
+
+## How to hook up a USB flash drive to your Android device
 http://www.greenbot.com/article/2155300/how-to-hook-up-a-usb-flash-drive-to-your-android-device.html

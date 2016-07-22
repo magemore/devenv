@@ -1,6 +1,6 @@
 mge() {
   a='$a'
-  ag='ag -l'
+  ag='grep -ril '
   xa='xargs -d "\n"'
   n='"\n"';
   p="$a=explode(' ','"$@"'); \

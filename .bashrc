@@ -504,3 +504,43 @@ alias gawk1='gawk '"'"'{ print $1 }'"'"''
 alias gawk2='gawk '"'"'{ print $2 }'"'"''
 alias gawk3='gawk '"'"'{ print $3 }'"'"''
 alias gawk4='gawk '"'"'{ print $4 }'"'"''
+
+w_myspl(){
+  watch -t -n 1 'echo "show processlist;" | mysql -uroot -pq1234e 2>/dev/null | grep local | grep -v processlist'
+}
+alias myspl=w_myspl
+alias ucpu='ps aux | sort -rk 3,3 | head -5'
+s_google(){
+  links2 "https://google.co.uk/search?q=$1 $2 $3 $4 $5 $6 $7 $8"
+}
+s_firefox_google(){
+  firefox "https://google.co.uk/search?q=$1 $2 $3 $4 $5 $6 $7 $8" 2>/dev/null >/dev/null &
+}
+s_go_google() {
+  links2 -source "https://google.co.uk/search?q=$1 $2 $3 $4 $5 $6 $7 $8" > /tmp/s_go_google.html
+  url=$(html_first_link)
+  echo $url > /tmp/z_goo.txt
+  echo '' > /tmp/z_s_go_tmp.html
+  #links2 -source $url >> /tmp/z_s_go_tmp.html
+  #links2 -dump $url >> /tmp/z_s_go_tmp_dump.txt
+  phantomjs /home/a/tools/html_get/get.js $url > /tmp/z_s_go_tmp.html
+  echo '<?php $s=file_get_contents("/tmp/z_s_go_tmp.html"); if (!$s) { file_put_contents("/tmp/z_s_go_tmp_result.html","not found"); return; } $a=explode("<h1",$s); if (isset($a[1])) { unset($a[0]); $s="<h1".implode("<h1",$a); } file_put_contents("/tmp/z_s_go_tmp_result.html",$s);' | php
+  links2 -dump /tmp/z_s_go_tmp_result.html >> /tmp/z_goo.txt
+  #links2 -dump $url >> /tmp/z_goo.txt
+  vim /tmp/z_goo.txt
+}
+s_chrome_google(){
+  google-chrome "https://google.co.uk/search?q=$1 $2 $3 $4 $5 $6 $7 $8" 2>/dev/null >/dev/null &
+}
+alias goo=s_google
+alias go=s_go_google
+
+alias R='R --no-save --slave'
+alias foo=s_firefox_google
+alias coo=s_chrome_google
+
+calc_r() {
+  #echo $1 $2 $3 $4 | R --no-save --slave | grep '\[' | gawk '{ print $2 }'
+  echo $1 $2 $3 $4 | R --no-save --slave | gawk '{ print $2 }'
+
+}

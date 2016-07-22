@@ -13,7 +13,7 @@ function limit($line,$limit=150) {
 
 function getPipeInput() {
   while ($line = readline()) {
-    limit($line)
+    limit($line);
   }
 }
 

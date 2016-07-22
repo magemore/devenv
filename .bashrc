@@ -27,8 +27,8 @@ mgv() {
 
 
 
-alias mg=mgvg
-alias mag=mgvg
+#alias mg=mgvg
+#alias mag=mgvg
 
 tar_improved() {
   tar czvf $1.tgz $1

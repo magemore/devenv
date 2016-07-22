@@ -21,5 +21,5 @@ gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 
 # install compiz
 ```bash
-sudo apt-get install compiz compizconfig-settings-manager compiz-fusion-plugins-extra compiz-fusion-plugins-main compiz-plugins
+sudo apt-get install compiz compizconfig-settings-manager compiz-plugins
 ```

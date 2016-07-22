@@ -1,4 +1,6 @@
-echo $(starts "$@")
+# fg = find grep
+#echo `starts "$@"`
+echo 123;
 
 # a='$a'
 #ag='grep -rli '

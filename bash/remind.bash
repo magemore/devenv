@@ -1,6 +1,8 @@
 cd ~/
 say curent time $(date +%H:%M)
 sleep 5
+say fix bin bash
+sleep 5
 say 'testing editing reminders from pc over git hub'
 sleep 5
 say 'combine w and a aliases so w will start track and also add task to log that is acutally task list same time, possible to mark tasks in log as done'

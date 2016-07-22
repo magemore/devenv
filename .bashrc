@@ -327,3 +327,16 @@ alias tl='cd ~/tools/'
 alias tlc='cd ~/tools/cron/'
 alias ww='watch -t -n 1'
 alias wp='watch -t -n 1 php '
+
+textled() {
+  textl $1;
+  /usr/bin/vim $1;
+}
+alias v=textled
+alias vi=textled
+alias vim=textled
+alias sx='get_xclip | xclip'
+alias e='cd /srv/esf/'
+alias ea='cd /srv/esf/system/application'
+alias ew='cd /srv/esf/sites/esfwholesalefurniture.com'
+

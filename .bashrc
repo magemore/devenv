@@ -313,3 +313,17 @@ smart_count(){
   ls -lhtra | tail
   cat ~/mage/devenv/auto.tasks.md | tail
 }
+
+
+mkdir_cd() {
+  mkdir -p $1
+  cd $1
+}
+alias md=mkdir_cd
+alias m='mkdir'
+alias rcp='rsync -aP'
+alias tio='cd /srv/misc/time.io'
+alias tl='cd ~/tools/'
+alias tlc='cd ~/tools/cron/'
+alias ww='watch -t -n 1'
+alias wp='watch -t -n 1 php '

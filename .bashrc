@@ -87,7 +87,7 @@ alias xc=git_commit_empty
 loop_git_commit_empty() {
   while true; do
     git_commit_empty
-    sleep 10
+    sleep 30
   done
 
 }

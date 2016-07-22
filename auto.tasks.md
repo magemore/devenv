@@ -9,5 +9,8 @@
 - [ ] install ubuntu vlad
   - [x] find usb stick and install ubuntu 16 32 bit there
   - [x] boot laptop 
-    - [ ] with this ubuntu stick
-
+    - [x] with this ubuntu stick
+    - [ ] for some reason usb stick detected as hard drive in bios
+    - [ ] install ubuntu
+      - lol it was kylin... 
+      - [ ] making usb stick

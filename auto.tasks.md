@@ -4,6 +4,6 @@
   - [ ] esf refine deadline
     - [ ] 30 minutes left till they wake up
       - [ ] i will not be able to make it on time
-        - [X] need to make php work first
+        - [x] need to make php work first
           - fixated on install ubuntu vlad
 - [ ] install ubuntu vlad

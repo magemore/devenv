@@ -14,3 +14,5 @@
     - [ ] install ubuntu
       - lol it was kylin... 
       - [ ] making usb stick
+      - [ ] problem loading blank screen no errors
+        - [ ] trying install 32 bit

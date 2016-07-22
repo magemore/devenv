@@ -1,0 +1,2 @@
+random_value=$(rand)
+echo '/tmp/rand'$random_value

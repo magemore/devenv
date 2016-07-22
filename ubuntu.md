@@ -22,3 +22,4 @@ sudo apt-get install compiz compizconfig-settings-manager compiz-plugins
 ```bash
 ccsm
 ```
+

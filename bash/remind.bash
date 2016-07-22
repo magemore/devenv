@@ -1,3 +1,5 @@
+#todo: make mode variable alarm, task liist and execute some by mode
+# if it gets hard to write than make coffee script like parser/compiler into bash
 cd ~/
 say curent time $(date +%H:%M)
 sleep 5

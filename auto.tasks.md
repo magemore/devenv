@@ -2,3 +2,4 @@
 - [ ]  try other
 - [ ]  test task
 - [ ] 123
+- [ ] install ubuntu vlad

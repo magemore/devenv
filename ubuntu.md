@@ -12,3 +12,8 @@ note sure how it will combine with existing ubuntu setup
 play on virtual machine first
 ```
 - [ ] try to install same ubuntu setup on virtual machine and than enable compiz
+
+## move launcher to bottom
+```bash
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+```

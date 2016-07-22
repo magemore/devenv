@@ -25,3 +25,7 @@ case ":$PATH:" in
   *) PATH="$new_entry:$PATH";; # or PATH="$PATH:$new_entry"
 esac
 ```
+
+## synergy
+- [ ] write script to restart synergy on clipboard change
+

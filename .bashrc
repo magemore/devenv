@@ -25,8 +25,6 @@ mgv() {
   eval $b
 }
 
-mgvg() {
-}
 
 
 alias mg=mgvg

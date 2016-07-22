@@ -428,3 +428,17 @@ f_mdnf() {
   mkdir -p $D
 }
 
+git_commit_empty() {
+  git add .; git commit -m 'xc'
+  git push origin &>/dev/null
+  #git push origin
+  return;
+}
+alias xc=git_commit_empty
+
+# find out what ed isand why it freeze my bash
+alias ed='de'
+
+search_files() {
+  php ~/mage/devenv/php/search_files.php
+}

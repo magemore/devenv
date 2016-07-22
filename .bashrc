@@ -284,6 +284,10 @@ remind(){
   ~/mage/devenv/bash/remind.bash "$@"
 }
 
+add_task_devenv() {
+  echo '- [ ] ' "$@" >> ~/mage/devenv/auto.tasks.md
+}
+
 smart_count(){
   if [[ -n $1 ]]; then
     MSG="$@"
@@ -294,4 +298,5 @@ smart_count(){
   start_count $MSG
   say task started $MSG
   add_wrap_taskwarrior $MSG
+  add_task_devenv $MSG
 }

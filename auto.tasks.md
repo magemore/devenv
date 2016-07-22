@@ -7,5 +7,7 @@
         - [ ] need to make php work first
           - fixated on install ubuntu vlad
 - [ ] install ubuntu vlad
-  - [ ] find usb stick and install ubuntu 16 32 bit there
+  - [x] find usb stick and install ubuntu 16 32 bit there
+  - [x] boot laptop 
+    - [ ] with this ubuntu stick
 

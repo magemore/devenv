@@ -1,0 +1,14 @@
+#!/usr/bin/php
+<?php
+
+$limit = 150;
+
+function getPipeInput($filters) {
+  while ($line = readline()) {
+    filter($line,$filters);
+  }
+}
+
+$filters = $argv;
+unset($filters[0]);
+getPipeInput($argv);

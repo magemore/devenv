@@ -741,3 +741,68 @@ notes_mit() {
 }
 
 alias mit=notes_mit
+
+g_gac(){
+  git add .; git commit -m "$1 $2 $3 $4 $5 $6 $7 $8"
+}
+g_gc(){
+  git commit -m "$1 $2 $3 $4 $5 $6 $7 $8"
+}
+
+
+f_git_log_p(){
+  if [[ -n $1 ]]; then
+    git log -p $1 > /tmp/f_git_p
+  else
+    git log -p > /tmp/f_git_p
+  fi
+  /usr/bin/vim /tmp/f_git_p
+}
+alias glp=f_git_log_p
+
+alias gl='git log --pretty=format:"%ad %ar  %h %s"'
+alias gd='git log -p'
+alias gac=g_gac
+alias gacd='gitd add .; git commit -m "fix $(date)"'
+alias ga='git add '
+alias gc=g_gc
+alias gst='git status'
+alias gs='git status .'
+alias gdf='git diff'
+alias grm='git ls-files --deleted -z | xargs -0 git rm'
+alias t='task'
+alias ag='ag --follow'
+
+open_atom_if_file_else_task_add() {
+  # -e means
+  if [ ! -e $1 ]; then
+    echo something wrong
+    #task add $@
+    return
+  fi
+  # xdg may open not only atom files but all files associations
+  rsy
+  xdg-open $1 &>/dev/null &
+}
+alias a=open_atom_if_file_else_task_add
+alias xclip='xclip -selection c'
+alias fnn='find . -iname '
+alias gv='grep -iv'
+alias g='grep -i'
+f_sr() {
+  #php ~/play/compile/bash.php
+  source ~/.bashrc
+}
+alias sr=f_sr
+alias vr='vim ~/.bashrc; source ~/.bashrc'
+alias vrr='vim ~/.vimrc'
+f_br() {
+  rsy
+  ext_edit ~/.bashrc
+}
+alias br=f_br
+f_brr() {
+  rsy
+  ext_edit ~/.vimrc
+}
+alias brr=f_brr

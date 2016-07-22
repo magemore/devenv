@@ -8,3 +8,4 @@ http://www.pandorawiki.org/Formatting_SD_cards
 - [ ] format storage/extSdCard
 
 ## how to format the new disk
+- cant format it access denied

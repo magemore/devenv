@@ -299,5 +299,7 @@ smart_count(){
   add_wrap_taskwarrior $MSG
   add_task_devenv $MSG
   cd ~/mage/devenv/
-
+  xgit $MSG
+  ls -lhtra | tail
+  cat ~/mage/devenv/auto.tasks.md | tail 
 }

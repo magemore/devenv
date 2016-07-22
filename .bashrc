@@ -544,3 +544,200 @@ calc_r() {
   echo $1 $2 $3 $4 | R --no-save --slave | gawk '{ print $2 }'
 
 }
+alias tl='tail -f'
+
+alias nts='find ~/notes/ | xargs -d "\n" ag -l'
+#alias xag='xargs -d "\n" ag -l'
+alias xa='xargs -d "\n" '
+alias xai='xargs -d "\n" -I{} '
+
+notes_advanced_search() {
+  if [[ -n $7 ]]; then ag -l $1  ~/notes/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5 | xargs -d "\n" ag -l $6 | xargs -d "\n" ag -l $7; return; fi
+  if [[ -n $6 ]]; then ag -l $1  ~/notes/| xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5 | xargs -d "\n" ag -l $6; return; fi
+  if [[ -n $5 ]]; then ag -l $1  ~/notes/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5; return; fi
+  if [[ -n $4 ]]; then ag -l $1  ~/notes/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4; return; fi
+  if [[ -n $3 ]]; then ag -l $1  ~/notes/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3; return; fi
+  if [[ -n $2 ]]; then ag -l $1  ~/notes/ | xargs -d "\n" ag -l $2; return; fi
+  if [[ -n $1 ]]; then ag -l $1  ~/notes/; return; fi
+}
+alias nt=notes_advanced_search
+
+ev_notes_advanced_search() {
+  if [[ -n $7 ]]; then ag -l $1  ~/evernote/text/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5 | xargs -d "\n" ag -l $6 | xargs -d "\n" ag -l $7; return; fi
+  if [[ -n $6 ]]; then ag -l $1  ~/evernote/text/| xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5 | xargs -d "\n" ag -l $6; return; fi
+  if [[ -n $5 ]]; then ag -l $1  ~/evernote/text/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5; return; fi
+  if [[ -n $4 ]]; then ag -l $1  ~/evernote/text/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4; return; fi
+  if [[ -n $3 ]]; then ag -l $1  ~/evernote/text/ | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3; return; fi
+  if [[ -n $2 ]]; then ag -l $1  ~/evernote/text/ | xargs -d "\n" ag -l $2; return; fi
+  if [[ -n $1 ]]; then ag -l $1  ~/evernote/text/; return; fi
+}
+alias ev=ev_notes_advanced_search
+
+xargs_advanced_search() {
+  if [[ -n $7 ]]; then xargs -d "\n" ag -l $1 | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5 | xargs -d "\n" ag -l $6 | xargs -d "\n" ag -l $7; return; fi
+  if [[ -n $6 ]]; then xargs -d "\n" ag -l $1 | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5 | xargs -d "\n" ag -l $6; return; fi
+  if [[ -n $5 ]]; then xargs -d "\n" ag -l $1 | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4 | xargs -d "\n" ag -l $5; return; fi
+  if [[ -n $4 ]]; then xargs -d "\n" ag -l $1 | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3 | xargs -d "\n" ag -l $4; return; fi
+  if [[ -n $3 ]]; then xargs -d "\n" ag -l $1 | xargs -d "\n" ag -l $2 | xargs -d "\n" ag -l $3; return; fi
+  if [[ -n $2 ]]; then xargs -d "\n" ag -l $1 | xargs -d "\n" ag -l $2; return; fi
+  if [[ -n $1 ]]; then xargs -d "\n" ag -l $1; return; fi
+}
+alias xag=xargs_advanced_search
+
+findnn() {
+  if [[ -n $2 ]]; then
+    #echo $2;
+    #echo $(pwd)
+    #echo find $2 -type f -iname "*$1*";
+    find $2 -type f -iname "*$1*";
+    return; fi
+  find . -type f -iname "*$1*"
+}
+alias fn=findnn
+findnna() {
+  if [[ -n $2 ]]; then
+    #echo $2;
+    #echo $(pwd)
+    #echo find $2 -type f -iname "*$1*";
+    find $2 -iname "*$1*";
+    return;
+  fi
+  find . -iname "*$1*"
+}
+alias fna=findnna
+
+xfind_multi() {
+  if [[ -n $6 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | head -n 1 |  xargs -d "\n" ext_edit
+    return;
+  elif [[ -n $5 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | head -n 1 |  xargs -d "\n" ext_edit
+    return;
+  elif [[ -n $4 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | head -n 1 |  xargs -d "\n" ext_edit
+    return;
+  elif [[ -n $3 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | head -n 1 |  xargs -d "\n" ext_edit
+    return;
+  elif [[ -n $2 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | head -n 1 |  xargs -d "\n" ext_edit
+    return;
+  fi
+  find . -type f | grep -i $1 | head -n 1 |  xargs -d "\n" ext_edit
+}
+alias fx=xfind_multi
+alias xf=xfind_multi
+
+f_f() {
+  if [[ -n $6 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6
+    return;
+  elif [[ -n $5 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5
+    return;
+  elif [[ -n $4 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4
+    return;
+  elif [[ -n $3 ]]; then
+    find . -type f | grep -i $1 | grep -i $2 | grep -i $3
+    return;
+  elif [[ -n $2 ]]; then
+    find . -type f | grep -i $1 | grep -i $2
+    return;
+  fi
+  find . -type f | grep -i $1
+}
+alias f=f_f
+
+f_ffx() {
+  if [[ -n $6 ]]; then
+    FDR=$(find . -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | head -n 1)
+    cd $FDR
+    return;
+  elif [[ -n $5 ]]; then
+    FDR=$(find . -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | head -n 1)
+    cd $FDR
+    return;
+  elif [[ -n $4 ]]; then
+    FDR=$(find . -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | head -n 1)
+    cd $FDR
+    return;
+  elif [[ -n $3 ]]; then
+    FDR=$(find . -type d | grep -i $1 | grep -i $2 | grep -i $3 | head -n 1)
+    cd $FDR
+    return;
+  elif [[ -n $2 ]]; then
+    FDR=$(find . -type d | grep -i $1 | grep -i $2 | head -n 1)
+    cd $FDR
+    return;
+  fi
+  FDR=$(find . -type d | grep -i $1 | head -n 1)
+  cd $FDR
+}
+alias ffx=f_ffx
+alias xff=f_ffx
+
+f_ff() {
+  if [[ -n $6 ]]; then
+    find . -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6
+    return;
+  elif [[ -n $5 ]]; then
+    find . -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5
+    return;
+  elif [[ -n $4 ]]; then
+    find . -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4
+    return;
+  elif [[ -n $3 ]]; then
+    find . -type d | grep -i $1 | grep -i $2 | grep -i $3
+    return;
+  elif [[ -n $2 ]]; then
+    find . -type d | grep -i $1 | grep -i $2
+    return;
+  fi
+  find . -type d | grep -i $1
+}
+alias ff=f_ff
+
+alias fn1='find .  -maxdepth 1 -iname "*$1*" 2>/dev/null'
+alias fn1f='find . -type f  -maxdepth 1 -iname "*$1*" 2>/dev/null'
+findnna2() {
+  if [[ -n $2 ]]; then
+    #echo $2;
+    #echo $(pwd)
+    #echo find $2 -type f -iname "*$1*";
+    find $2 -maxdepth 2 -iname "*$1*" 2>/dev/null;
+    return; fi
+  find . -maxdepth 2 -iname "*$1*" 2>/dev/null
+}
+alias fn2=findnna2
+findnna3() {
+  if [[ -n $2 ]]; then
+    #echo $2;
+    #echo $(pwd)
+    #echo find $2 -type f -iname "*$1*";
+    find $2 -maxdepth 3 -iname "*$1*" 2>/dev/null;
+    return; fi
+  find . -maxdepth 3 -iname "*$1*" 2>/dev/null
+}
+alias fn3=findnna3
+
+notesfindvim() {
+  #find ~/notes/ -iname "*$1*" | cut -f 1 -d ' ' | xargs -n 1 vim
+  find ~/notes/ -iname "*$1*" | cut -f 1 -d ' ' | xargs -n 1 echo
+}
+notesvim() {
+  dirname ~/notes/$1 | xargs mkdir -p
+  vim ~/notes/$1
+}
+alias nv=notesvim
+alias nvv=notesfindvim
+alias lol='~/tools/task/lol | less'
+
+notes_mit() {
+  MY_DATE=$(date +"%m/%d")
+
+  mkdir -p $(dirname ~/notes/ztd/mit/${MY_DATE})
+  vim ~/notes/ztd/mit/${MY_DATE}
+}
+
+alias mit=notes_mit

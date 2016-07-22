@@ -493,3 +493,5 @@ touch_chmod() {
 }
 alias tx=$1
 
+alias s='/home/a/play/timep/taskw_start'
+alias pl='cd /home/a/play/'

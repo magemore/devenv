@@ -2,8 +2,14 @@
 <?php
 
 $limit = 150;
+// default is or
+$rules = ['and','or'];
 
-function getPipeInput($filters) {
+function filter($s,$fr,$rule) {
+    
+}
+
+function getPipeInput($filters,$rule) {
   while ($line = readline()) {
     filter($line,$filters);
   }
@@ -11,4 +17,10 @@ function getPipeInput($filters) {
 
 $filters = $argv;
 unset($filters[0]);
+$rule='or';
+if (isset($argv[1] && in_array($argv[1],$rules) {
+  if ($argv[1]=='and') $rule='and';
+  unset($filters[1]);
+}
+if ($filter)
 getPipeInput($argv);

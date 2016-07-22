@@ -1,0 +1,18 @@
+#!/usr/bin/php
+<?php
+
+$glue = ' ';
+if (isset($argv[1])) $glue=$argv[1];
+if (isset($argv[2])) {
+  $a = array_slice($argv,2);
+  echo implode($glue,$a)."\n";
+  return 1;
+}
+
+while ($s = readline()) {
+  $a = explode(' ',$s);
+  echo implode($a,$glue)."\n";
+}
+
+return 1;
+

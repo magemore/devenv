@@ -4,12 +4,11 @@
 
 - [ ] make it automatically generate and write system functions
 
-- [ ] there also were some lib with some cool pph functions
-
-http://php.net/manual/en/ref.filesystem.php
+- [ ] there also were some lib with some cool pph functions. besides standard php functions
+  - [ ] http://php.net/manual/en/ref.filesystem.php
 
 - [ ] sublime start using glue
 - [ ] http://sweetme.at/2014/04/07/glue-a-terminal-for-sublime-text/
 
-
+- [ ] install sublime wakatime=
 

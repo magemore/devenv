@@ -38,7 +38,7 @@ mgvg() {
   zero='0'
   p="$a=explode(' ','"$@"'); \
    echo '$ag '.implode(' | $xa $ag ',$a).$n; \
-   echo ' | grep -v css | ~/mage/devenv/php/cut_line.bash | $xa grep ^ | ag '.implode(' | ag ',$a).' | ag $q'.implode('|',$a).'$q';"
+   echo ' | grep -v css | $xa grep ^ |  ~/mage/devenv/php/cut_line.bash | ag '.implode(' | ag ',$a).' | ag $q'.implode('|',$a).'$q';"
    #echo $p
    b=$(php -r "$p")
    #echo $b

@@ -4,7 +4,7 @@ if (!isset($argv[1])) {
   return 0;
 }
 
-$limit = 50;
+$limit = 150;
 if (isset($argv[2])) {
   $limit = $argv[2];
 }

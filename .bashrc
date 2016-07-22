@@ -284,7 +284,7 @@ remind(){
 }
 
 add_task_devenv() {
-  echo '- [ ] ' "$@" >> ~/mage/devenv/auto.tasks.md
+  echo '- [ ] '"$@" >> ~/mage/devenv/auto.tasks.md
 }
 
 smart_count(){

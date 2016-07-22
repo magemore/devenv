@@ -187,7 +187,6 @@ open_php_editor_for_bash_script() {
 }
 alias pb=open_php_editor_for_bash_script
 
-alias connect_to_android_just_ssh='ssh 192.168.0.201 -p 8022 -i ~/.ssh/android_rsa'
 connect_to_android_mosh() {
   mosh -ssh='ssh -p 8022 -i ~/.ssh/android_rsa' 192.168.0.201
 }
@@ -299,4 +298,6 @@ smart_count(){
   say task started $MSG
   add_wrap_taskwarrior $MSG
   add_task_devenv $MSG
+  cd ~/mage/devenv/
+
 }

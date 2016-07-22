@@ -340,3 +340,91 @@ alias e='cd /srv/esf/'
 alias ea='cd /srv/esf/system/application'
 alias ew='cd /srv/esf/sites/esfwholesalefurniture.com'
 
+alias node='nodejs'
+alias nj='nodejs'
+# alias n='nodejs'
+
+alias cl='clear'
+alias cle='clear'
+alias clea='clear'
+f_p() {
+  if [ ! -f $1 ]; then
+    php "/home/a/play/php/$1.php"
+    return
+  fi
+  if [[ -n $1 ]]; then
+    php $1
+    return
+  fi
+  pwd
+}
+alias p=f_p
+
+#alias h='cd ~/; date; pwd;'
+# c = cd does the sameif just empty
+
+
+#alias x='clear; git status .'
+
+
+# example xclip image. todo: make it after print screen pressed and file sorted
+# $ xclip -selection clipboard -t image/png -o > /tmp/avatar.png
+# $ see /tmp/avatar.png  # yep, that's it
+
+alias vgi='vim .gitignore'
+alias cc='cd ..'
+cdandclear() {
+  if [[ -n $1 ]]; then
+    if [ ! -d "$1" ]; then
+      xfind_multi $@
+      return
+    fi
+    cd $1;
+    pwd
+    ls
+    return;
+  fi
+  clear
+#  date
+}
+alias c=cdandclear
+alias ch='cd'
+alias hi=history
+f_haml(){
+  #haml $1 > $2
+  vim /home/a/play/haml/t.h
+  haml /home/a/play/haml/t.h > /tmp/share
+}
+alias h=f_haml
+# todo make alias to quick open last editee vim file wzcept some
+
+alias srv='cd /srv/'
+alias srm='cd /srv/misc/'
+alias srb='cd /srv/misc/bootstrap/'
+alias mage='cd /srv/magento'
+alias book='cd /home/a/play/bookshots'
+
+
+silent_findnn() {
+  if [[ -n $2 ]]; then
+    find $2 -type f -iname "*$1*" 2> "/home/a/find/err/$1" > "/home/a/find/$1" &
+    return; fi
+  find . -type f -iname "*$1*" 2> "/home/a/find/err/$1" > "/home/a/find/$1" &
+}
+alias sfn=silent_findnn
+alias fns=silent_findnn
+alias gcron='vim /usr/bin/git_all'
+alias cp='cp -rf'
+alias sm='cd /srv/magento'
+alias xasa='xargs -d "\n" sublime_text'
+alias xas='head -n 1 |  xargs -d "\n" ext_edit'
+
+
+f_mdnf() {
+  PWD=$(pwd)
+  s='/'
+  F=$(echo $PWD$s$1)
+  D=$(dirname $F)
+  mkdir -p $D
+}
+

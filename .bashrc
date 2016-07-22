@@ -27,7 +27,8 @@ mgv() {
 
 mgvg() {
   a='$a'
-  ag='ag -l'
+  #ag='grep -rli '
+  ag='ag -l  '
   xa='xargs -d "\n"'
   xai='xargs -d "\n" -I{}'
   dollar='$'
@@ -39,8 +40,8 @@ mgvg() {
    echo '$ag '.implode(' | $xa $ag ',$a).$n; \
    echo ' | $xa grep ^ | ag '.implode(' | ag ',$a).' | ag $q'.implode('|',$a).'$q';"
    #echo $p
-   #b=$(php -r "$p")
-   echo $b
+   b=$(php -r "$p")
+   #echo $b
    eval $b
 }
 

@@ -1,1 +1,1 @@
-grep -i 
+grep -i "$@"

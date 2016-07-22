@@ -83,6 +83,15 @@ git_commit_empty() {
   return;
 }
 alias xc=git_commit_empty
+# acts like watch a bit
+loop_git_commit_empty() {
+  while true; do
+    git_commit_empty
+    sleep 1
+  done
+
+}
+alias wxc=loop_git_commit_empty
 alias ln='ln -s '
 
 edit_bashrc_sublime() {
@@ -292,7 +301,7 @@ smart_count(){
     MSG="$@"
   else
     # make fallback for termux on pc
-    MSG=$(termux-dialog)  
+    MSG=$(termux-dialog)
   fi
   start_count $MSG
   say task started $MSG
@@ -301,5 +310,5 @@ smart_count(){
   cd ~/mage/devenv/
   xgit $MSG
   ls -lhtra | tail
-  cat ~/mage/devenv/auto.tasks.md | tail 
+  cat ~/mage/devenv/auto.tasks.md | tail
 }

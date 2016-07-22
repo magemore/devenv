@@ -1,0 +1,32 @@
+#!/usr/bin/php
+<?php
+
+$limit = 150;
+function limit($line,$limit=150) {
+  $len = strlen($line);
+  if ($len>$limit) {
+    $line = substr($line,0,$limit);
+  }
+  echo $line."\n";
+
+}
+
+function getPipeInput() {
+  while ($line = readline()) {
+    limit($line)
+  }
+}
+
+if (!isset($argv[1])) {
+  getPipeInput();
+  return 0;
+}
+
+if (isset($argv[2])) {
+  $limit = $argv[2];
+}
+
+$line = $argv[1];
+limit($line);
+
+return 1;

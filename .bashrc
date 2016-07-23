@@ -790,6 +790,7 @@ up() {
   for i in $(seq 1 ${DEEP}); do 
     cd ../;
   done;
+  pwd
 }
 alias c1='cd ..'
 alias c2='up 2'

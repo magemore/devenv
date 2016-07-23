@@ -801,3 +801,5 @@ alias c6='up 6'
 alias c7='up 7'
 alias c8='up 8'
 alias c9='up 9'
+
+alias diff='git diff'

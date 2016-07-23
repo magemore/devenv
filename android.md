@@ -8,6 +8,7 @@ cd sh://a@192.168.0.100:1022/tmp
 
 ### web servers from phone on local network
 http://192.168.0.100:80
+
 http://192.168.0.100:1080
 
 ### accessing nodejs server on phone from other device

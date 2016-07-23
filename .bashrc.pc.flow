@@ -1,0 +1,8 @@
+alias pw='cd ~/play/timep'
+f_timep() {
+  /home/a/play/timep/timep $*
+  /home/a/play/timep/timep log | tail -n5
+}
+alias w=f_timep
+alias wl='/home/a/play/timep/timep log | tail -n5'
+alias q='watch -n 1 -t timep'

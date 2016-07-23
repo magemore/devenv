@@ -227,7 +227,6 @@ alias nbj=open_nodejs_coffee_editor_compiled_js_after_coffee
 alias ta='task limit:page=1000'
 alias tacalltab='task limit:page=1000 calltab'
 alias h1=' head -n 1'
-alias pw='cd ~/play/timep'
 
 # idea write tool to find files save found results to favorites track opened files by vim and other editors
 # so find files will give interactive list where possible to switch between files by pressing 1, 2, 3 or arrows
@@ -423,13 +422,6 @@ alias ed='de'
 search_files() {
   php ~/mage/devenv/php/search_files.php
 }
-f_timep() {
-  /home/a/play/timep/timep $*
-  /home/a/play/timep/timep log | tail -n5
-}
-alias w=f_timep
-alias wl='/home/a/play/timep/timep log | tail -n5'
-alias q='watch -n 1 -t timep'
 alias r='/home/a/play/timep/task_rules'
 alias vic='cat'
 alias psg='ps -A | grep -i 'lias psg='ps -A | grep -i '

@@ -5,7 +5,7 @@ set background=dark
 
 set t_Co=256            " use 256 colors in vim
 "colorscheme desert256   " an appropriate color scheme
-colorscheme luna
+"colorscheme luna
 
 set autoread
 

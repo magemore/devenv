@@ -1,11 +1,12 @@
 #!/usr/bin/php
 <?php
 
-$limit = 150;
-function limit($line,$limit=150) {
+$limit = 50;
+function limit($line,$limit=50) {
   $len = strlen($line);
   if ($len>$limit) {
-    $line = substr($line,0,$limit);
+    #$line = substr($line,0,$limit);
+    return;
   }
   echo $line."\n";
 

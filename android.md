@@ -3,6 +3,8 @@
 this file dedicated to my android phone and it's termux, apps, etc
 
 # Making Android Native Apps
+## Rhino
+- [ ] https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino
 
 # markdown server
 - [ ] Make markdown server on android that fill work for my private files

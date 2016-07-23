@@ -1,5 +1,8 @@
 # auto tasks
 
+- [ ] learn angular basics
+ - [ ] is magento2 andmin tree also built using angular
+
 - [ ] focus on important
   - [ ] magento categories ui
     - refine.html in /srv/mage2/
@@ -9,13 +12,7 @@
       - [ ] i will not be able to make it on time
         - [ ] need to make php work first
           - fixated on install ubuntu vlad
-- [ ] install ubuntu vlad
+- [x] install ubuntu vlad
   - [x] find usb stick and install ubuntu 16 32 bit there
   - [x] boot laptop
     - [x] with this ubuntu stick
-    - [ ] for some reason usb stick detected as hard drive in bios
-    - [ ] install ubuntu
-      - lol it was kylin...
-      - [ ] making usb stick
-      - [ ] problem loading blank screen no errors
-        - [ ] trying install 32 bit

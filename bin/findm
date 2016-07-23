@@ -1,2 +1,2 @@
 #echo 'ag -l '`implode ' |  xargs -d "\n" ag -l ' $@ ` ' | xargs -d "\n" grep ^
-eval  'ag -l '`implode ' |  xargs -d "\n" ag -l ' $@ `' | xargs -d "\n" grep ^ | grep -E '"'"` implode '|' $@`"'"
+eval  'ag -l '`implode ' |  xargs -d "\n" ag -l ' $@ `' | xargs -d "\n" grep ^ | grep -E '"'"` implode '|' $@`"'"' | strlim '

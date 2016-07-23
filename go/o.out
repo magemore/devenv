@@ -1,0 +1,3 @@
+# command-line-arguments
+/data/data/com.termux/files/usr/lib/go/pkg/tool/android_arm/link: running arm-linux-androideabi-gcc failed: exec: "arm-linux-androideabi-gcc": executable file not found in $PATH
+

@@ -5,6 +5,7 @@ this file dedicated to my android phone and it's termux, apps, etc
 # markdown server
 - [ ] Make markdown server on android that fill work for my private files
   - using nodejs http
+  - [ ] https://github.com/showdownjs/showdown
   
 # termux-camera-photo test.jpg
 works. maybe connectit to some image recognition

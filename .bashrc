@@ -793,3 +793,10 @@ up() {
 }
 alias c1='cd ..'
 alias c2='up 2'
+alias c3='up 3'
+alias c4='up 4'
+alias c5='up 5'
+alias c6='up 6'
+alias c7='up 7'
+alias c8='up 8'
+alias c9='up 9'

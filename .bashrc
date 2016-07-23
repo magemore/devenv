@@ -803,3 +803,4 @@ alias c8='up 8'
 alias c9='up 9'
 
 alias diff='git diff'
+alias dif='git diff'

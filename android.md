@@ -1,5 +1,8 @@
 #Android
 
+## Midnight Commander as sftp client
+cd sh:/a@192.168.0.100:22/tmp
+
 this file dedicated to my android phone and it's termux, apps, etc
 
 # Making Android Native Apps

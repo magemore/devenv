@@ -1,0 +1,3 @@
+# need to wrap this way phone path to php and android are different
+php ~/mage/devenv/php/count_down.php $@
+

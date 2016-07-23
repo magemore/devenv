@@ -3,6 +3,13 @@
 # huboard track github issues
 https://huboard.com/magemore/devenv/
 
+# use my small samsung laptop: uc as a git server
+ - [ ] it's slow but it silent
+ - [ ] install git server on laptop
+
+# make php dev server less as possible 
+- [ ] write unit tests for esf
+
 # coding from phone
 - [ ] delete some nodejs packages and find out what takes up to 8Gb internal space
   - [ ] maybe root the phone than i can use sd card and etc

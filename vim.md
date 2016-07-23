@@ -3,6 +3,8 @@
 ## :noh
 hides search highlight
 
+
+# todo
 - [ ] find how to execute selected line from vim
   - i saw it somewhere on stackoverflow
 

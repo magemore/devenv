@@ -628,7 +628,7 @@ f_f() {
   fi
   find . -type f | grep -i $1
 }
-alias f=f_f
+alias f='findm'
 
 f_ffx() {
   if [[ -n $6 ]]; then

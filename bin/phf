@@ -1,0 +1,7 @@
+FUNCTION=$1
+ARGTMP="${*:2}"
+ARGS=$(implode ',' ${*:2})
+#echo $ARGS
+CMD=$(echo '$r='"$FUNCTION"'('"$ARGS"'); var_dump($r); echo "\n";')
+echo $CMD
+php -r "$CMD"

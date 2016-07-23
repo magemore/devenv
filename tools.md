@@ -1,6 +1,8 @@
 #tools
 
-- [ ] inside bin folder make php files named as php functions that will call php funstions  with command line params. it wiil be possible this way call php from bash. i used to write php code with built in functions for arrays, etc.
-
-- [x] install sublime wakatime=
-
+## termux
+bin folder works in path and sync of scripts with github.
+but !#/bin/php like scripts don't work on android
+- [ ] rewrite this scripts with bash wrapper, as additional file... maybe only on mobile like this.
+- best just wait and hope it gets resolved itself. it's termux problem
+  - i don't need that much scripting on mobile at the moment

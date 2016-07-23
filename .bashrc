@@ -791,3 +791,5 @@ up() {
     cd ../;
   done;
 }
+alias c1='cd ..'
+alias c2='up 2'

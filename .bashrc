@@ -460,11 +460,10 @@ touch_chmod() {
 }
 alias tx=$1
 
-alias s='/home/a/play/timep/taskw_start'
 alias pl='cd /home/a/play/'
 alias mplay='mplayer -shuffle -playlist /home/a/Music/playlist.txt'
 
-alias u='sort | uniq'
+#alias u='sort | uniq'
 alias smartgit='/home/a/apps/smartgit/bin/smartgit.sh &'
 
 alias gawk1='gawk '"'"'{ print $1 }'"'"''

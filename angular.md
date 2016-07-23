@@ -15,6 +15,4 @@ https://www.quora.com/What-are-some-of-the-best-JavaScript-AngularJS-editors
 ./vendor/magento/module-catalog/view/adminhtml/templates/catalog/category/tree.phtml
 ./vendor/magento/magento2-base/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Category/CatalogCategoryEdit.php
 ./vendor/magento/magento2-base/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Category/CatalogCategory.php
-./dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Category/CatalogCategoryEdit.php
-./dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Category/CatalogCategory.php
 ```

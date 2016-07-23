@@ -12,7 +12,7 @@ http://192.168.0.100:80
 http://192.168.0.100:1080
 
 ### accessing nodejs server on phone from other device
-192.168.0.201:8080
+http://192.168.0.201:8080
 
 # Making Android Native Apps
 ## Rhino

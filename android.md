@@ -1,7 +1,17 @@
 #Android
 
 ## Midnight Commander as sftp client
+flow pc
 cd sh://a@192.168.0.100:22/tmp
+samsung laptop uc
+cd sh://a@192.168.0.100:1022/tmp
+
+### web servers from phone on local network
+http://192.168.0.100:80
+http://192.168.0.100:1080
+
+### accessing nodejs server on phone from other device
+192.168.0.201:8080
 
 # Making Android Native Apps
 ## Rhino

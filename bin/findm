@@ -1,0 +1,2 @@
+#echo 'ag -l '`implode ' |  xargs -d "\n" ag -l ' $@ ` ' | xargs -d "\n" grep ^
+echo  'ag -l '`implode ' |  xargs -d "\n" ag -l ' $@ `' | xargs -d "\n" grep ^ | grep "('` implode '|' $@`')"'

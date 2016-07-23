@@ -1,0 +1,11 @@
+#!/usr/bin/php
+<?php
+
+if (isset($argv[1]) && isset($argv[2])) {
+  echo rand($argv[1],$argv[2]) . "\n";
+  return 1;
+}
+
+echo rand() . "\n";
+return 1;
+

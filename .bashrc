@@ -768,8 +768,8 @@ open_atom_if_file_else_task_add() {
 alias a=open_atom_if_file_else_task_add
 alias xclip='xclip -selection c'
 alias fnn='find . -iname '
-alias gv='grep -iv'
-alias g='grep -i'
+#alias gv='grep -iv'
+#alias g='grep -i'
 f_sr() {
   #php ~/play/compile/bash.php
   source ~/.bashrc

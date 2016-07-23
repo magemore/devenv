@@ -13,6 +13,7 @@ https://huboard.com/magemore/devenv/
 ```
 442M	node_modules
 ```
+- [ ] move node modules to sd card from usb connected and link node_modules folder to sdcard path it will save space
 
 ## from phone for web dev use vlad laptop over ssh from termux when pc is turned off it works almost with no noise.
 

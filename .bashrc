@@ -709,7 +709,8 @@ notes_mit() {
   MY_DATE=$(date +"%m/%d")
 
   mkdir -p $(dirname ~/notes/ztd/mit/${MY_DATE})
-  vim ~/notes/ztd/mit/${MY_DATE}
+  # markdown
+  vim ~/notes/ztd/mit/${MY_DATE}.md
 }
 
 alias mit=notes_mit

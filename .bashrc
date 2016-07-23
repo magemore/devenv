@@ -785,3 +785,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias deb='cd ~/mage/devenv/bin/'
 
 alias wa='watch -t -n 1'
+
+up() {
+  DEEP=$1; [ -z "${DEEP}" ] && { DEEP=1; };
+  for i in $(seq 1 ${DEEP}); do 
+    cd ../;
+  done;
+}

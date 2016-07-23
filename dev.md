@@ -6,6 +6,9 @@
 
 ## from phone for web dev use vlad laptop over ssh from termux when pc is turned off it works almost with no noise.
 
+### http-server nice to play with webdev client side. still it's better to switch to laptop if possible.
+  - hovewer it's cool that i can do it from phone offline somewhere when waiting for the line in a shop
+  - so nodejs just as android game
 
 #termux
 ```bash

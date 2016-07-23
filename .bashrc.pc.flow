@@ -4,7 +4,12 @@ f_timep() {
   /home/a/play/timep/timep log | tail -n5
 }
 alias w=f_timep
+time_log_tail() {
+  ~/play/time/time log | tail -n $1;
+}
 alias wl='/home/a/play/timep/timep log | tail -n5'
 alias q='watch -n 1 -t timep'
 alias b=open_file_with_external_editor_focus_on_pc
 alias s='/home/a/play/timep/taskw_start'
+alias qwl='watch time_log_tail 15'
+

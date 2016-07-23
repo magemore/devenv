@@ -1,0 +1,3 @@
+CMD=$(echo '$r='"$@"'; echo $r."\n";')
+echo $CMD
+php -r "$CMD"

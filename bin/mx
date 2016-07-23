@@ -1,0 +1,3 @@
+touch ~/mage/devenv/bin/$1 2>/dev/null
+chmod a+x ~/mage/devenv/bin/$1 2>/dev/null
+vim ~/mage/devenv/bin/$1

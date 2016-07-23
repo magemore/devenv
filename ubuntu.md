@@ -1,5 +1,8 @@
 # ubuntu
 
+##How to Run Your Own Git Server
+- [ ] https://www.linux.com/learn/how-run-your-own-git-server
+
 ##make inactive windows transparent
 ```bash
 sudo apt-get install compiz-fusion-plugins-extra

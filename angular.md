@@ -6,7 +6,7 @@ pub/static/adminhtml/Magento/backend/en_US/Magento_Ui/templates/
 ### What are some of the best JavaScript/AngularJS editors?
 https://www.quora.com/What-are-some-of-the-best-JavaScript-AngularJS-editors
 
-# Magento2 Admin ui
+# Magento2 Admin UI
 
 ##categories-side-col
 ```

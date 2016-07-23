@@ -1,5 +1,8 @@
 #dev
 
+# huboard track github issues
+https://huboard.com/magemore/devenv/
+
 # coding from phone
 - [ ] delete some nodejs packages and find out what takes up to 8Gb internal space
   - [ ] maybe root the phone than i can use sd card and etc

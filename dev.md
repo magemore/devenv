@@ -4,6 +4,13 @@
 - [ ] delete some nodejs packages and find out what takes up to 8Gb internal space
   - [ ] maybe root the phone than i can use sd card and etc
 
+### node modules taking less space than i expected
+ - in general termux uses near 2Gb
+ - [ ] so whats taking other 6Gb? is it android itself?
+```
+442M	node_modules
+```
+
 ## from phone for web dev use vlad laptop over ssh from termux when pc is turned off it works almost with no noise.
 
 ### http-server nice to play with webdev client side. still it's better to switch to laptop if possible.

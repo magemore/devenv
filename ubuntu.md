@@ -2,6 +2,8 @@
 
 ##How to Run Your Own Git Server
 - [ ] https://www.linux.com/learn/how-run-your-own-git-server
+- [ ] setup git server on uc samsung laptop
+- [ ] install showdown there for markdown display and nodejs server to serve markdown
 
 ##make inactive windows transparent
 ```bash

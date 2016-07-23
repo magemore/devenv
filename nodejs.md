@@ -1,9 +1,11 @@
 #nodejs
 
+## npm-ls
+List installed packages
+
 ## quick http server
 - [ ] install on vlad laptop
 - [ ] install also on mobile termux
-
 
 A good "ready-to-use tool" option could be http-server:
 ```bash

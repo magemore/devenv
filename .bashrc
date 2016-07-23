@@ -260,11 +260,6 @@ alias wp='watch -t -n 1 php '
 #source /data/data/com.termux/files/home/mage/devenv/.bashrc
 
 
-say(){
-    echo $(date)
-    echo "$@"
-    termux-clipboard-set "$@"
-}
 
 # reminder with delays in text to speech
 # todo: use termux api for text to speech

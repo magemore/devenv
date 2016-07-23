@@ -450,7 +450,6 @@ open_file_with_external_editor_focus_on_pc() {
   #ext_edit $1
   #xdg-open $1
 }
-alias b=open_file_with_external_editor_focus_on_pc
 
 
 find_and_grep_result() {

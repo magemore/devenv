@@ -1,7 +1,7 @@
 #Android
 
 ## Midnight Commander as sftp client
-cd sh:/a@192.168.0.100:22/tmp
+cd sh://a@192.168.0.100:22/tmp
 
 # Making Android Native Apps
 ## Rhino

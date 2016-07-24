@@ -182,6 +182,10 @@ connect_to_android_mosh() {
   mosh -ssh='ssh -p 8022 -i ~/.ssh/android_rsa' 192.168.0.201
 }
 alias an=connect_to_android_mosh
+ssh_android_init() {
+ ssh -p 8022 -i ~/.ssh/android_rsa 192.168.0.201
+}
+alias an_init=ssh_android_init
 
 
 compile_coffe_and_run_nodejs() {

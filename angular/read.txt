@@ -1,0 +1,37 @@
+It's an exciting time to be a JavaScript developer. Modern JavaScript frameworks including Backbone, Knockout, AngularJS, and others have brought a level of maturity and sophistication to the creation of HTML-based rich web applications that has been sorely needed. Although differing greatly in their approaches, these frameworks share a common goal: make it simpler for developers to build robust applications with HTML, CSS, and JavaScript.
+
+This tutorial  explores the AngularJS framework by Google. It starts by briefly describing the design philosophy that the framework embodies and then quickly moves onto building a simple but nontrivial application to demonstrate the basics as well as some of AngularJS's most distinctive features including data binding, dependency injection, loosely coupled code, and conciseness.
+
+Note: You can follow along with the tutorial using the Plunker links provided. Plunker is an online HTML, CSS, and JavaScript prototyping tool. If you prefer to edit the files locally, you can find them in the GettingStartedWithAngularJS.zip sample file.
+
+The AngularJS philosophy
+
+The AngularJS philosophy is based on embracing and extending HTML, while meeting the needs of both new and experienced developers.
+
+Enhanced HTML
+HTML works well when used to describe static documents, but it falls short when used to describe the "views" of a rich web application. This is just not something it was ever designed to support. Most JavaScript frameworks address this limitation by either abstracting away the HTML or requiring a large dose of hand-crafted DOM manipulation JavaScript code. AngularJS takes a different approach. Instead of hiding HTML and CSS, it embraces their strengths and extends them to make them suitable for describing dynamic views. The result is a workflow that should feel very familiar to any web developer and a JavaScript programming style that is surprisingly concise, clear, and focused.
+
+Simple yet scalable
+Another distinguishing characteristic of AngularJS is that it is very approachable for newcomers yet offers powerful and sophisticated features for developers with more complex needs. Other frameworks either focus on simplicity without providing much assistance in creating complex apps, or offer sophisticated features but require lots of boilerplate code and moving parts for even the simplest apps.
+
+The building blocks of AngularJS
+
+Code for AngularJS applications is always organized into models, views, controllers, and (optionally) services.
+
+Models are JavaScript objects that represent the data your application can access. Models are also used to represent the application's current state.
+
+Views play two important roles. First, they are responsible for presenting the data from your models to the user in a visual and useful format. Second, they intercept generic user interactions–including clicks and option list selections–and translate them into application-specific actions. Views in AngularJS are defined declaratively using HTML and CSS.
+
+Controllers define the actual behavior of your application (also called "application logic") and play a key role in connecting the right models to the right views.
+
+Services are specialized objects that perform work on behalf of other objects. Services have many uses, from fetching remote data to providing an implementation of a useful algorithm. Services are intended to be highly reusable and are designed to be swapped easily with other similar services.
+
+All this talk of philosophy and architectural elements probably seems pretty abstract at this point. But now that you know a bit more about the theory, you’re ready to start putting it into practice by building a real application.
+
+Building an app
+
+You are going to build a photo browsing application with AngularJS. You can see the finished application here. To try out the application, type a keyword into the search box in the upper-left corner and click Find. You can choose small or large thumbnails by clicking the buttons in the upper-right corner.
+
+As you progress through this tutorial I'll provide links to Plunker "plunks" (online editable code) that you can use as starting points for each step. To follow along, visit the Plunker URL I provide and click the Fork button to create your own copy to work from.
+
+The first step is something you're likely already comfortable with: laying out your application's user interface using HTML and CSS. Below is your starting point. Take a moment to review the HTML by selecting Source code > index.html. (You can also view this plunk here.)

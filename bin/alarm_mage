@@ -1,0 +1,4 @@
+TWAIT=$(h2s 5)
+sleep $TWAIT
+say 'Sasha wake up and check Magento Source codes'
+

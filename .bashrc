@@ -804,3 +804,5 @@ alias c9='up 9'
 
 alias diff='git diff'
 alias dif='git diff'
+alias andr='vim ~/mage/devenv/android.md'
+

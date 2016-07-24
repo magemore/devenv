@@ -1,6 +1,6 @@
 <?php
 
-require '/libs/scripts.php';
+require 'short.php';
 
 $c = [];
 # find all files

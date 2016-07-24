@@ -45,3 +45,4 @@ https://www.quora.com/What-are-some-of-the-best-JavaScript-AngularJS-editors
 
 # Getting started with AngularJS
 - [ ] http://www.adobe.com/devnet/archive/html5/articles/getting-started-with-angularjs.html
+- [ ] https://plnkr.co/edit/SmqgTP3F77eKPFiPbBBv?p=preview

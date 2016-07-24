@@ -1,5 +1,9 @@
 #Angular
 
+
+## plunker for playing
+- [ ] https://plnkr.co/edit/SmqgTP3F77eKPFiPbBBv?p=preview
+
 ## location of magento files
 pub/static/adminhtml/Magento/backend/en_US/Magento_Ui/templates/
 

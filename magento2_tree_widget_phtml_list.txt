@@ -1,0 +1,12 @@
+./app/code/Magento/Braintree/view/adminhtml/templates/form/cc.phtml
+./app/code/Magento/Braintree/view/adminhtml/templates/form/vault.phtml
+./app/code/Magento/Braintree/view/adminhtml/templates/grid/tooltip.phtml
+./app/code/Magento/Braintree/view/adminhtml/templates/payment/script.phtml
+./app/code/Magento/Catalog/view/adminhtml/templates/catalog/category/checkboxes/tree.phtml
+./app/code/Magento/Catalog/view/adminhtml/templates/catalog/category/tree.phtml
+./app/code/Magento/Catalog/view/adminhtml/templates/catalog/category/widget/tree.phtml
+./app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/set/main/tree/attribute.phtml
+./app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/set/main/tree/group.phtml
+./app/code/Magento/Cms/view/adminhtml/templates/browser/tree.phtml
+./app/code/Magento/Integration/view/adminhtml/templates/resourcetree.phtml
+./app/code/Magento/Widget/view/adminhtml/templates/catalog/category/widget/tree.phtml

@@ -42,3 +42,6 @@ https://www.quora.com/What-are-some-of-the-best-JavaScript-AngularJS-editors
 ./setup/pub/angular/angular.min.js
 ./setup/pub/angular/angular.js
 ```
+
+# Getting started with AngularJS
+- [ ] http://www.adobe.com/devnet/archive/html5/articles/getting-started-with-angularjs.html

@@ -2,6 +2,10 @@
 
 ## Debug HTML/Js sites on android dev tools without pc
 ```
+
+## turbo edit use storege acces key
+allows to access and edit termux files
+
 One option is weinre. It provides DOM & Style editing along with the console. If you don't want to set it up yourself, there is an instance hosted at http://debug.phonegap.com
 
 The other option is JSHybugger. It's certainly the most complete debugging environment available for android browser. It's a paid product, but probably worth it.

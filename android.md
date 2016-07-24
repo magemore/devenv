@@ -54,3 +54,9 @@ http://www.pandorawiki.org/Formatting_SD_cards
 
 ## How to hook up a USB flash drive to your Android device
 http://www.greenbot.com/article/2155300/how-to-hook-up-a-usb-flash-drive-to-your-android-device.html
+
+# Alarms and reminders bash
+```
+sleep `h2s 5` && say wake up
+```
+means sleep 5h and say wake up

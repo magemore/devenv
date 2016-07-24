@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/a/notes/health/sleep'
 let g:netrw_dirhist_2='/home/a/notes/costcut/calltab/magento'
 let g:netrw_dirhist_3='/home/a/.vim'
+let g:netrw_dirhist_4='/data/data/com.termux/files/home/mage/devenv/bin'

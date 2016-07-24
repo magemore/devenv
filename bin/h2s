@@ -1,0 +1,1 @@
+php -r "echo (60*60*$1).PHP_EOL;"

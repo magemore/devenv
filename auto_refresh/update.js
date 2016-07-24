@@ -7,13 +7,14 @@ var last_check = false;
 function check_files_updated() {
   // console.log('cool');
 
-  console.log('make request');
+  //console.log('make request');
   var request = new XMLHttpRequest();
-  request.open('GET', '/auto_refresh/update.php', true);
-  request.onload = function() {
-    console.log('done');
-    if (request.status >= 200 && request.status < 400) {
-      console.log(data);
+  request.onreadystatechange = function() {
+    // console.log(request)
+    // console.log(request.status)
+    if (request.status == 200) {
+      var data = request.responseText;
+      console.log(request.responseText);
       // Success!
       var data=request.responseText;
       if (!last_check) {
@@ -22,18 +23,15 @@ function check_files_updated() {
       }
       if (last_check!=data) {
         last_check=data;
-        refresh();
+        //refresh();
       }
     } else {
       // We reached our target server, but it returned an error
     }
-    setTimeout(check_files_updated,200);
+    setTimeout(check_files_updated,500);
   };
-  request.onerror = function() {
-    console.log('error');
-    // There was a connection error of some sort
-  };
-
+  request.open('GET', '/auto_refresh/update.php', true);
+  request.send();
 }
 
 check_files_updated();

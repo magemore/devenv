@@ -17,13 +17,14 @@ indentLevel = (level) ->
 
 parseList = (data,level) ->
   t = ''
-  for i,id in data
-    for j,jd in data[i]
+  for id,i in data
+    for jd,j in data[i]
       if j == 'toString'
         continue
       t = indentLevel level
       c t+j
       parseList data[i][j], level+1
+  return
 
 convertToMagentoTree = (data) ->
   parseList data, 0

@@ -1,0 +1,40 @@
+[global_config]
+  always_split_with_profile = True
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  focus = mouse
+  handle_size = -3
+  inactive_color_offset = 0.76
+  scroll_tabbar = True
+  suppress_multiple_term_dialog = True
+  tab_position = bottom
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#4c4c4c"
+  title_receive_bg_color = "#484848"
+  title_receive_fg_color = "#000000"
+  title_transmit_bg_color = "#636363"
+  title_transmit_fg_color = "#000000"
+[keybindings]
+  help = disabled
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#0f0808"
+    background_darkness = 0.94
+    background_image = /home/a/Pictures/wallpapers.ws-9629.jpg
+    cursor_blink = False
+    font = Anonymous Pro Bold 13
+    foreground_color = "#f3f3f3"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scroll_background = False
+    scrollbar_position = hidden
+    show_titlebar = False
+    split_to_group = True
+    use_system_font = False

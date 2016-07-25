@@ -19,11 +19,13 @@
   }
 
   function parseList(data,level) {
+    var t='';
     for (var i in data) {
       for (var j in data[i]) {
         if (j=='toString') continue;
-        parseList(data[i][j],level+1)
-        c(indentLevel(level)+j);
+        t=indentLevel(level);
+        c(t+j);
+        parseList(data[i][j],level+1);
       }
     }
   }
@@ -32,6 +34,8 @@
     parseList(data,0);
   }
 
+c('start:');
+c('');
   fs.readFile(f, 'utf8', function(err, data) {
     var i, j, k, l, len, results, tree;
     if (err) {

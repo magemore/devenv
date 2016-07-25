@@ -27,12 +27,14 @@ $s = str_replace('-',' ',$s);
 $s = str_replace('/',' ',$s);
 $s = str_replace(']',' ',$s);
 $s = str_replace('[',' ',$s);
+$s = str_replace(':',' ',$s);
 $s = str_replace('{',' ',$s);
+$s = str_replace('`',' ',$s);
 $s = str_replace('}',' ',$s);
 $s = str_replace('\\',' ',$s);
 $m=[];
 preg_match_all('/(\S{4,})/i', $s, $m);
 $d=$m[0];
-$d=array_unique($d);
+//$d=array_unique($d);
 echo implode("\n",$d)."\n";
 

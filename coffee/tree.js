@@ -16,8 +16,7 @@
       c(err);
     }
     data = data.split("\n");
-    tree = tabdown.parse(data);
-    return c(tree);
+    return tree = tabdown.parse(data);
   });
 
 }).call(this);

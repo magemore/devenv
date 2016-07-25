@@ -8,5 +8,6 @@ fs.readFile f, 'utf8', (err, data) ->
   #data = data.replace '  ',"\t"
   data = data.split "\n"
   tree = tabdown.parse data
-  c tree
+
+  #c tree
   #c data

@@ -814,3 +814,5 @@ alias diff='git diff'
 alias dif='git diff'
 alias andr='vim ~/mage/devenv/android.md'
 
+alias cn='git clone'
+alias vgit='cd ~/.vim/github/'

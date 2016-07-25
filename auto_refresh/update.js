@@ -7,7 +7,6 @@ var auto_refresh = function(){
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.status == 200) {
-      var data = request.responseText;
       var data=request.responseText;
       // sometimes on request state change data is empty. strange.
       // anybody knows why? how to make it better? it refreshes when not needed. so there this check

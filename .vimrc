@@ -39,6 +39,9 @@ inoremap <F6> <ESC>:set mouse=<ENTER><ESC>
 
 noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 
+
+nmap <F8> :TagbarToggle<CR>
+
 " noremap y y
 " todo later maybe
 

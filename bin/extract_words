@@ -1,8 +1,9 @@
 #!/usr/bin/php
 <?php
 
-$f = '/srv/esf/system/application/models/FreakAuth_light/usertemp.php';
+$f = $argv[1];
 $s = file_get_contents($f);
+if (strpos($s,'<?php')===FALSE) return;
 $s = str_replace('(',' ',$s);
 $s = str_replace(')',' ',$s);
 $s = str_replace('@',' ',$s);
@@ -18,6 +19,7 @@ $s = str_replace('=',' ',$s);
 $s = str_replace('+',' ',$s);
 $s = str_replace('.',' ',$s);
 $s = str_replace('!',' ',$s);
+$s = str_replace('%',' ',$s);
 $s = str_replace('#',' ',$s);
 $s = str_replace('&',' ',$s);
 $s = str_replace('*',' ',$s);

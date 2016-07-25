@@ -16,7 +16,7 @@ set autoread
 
 
 set viminfo='20,<1000,s1000
-set mouse=a
+set mouse=
 set clipboard=unnamedplus
 
 nnoremap <F1> <ESC>:w!<ENTER><ESC><ESC>
@@ -73,4 +73,6 @@ set nobackup
 execute pathogen#infect()
 
 filetype plugin indent on
+
+set complete+=k~/.vim/dict/php.dict
 

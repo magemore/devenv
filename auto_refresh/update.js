@@ -38,4 +38,4 @@ var auto_refresh = function(){
   check_files_updated();
 }
 
-auto_refresh()
+auto_refresh();

@@ -31,6 +31,8 @@ inoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>
 nnoremap <F4> <ENTER>:q!<ENTER><ESC>
 inoremap <F4> <ENTER>:q!<ENTER><ESC>
 
+
+# toggle mouse with F7, F6
 nnoremap <F5> <ESC>:set mouse=a<ENTER><ESC>
 inoremap <F5> <ESC>:set mouse=a<ENTER><ESC>
 
@@ -40,10 +42,9 @@ inoremap <F6> <ESC>:set mouse=<ENTER><ESC>
 noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 
 
+# bar with tags, list of functions and variables
 nmap <F8> :TagbarToggle<CR>
 
-" noremap y y
-" todo later maybe
 
 " todo: find out how from vim script check file format
 " todo: play with vim plugins make something like watch built in and try to edit several files at once in vim.

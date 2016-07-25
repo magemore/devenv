@@ -320,6 +320,9 @@ alias vim=textled
 alias sx='get_xclip | xclip'
 alias e='cd /srv/esf/'
 alias ea='cd /srv/esf/system/application'
+alias eac='cd /srv/esf/system/application/controllers'
+alias eaca='cd /srv/esf/system/application/controllers/admin'
+alias ean='cd /srv/esf/system/application/models'
 alias ew='cd /srv/esf/sites/esfwholesalefurniture.com'
 
 alias node='nodejs'

@@ -14,17 +14,17 @@
     if (err) {
       c(err);
     }
-    data = data.split("\n");
-    tree = tabdown.parse(data);
-    data = tree.root;
-    results = [];
-    for (i in data) {
-      for (category in data[i]) {
+    var data = data.split("\n");
+    var tree = tabdown.parse(data);
+    var data = tree.root;
+    var results = [];
+    for (var i in data) {
+      for (var category in data[i]) {
         if (category=='toString') continue;
         c(category);
         //c(data[i][category]);
-        for (j in data[i][category]) {
-          for (prop in data[i][category][j]) {
+        for (var j in data[i][category]) {
+          for (var prop in data[i][category][j]) {
             if (prop=='toString') continue;
             c('  '+prop);
           }

@@ -31,7 +31,21 @@ function convertToMagentoTree(data) {
   parseList(data,0);
 }
 
-c('start:');
+function simplify(data)  {
+  var a = [];
+  var c;
+  for (var i in data) {
+    for (var j in data[i]) {
+      if (j=='toString') continue;
+      c=new Object();
+      c.name = j;
+      a[i]={'name': j, 'children': simplify(data[i][j])};
+    }
+  }
+  return a;
+}
+
+
 c('');
 fs.readFile(f, 'utf8', function(err, data) {
   if (err) {
@@ -41,7 +55,8 @@ fs.readFile(f, 'utf8', function(err, data) {
   var tree = tabdown.parse(data);
   data = tree.root;
 
-  convertToMagentoTree(data);
-
-
+  //convertToMagentoTree(data);
+  a = simplify(data)
+  s = JSON.stringify(a)
+  c(s);
 });

@@ -2,16 +2,12 @@
 
 ###Ctrl + X
   - Cut line
-
 ###Ctrl + ↩
   - Insert line after
-
 ###Ctrl + ⇧ + ↩
   - Insert line before
-
 ###Ctrl + ⇧ + ↑
   - Move line/selection up
-
 ###Ctrl + ⇧ + ↓
   - Move line/selection down
 

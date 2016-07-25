@@ -19,9 +19,9 @@ var auto_refresh = function(){
         }
         if (data) {
           if (last_check!=data) {
-              console.log(data);
-              last_check=data;
-            //refresh();
+            console.log(data);
+            last_check=data;
+            refresh();
           }
         }
       } else {
@@ -32,7 +32,7 @@ var auto_refresh = function(){
   function check_files_updated() {
     request.open('GET', '/auto_refresh/update.php', true);
     request.send();
-    setTimeout(check_files_updated,1000);
+    setTimeout(check_files_updated,500);
   }
 
   check_files_updated();

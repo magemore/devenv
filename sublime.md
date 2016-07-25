@@ -1,6 +1,7 @@
 #sublime shortcuts
 
-Ctrl + X        Cut line
+Ctrl + X
+  - Cut line
 
 Ctrl + ↩        Insert line after
 

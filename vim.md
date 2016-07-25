@@ -3,9 +3,9 @@
 ## :noh
 hides search highlight
 
-```
-install ctags for tagbar plugin
 
+##install ctags for tagbar plugin
+```
 For Ubuntu and derivatives:
 sudo apt-get install exuberant-ctags
 

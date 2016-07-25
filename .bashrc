@@ -784,6 +784,7 @@ f_sr() {
 }
 alias sr=f_sr
 alias vr='vim ~/.bashrc; source ~/.bashrc'
+alias vrf='vim ~/.bashrc.flow; source ~/.bashrc'
 alias vrr='vim ~/.vimrc'
 f_br() {
   rsy

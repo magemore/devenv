@@ -39,7 +39,6 @@ alias rm='rm -r'
 alias apt='apt-get'
 cd_devenv() {
     cd ~/mage/devenv/
-    xgit
     ls
 }
 alias de=cd_devenv

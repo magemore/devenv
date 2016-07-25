@@ -1,5 +1,9 @@
 #dev
 
+
+# terminator
+- [ ] make configs on all laptops as symbolic link to dev env
+
 # huboard track github issues
 https://huboard.com/magemore/devenv/
 

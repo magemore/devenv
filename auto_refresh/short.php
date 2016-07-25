@@ -1,5 +1,6 @@
 <?php
 
+// for lazy next line
 define('n', "\n");
 
 // short for file get contnents

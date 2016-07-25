@@ -7,6 +7,7 @@ set t_Co=256            " use 256 colors in vim
 "colorscheme desert256   " an appropriate color scheme
 "colorscheme luna
 colorscheme highwayman
+"colorscheme spurs_away
 
 set autoread
 
@@ -17,44 +18,25 @@ set autoread
 set viminfo='20,<1000,s1000
 set mouse=a
 set clipboard=unnamedplus
-"nnoremap / _i//<ESC>gj_
-"nnoremap <c-q> <ESC>:w!<ENTER><ESC>:q!<ENTER>
-"inoremap <c-q> <ESC>:w!<ENTER><ESC>:q!<ENTER>
-"nnoremap <c-q> <ESC>:q<ENTER>
-"inoremap <c-q> <ESC>:q<ENTER>
-"nnoremap <c-e> <ESC>:q!<ENTER>
-"inoremap <c-e> <ESC>:q!<ENTER>
-"nnoremap <c-w> <ESC>:w!<ENTER>
-"inoremap <c-w> <ESC>:w!<ENTER>
-"map <ESC> <ESC>:w!<ENTER>
-noremap <F1> <ESC>:w!<ENTER><ESC><ESC>
+
+nnoremap <F1> <ESC>:w!<ENTER><ESC><ESC>
 inoremap <F1> <ESC>:w!<ENTER><ESC>i<ESC>
 
-noremap <F2> <ESC>:wq!<ENTER><ESC>
+nnoremap <F2> <ESC>:wq!<ENTER><ESC>
 inoremap <F2> <ESC>:wq!<ENTER><ESC>
-noremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>
+
+nnoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>
 inoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>
-noremap <F4> <ENTER>:q!<ENTER><ESC>
+
+nnoremap <F4> <ENTER>:q!<ENTER><ESC>
 inoremap <F4> <ENTER>:q!<ENTER><ESC>
-noremap <F5> <ESC>:set mouse=a<ENTER><ESC>
+
+nnoremap <F5> <ESC>:set mouse=a<ENTER><ESC>
 inoremap <F5> <ESC>:set mouse=a<ENTER><ESC>
-noremap <F6> <ESC>:set mouse=<ENTER><ESC>
+
+nnoremap <F6> <ESC>:set mouse=<ENTER><ESC>
 inoremap <F6> <ESC>:set mouse=<ENTER><ESC>
 
-"inoremap <c-1> <ESC>:q!<ENTER>
-"inoremap <c-1> <ESC>:q!<ENTER>
-"map <c-a> <ESC>:q!<ENTER>
-"map <c-w> <ESC>:w!<ENTER>
-"noremap <c-r> <ESC>:edit!<ENTER>
-
-"nnoremap <c-t> <ESC>:r! date<ENTER>
-
-"vnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
-"nnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
-"inoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
-
-"noremap <c-c> <ESC>Vy
-"noremap <c-v> <ESC>p
 noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 
 " noremap y y

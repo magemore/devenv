@@ -11,10 +11,13 @@
   f = '/srv/mage2/esf_refine_tree.txt';
 
   fs.readFile(f, 'utf8', function(err, data) {
+    var tree;
     if (err) {
       c(err);
     }
-    return c(data);
+    data = data.split("\n");
+    tree = tabdown.parse(data);
+    return c(tree);
   });
 
 }).call(this);

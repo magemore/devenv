@@ -324,6 +324,8 @@ alias eac='cd /srv/esf/system/application/controllers; ls -lhtra'
 alias eaca='cd /srv/esf/system/application/controllers/admin; ls -lhtra'
 alias ean='cd /srv/esf/system/application/models; ls -lhtra'
 alias ew='cd /srv/esf/sites/esfwholesalefurniture.com; ls -lhtra'
+alias eal='/srv/esf/system/application/libraries'
+
 
 alias node='nodejs'
 alias nj='nodejs'

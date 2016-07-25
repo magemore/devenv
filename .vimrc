@@ -46,6 +46,10 @@ noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 nmap <F8> :TagbarToggle<CR>
 
 
+nnoremap <Tab> <c-w>w
+nnoremap <bs> <c-w>W
+
+
 " todo: find out how from vim script check file format
 " todo: play with vim plugins make something like watch built in and try to edit several files at once in vim.
 " maybe enable mouse... but after enabling mouse can't pase with middle key. maybe middle rewrite somehow on linux level

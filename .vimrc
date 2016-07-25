@@ -26,8 +26,9 @@ set clipboard=unnamedplus
 "nnoremap <c-w> <ESC>:w!<ENTER>
 "inoremap <c-w> <ESC>:w!<ENTER>
 "map <ESC> <ESC>:w!<ENTER>
-noremap <F1> <ESC>:w!<ENTER><ESC>:r! git_vim_commit<ENTER>dd<ESC>
-inoremap <F1> <ESC>:w!<ENTER><ESC>:r! git_vim_commit<ENTER>dd<ESC>
+noremap <F1> <ESC>:w!<ENTER><ESC><ESC>
+inoremap <F1> <ESC>:w!<ENTER><ESC>i<ESC>
+
 noremap <F2> <ESC>:wq!<ENTER><ESC>
 inoremap <F2> <ESC>:wq!<ENTER><ESC>
 noremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>

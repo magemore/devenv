@@ -6,27 +6,23 @@ var auto_refresh = function(){
   var last_check = false;
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
-      // console.log(request)
-      // console.log(request.status)
-      if (request.status == 200) {
-        var data = request.responseText;
-        //console.log(request.responseText);
-        // Success!
-        var data=request.responseText;
+    if (request.status == 200) {
+      var data = request.responseText;
+      var data=request.responseText;
+      // sometimes on request state change data is empty. strange. anybody knows why? how to make it better? it refreshes when not needed. so there this check
+      if (data) {
         if (!last_check) {
           last_check = data;
           return;
         }
-        if (data) {
-          if (last_check!=data) {
-            // console.log(data);
-            last_check=data;
-            refresh();
-          }
+        if (last_check!=data) {
+          last_check=data;
+          refresh();
         }
-      } else {
-        // We reached our target server, but it returned an error
       }
+    } else {
+      // ignore errors
+    }
   };
 
   function check_files_updated() {

@@ -581,6 +581,16 @@ findnna() {
   find . -iname "*$1*"
 }
 alias fna=findnna
+findnnd() {
+  if [[ -n $2 ]]; then
+    #echo $2;
+    #echo $(pwd)
+    #echo find $2 -type f -iname "*$1*";
+    find $2 -type d -iname "*$1*";
+    return; fi
+  find . -type d -iname "*$1*"
+}
+alias fnd=findnnd
 
 xfind_multi() {
   if [[ -n $6 ]]; then

@@ -19,7 +19,7 @@ var auto_refresh = function(){
         }
         if (data) {
           if (last_check!=data) {
-            console.log(data);
+            // console.log(data);
             last_check=data;
             refresh();
           }

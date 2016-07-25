@@ -32,7 +32,7 @@ nnoremap <F4> <ENTER>:q!<ENTER><ESC>
 inoremap <F4> <ENTER>:q!<ENTER><ESC>
 
 
-# toggle mouse with F7, F6
+"toggle mouse with F7, F6
 nnoremap <F5> <ESC>:set mouse=a<ENTER><ESC>
 inoremap <F5> <ESC>:set mouse=a<ENTER><ESC>
 
@@ -42,7 +42,7 @@ inoremap <F6> <ESC>:set mouse=<ENTER><ESC>
 noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 
 
-# bar with tags, list of functions and variables
+"bar with tags, list of functions and variables
 nmap <F8> :TagbarToggle<CR>
 
 

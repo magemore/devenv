@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8">
+  <title>Photo App</title>
+  <link rel="stylesheet" href="dark-html-theme.css" type="text/css"/>
+  <link rel="stylesheet" href="photo-app.css" type="text/css"/>
+</head>
+
+<body ng-app="photoApp">
+
+  <div ng-controller="MainController">
+
+    <form class="search-field" ng-submit="submitSearch()">
+      <input type="text" placeholder="enter 'water' or 'mountains'" ng-model="searchKeyword">
+      <input type="submit" value="Find">
+      <span class="search-message">photos of {{searchKeyword}}</span>
+    </form>
+
+    <div class="size-controls btn-group">
+      <button ng-disabled="thumbSize == 'small'" ng-click="setThumbSize('small')">Small</button>
+      <button ng-disabled="thumbSize == 'large'" ng-click="setThumbSize('large')">Large</button>
+    </div>
+
+    <ul class="results-list" ng-class="thumbSize + '-thumbs'">
+      <li ng-repeat="photo in photos">
+        <img ng-src="{{photo.thumbUrl}}"/>
+        <p class="title">{{photo.title}}</p>
+      </li>
+    </ul>
+
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+  <script src="MainController.js"></script>
+  <script src="photoApp.js"></script>
+  <script src="photoSearchService.js"></script>
+  
+</body>
+
+</html>

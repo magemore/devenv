@@ -789,6 +789,8 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias deb='cd ~/mage/devenv/bin/'
+alias dep='cd ~/mage/devenv/php/'
+alias dej='cd ~/mage/devenv/js/'
 alias dea='cd ~/mage/devenv/angular/'
 
 alias wa='watch -t -n 1'

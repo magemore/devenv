@@ -19,12 +19,12 @@ set clipboard=unnamedplus
 "nnoremap / _i//<ESC>gj_
 "nnoremap <c-q> <ESC>:w!<ENTER><ESC>:q!<ENTER>
 "inoremap <c-q> <ESC>:w!<ENTER><ESC>:q!<ENTER>
-nnoremap <c-q> <ESC>:q<ENTER>
-inoremap <c-q> <ESC>:q<ENTER>
-nnoremap <c-e> <ESC>:q!<ENTER>
-inoremap <c-e> <ESC>:q!<ENTER>
-nnoremap <c-w> <ESC>:w!<ENTER>
-inoremap <c-w> <ESC>:w!<ENTER>
+"nnoremap <c-q> <ESC>:q<ENTER>
+"inoremap <c-q> <ESC>:q<ENTER>
+"nnoremap <c-e> <ESC>:q!<ENTER>
+"inoremap <c-e> <ESC>:q!<ENTER>
+"nnoremap <c-w> <ESC>:w!<ENTER>
+"inoremap <c-w> <ESC>:w!<ENTER>
 "map <ESC> <ESC>:w!<ENTER>
 noremap <F1> <ESC>:w!<ENTER><ESC>:r! git_vim_commit<ENTER>dd<ESC>
 inoremap <F1> <ESC>:w!<ENTER><ESC>:r! git_vim_commit<ENTER>dd<ESC>
@@ -43,16 +43,16 @@ inoremap <F6> <ESC>:set mouse=<ENTER><ESC>
 "inoremap <c-1> <ESC>:q!<ENTER>
 "map <c-a> <ESC>:q!<ENTER>
 "map <c-w> <ESC>:w!<ENTER>
-noremap <c-r> <ESC>:edit!<ENTER>
+"noremap <c-r> <ESC>:edit!<ENTER>
 
-nnoremap <c-t> <ESC>:r! date<ENTER>
+"nnoremap <c-t> <ESC>:r! date<ENTER>
 
-vnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
-nnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
-inoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
+"vnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
+"nnoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
+"inoremap <c-d> <ESC>/(<ENTER>bv/(<ENTER>d<ESC>i
 
-noremap <c-c> <ESC>Vy
-noremap <c-v> <ESC>p
+"noremap <c-c> <ESC>Vy
+"noremap <c-v> <ESC>p
 noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 
 " noremap y y

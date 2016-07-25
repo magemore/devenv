@@ -26,10 +26,8 @@
 
 ###Ctrl + ⇧ + M
   - Select all contents of the current parentheses
-
 ###Ctrl + ⇧ + K
   - Delete Line
-
 ###Ctrl + KK
   - Delete from cursor to end of line
 

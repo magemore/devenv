@@ -486,8 +486,10 @@ alias cc1=cdandclear1
 
 cdfind_line() {
   LINE=$(sed -n "$1"'p' /tmp/cdfind)
-  echo $LINE
-  #cd $LINE
+  #echo $LINE
+  cd $LINE
+  ls -lhtra
+  pwd
 }
 
 alias c1='cdfind_line 1'

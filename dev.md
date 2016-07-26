@@ -4,6 +4,7 @@
 bin/inject_php_log usecase to check what php and phtml files included in some CMS. It handles namespaces first error, so injected code placed after namespace.
 - [ ] maybe add additional log with print debug backtrace short for each file.
 - [ ] also inject inside function calls and make it filterable by grep. so it should be somehow one liner
+- [ ] add require once? and use predefined functions. problem need to include require in each file. there can be several points from where php requests handled and what php file included first.
 
 # terminator
 - [ ] make configs on all laptops as symbolic link to dev env

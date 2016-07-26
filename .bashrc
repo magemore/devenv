@@ -362,6 +362,51 @@ alias p=f_p
 #TFILE="/tmp/$(basename $0).$$.tmp"
 
 alias vgi='vim .gitignore'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cdandclear() {
   if [[ -n $1 ]]; then
     if [ ! -d "$1" ]; then
@@ -427,6 +472,126 @@ cdfind_line() {
 alias c1='cdfind_line 1'
 # last
 alias c0='cd $(tail -1 /tmp/cdfind)'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+indandvim() {
+  if [[ -n $1 ]]; then
+    if [ ! -d "$1" ]; then
+      if [[ -n $7 ]]; then
+        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5|$6|$7"
+      elif [[ -n $6 ]]; then
+        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5|$6"
+      elif [[ -n $5 ]]; then
+        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5"
+      elif [[ -n $4 ]]; then
+        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4"
+      elif [[ -n $3 ]]; then
+        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/findandvim | egrep -i "$1|$2|$3"
+      elif [[ -n $2 ]]; then
+        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2  | tee /tmp/findandvim | egrep -i "$1|$2"
+      else
+        find . -maxdepth $MAXDEPTH -type f | tee /tmp/findandvim | grep -i $1
+      fi
+      return
+    fi
+    cd $1;
+    pwd
+    ls
+    return;
+  fi
+  clear
+#  date
+}
+
+findandvim5() {
+	MAXDEPTH=5
+	findandvim $@
+}
+findandvim4() {
+	MAXDEPTH=4
+	findandvim $@
+}
+findandvim3() {
+	MAXDEPTH=3
+	findandvim $@
+}
+findandvim2() {
+	MAXDEPTH=2
+	findandvim $@
+}
+findandvim1() {
+	MAXDEPTH=1
+	findandvim $@
+}
+
+alias f=findandvim5
+alias ff=findandvim2
+alias fff=findandvim3
+alias ffff=findandvim4
+alias ff1=findandvim1
+
+
+vim_found_line() {
+  LINE=$(sed -n '3p' /tmp/findandvim)
+  echo $LINE
+}
+
+alias f1='vim_found_line 1'
+# last
+alias f0='vim $(tail -1 /tmp/findandvim)'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 alias ch='cd'
@@ -669,27 +834,6 @@ xfind_multi() {
 }
 alias fx=xfind_multi
 alias xf=xfind_multi
-
-f_f() {
-  if [[ -n $6 ]]; then
-    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6
-    return;
-  elif [[ -n $5 ]]; then
-    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5
-    return;
-  elif [[ -n $4 ]]; then
-    find . -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4
-    return;
-  elif [[ -n $3 ]]; then
-    find . -type f | grep -i $1 | grep -i $2 | grep -i $3
-    return;
-  elif [[ -n $2 ]]; then
-    find . -type f | grep -i $1 | grep -i $2
-    return;
-  fi
-  find . -type f | grep -i $1
-}
-alias f='findm'
 
 f_ffx() {
   if [[ -n $6 ]]; then

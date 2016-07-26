@@ -504,7 +504,7 @@ alias c0='cd $(tail -1 /tmp/cdfind)'
 
 findandvim() {
   if [[ -n $1 ]]; then
-    if [ ! -d "$1" ]; then
+    if [ ! -f "$1" ]; then
       if [[ -n $7 ]]; then
         find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5|$6|$7"
       elif [[ -n $6 ]]; then
@@ -522,12 +522,9 @@ findandvim() {
       fi
       return
     fi
-    cd $1;
-    pwd
-    ls
+    v $1
     return;
   fi
-  clear
 #  date
 }
 
@@ -592,9 +589,10 @@ alias f3=vim_found_line3
 alias f4=vim_found_line4
 alias f5=vim_found_line5
 
-# last
+# last and lazy missing fingers
 alias f0='vim $(tail -1 /tmp/findandvim)'
-
+alias fd='vim $(tail -1 /tmp/findandvim)'
+alias fg='vim $(tail -1 /tmp/findandvim)'
 
 
 

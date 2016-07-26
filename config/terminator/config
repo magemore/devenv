@@ -32,13 +32,13 @@
       position = 0
 [profiles]
   [[default]]
-    background_color = "#002b36"
+    background_color = "#262626"
     background_darkness = 0.94
     background_image = /home/a/Pictures/wallpapers.ws-9629.jpg
     cursor_blink = False
     font = Anonymous Pro Bold 13
-    foreground_color = "#839496"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    foreground_color = "#d1d1d1"
+    palette = "#000000:#ff0087:#5fd75f:#5f87ff:#d1d1d1:#ff0087:#ffd700:#eee8d5:#262626:#ffd700:#5fd75f:#ff0087:#ff0087:#ffd700:#ff0087:#fdf6e3"
     scroll_background = False
     scrollbar_position = hidden
     show_titlebar = False

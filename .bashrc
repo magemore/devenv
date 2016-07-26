@@ -99,7 +99,7 @@ edit_bashrc_source_after_and_push_to_github() {
   pwd
   ls
 }
-alias xr='vun ~/mage/devenv/.bashrc'
+alias xr='vim ~/mage/devenv/.bashrc'
 
 edit_vimrc_and_push_to_github() {
   PWD=$(pwd)

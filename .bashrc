@@ -362,24 +362,23 @@ alias p=f_p
 #TFILE="/tmp/$(basename $0).$$.tmp"
 
 alias vgi='vim .gitignore'
-alias cc='cd ..'
 cdandclear() {
   if [[ -n $1 ]]; then
     if [ ! -d "$1" ]; then
       if [[ -n $7 ]]; then
-        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6|$7"
+        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6|$7"
       elif [[ -n $6 ]]; then
-        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6"
+        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6"
       elif [[ -n $5 ]]; then
-        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5"
+        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5"
       elif [[ -n $4 ]]; then
-        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4"
+        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4"
       elif [[ -n $3 ]]; then
-        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/cdfind | egrep -i "$1|$2|$3"
+        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/cdfind | egrep -i "$1|$2|$3"
       elif [[ -n $2 ]]; then
-        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2  | tee /tmp/cdfind | egrep -i "$1|$2"
+        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2  | tee /tmp/cdfind | egrep -i "$1|$2"
       else
-        find . -maxdepth 5 -type d | tee /tmp/cdfind | grep -i $1
+        find . -maxdepth $MAXDEPTH -type d | tee /tmp/cdfind | grep -i $1
       fi
       return
     fi
@@ -391,7 +390,33 @@ cdandclear() {
   clear
 #  date
 }
-alias c=cdandclear
+
+cdandclear5() {
+	MAXDEPTH=5
+	cdandclear $@
+}
+cdandclear4() {
+	MAXDEPTH=4
+	cdandclear $@
+}
+cdandclear3() {
+	MAXDEPTH=3
+	cdandclear $@
+}
+cdandclear2() {
+	MAXDEPTH=2
+	cdandclear $@
+}
+cdandclear1() {
+	MAXDEPTH=1
+	cdandclear $@
+}
+
+alias c=cdandclear5
+alias cc=cdandclear2
+alias ccc=cdandclear3
+alias cccc=cdandclear4
+alias cc1=cdandclear1
 
 
 cdfind_line() {

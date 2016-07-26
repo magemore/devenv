@@ -502,7 +502,7 @@ alias c0='cd $(tail -1 /tmp/cdfind)'
 
 
 
-indandvim() {
+findandvim() {
   if [[ -n $1 ]]; then
     if [ ! -d "$1" ]; then
       if [[ -n $7 ]]; then
@@ -560,11 +560,38 @@ alias ff1=findandvim1
 
 
 vim_found_line() {
-  LINE=$(sed -n '3p' /tmp/findandvim)
-  echo $LINE
+  LINE=$(sed -n "$LNUM"'p' /tmp/findandvim)
+  #echo $LINE
+  vim $LINE
 }
 
-alias f1='vim_found_line 1'
+vim_found_line1() {
+	LNUM=1
+	vim_found_line
+}
+vim_found_line2() {
+	LNUM=2
+	vim_found_line
+}
+vim_found_line3() {
+	LNUM=3
+	vim_found_line
+}
+vim_found_line4() {
+	LNUM=4
+	vim_found_line
+}
+vim_found_line5() {
+	LNUM=5
+	vim_found_line
+}
+
+alias f1=vim_found_line1
+alias f2=vim_found_line2
+alias f3=vim_found_line3
+alias f4=vim_found_line4
+alias f5=vim_found_line5
+
 # last
 alias f0='vim $(tail -1 /tmp/findandvim)'
 

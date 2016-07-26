@@ -1,6 +1,6 @@
 [global_config]
   always_split_with_profile = True
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
   handle_size = -3
   inactive_color_offset = 0.76
@@ -24,14 +24,20 @@
       parent = ""
       type = Window
 [plugins]
+  [[CustomCommandsMenu]]
+    [[[dev]]]
+      command = cd ~/mage/devenv/
+      enabled = True
+      name = dev
+      position = 0
 [profiles]
   [[default]]
-    background_color = "#0f0808"
+    background_color = "#002b36"
     background_darkness = 0.94
     background_image = /home/a/Pictures/wallpapers.ws-9629.jpg
     cursor_blink = False
     font = Anonymous Pro Bold 13
-    foreground_color = "#f3f3f3"
+    foreground_color = "#839496"
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     scroll_background = False
     scrollbar_position = hidden

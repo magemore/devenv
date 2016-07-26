@@ -13,6 +13,8 @@ The other option is JSHybugger. It's certainly the most complete debugging envir
 ```
 ## turbo edit use storege acces key
 allows to access and edit termux files
+- no ads, free, cool
+https://play.google.com/store/apps/details?id=com.maskyn.fileeditor
 
 ## Midnight Commander as sftp client
 flow pc

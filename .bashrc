@@ -357,12 +357,20 @@ alias p=f_p
 # $ xclip -selection clipboard -t image/png -o > /tmp/avatar.png
 # $ see /tmp/avatar.png  # yep, that's it
 
+#Method # 2 Use of $$ variable
+#This is old and classic method. $$ shell variable returns the current running process this can be use to create unique temporary file as demonstrated in following script:
+#TFILE="/tmp/$(basename $0).$$.tmp"
+
 alias vgi='vim .gitignore'
 alias cc='cd ..'
 cdandclear() {
   if [[ -n $1 ]]; then
     if [ ! -d "$1" ]; then
-      xfind_multi $@
+      if [[ -n $2 ]]; then
+        find . -maxdepth 5 -type d -iname "*$1*" | grep -i $1 | grep -i $2 | tee /tmp/cdfind | egrep -i "$1|$2" 
+      else
+        find . -maxdepth 5 -type d -iname "*$1*" | tee /tmp/cdfind | grep -i $1
+      fi
       return
     fi
     cd $1;
@@ -374,6 +382,21 @@ cdandclear() {
 #  date
 }
 alias c=cdandclear
+
+
+alias c1='cd $(head -1 /tmp/cdfind | tail -1)'
+alias c2='cd $(head -2 /tmp/cdfind | tail -1)'
+alias c3='cd $(head -3 /tmp/cdfind | tail -1)'
+alias c4='cd $(head -4 /tmp/cdfind | tail -1)'
+alias c5='cd $(head -5 /tmp/cdfind | tail -1)'
+alias c6='cd $(head -6 /tmp/cdfind | tail -1)'
+alias c7='cd $(head -7 /tmp/cdfind | tail -1)'
+alias c8='cd $(head -8 /tmp/cdfind | tail -1)'
+alias c9='cd $(head -9 /tmp/cdfind | tail -1)'
+# last
+alias c0='cd $(head -99999 /tmp/cdfind | tail -1)'
+
+
 alias ch='cd'
 alias hi=history
 f_haml(){
@@ -775,8 +798,8 @@ open_atom_if_file_else_task_add() {
 alias a=open_atom_if_file_else_task_add
 alias xclip='xclip -selection c'
 alias fnn='find . -iname '
-#alias gv='grep -iv'
-#alias g='grep -i'
+alias gv='grep -iv'
+alias g='grep -i'
 f_sr() {
   #php ~/play/compile/bash.php
   source ~/.bashrc

@@ -1,6 +1,6 @@
 var auto_refresh = function(){
   function refresh() {
-      setTimeout(=>{location.reload();},500);
+      setTimeout(function(){location.reload();},500);
   }
 
   var last_check = false;

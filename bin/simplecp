@@ -1,0 +1,6 @@
+if [[ -n $2 ]]; then
+  cp -rf $1 $2
+else
+  cp -rf $1 .
+fi
+

@@ -3,7 +3,7 @@
   enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
   handle_size = -3
-  inactive_color_offset = 0.76
+  inactive_color_offset = 0.87
   scroll_tabbar = True
   suppress_multiple_term_dialog = True
   tab_position = bottom
@@ -13,6 +13,7 @@
   title_receive_fg_color = "#000000"
   title_transmit_bg_color = "#636363"
   title_transmit_fg_color = "#000000"
+  window_state = maximise
 [keybindings]
   help = disabled
 [layouts]
@@ -35,6 +36,7 @@
     background_color = "#262626"
     background_darkness = 0.94
     background_image = /home/a/Pictures/wallpapers.ws-9629.jpg
+    copy_on_selection = True
     cursor_blink = False
     font = Anonymous Pro Bold 13
     foreground_color = "#d1d1d1"

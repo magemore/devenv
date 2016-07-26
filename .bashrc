@@ -34,6 +34,7 @@ tar_improved() {
   tar czvf $1.tgz $1
 }
 alias trc=tar_improved
+alias trx='tar xvf * 2>/dev/null; gunzip * 2>/dev/null; unzip * 2>/dev/null'
 alias du='du -hs * | less'
 alias rm='rm -r'
 alias apt='apt-get'
@@ -671,7 +672,7 @@ silent_findnn() {
 alias sfn=silent_findnn
 alias fns=silent_findnn
 alias gcron='vim /usr/bin/git_all'
-alias cp='cp -rf'
+#alias cp='cp -rf'
 alias sm='cd /srv/magento'
 alias xasa='xargs -d "\n" sublime_text'
 alias xas='head -n 1 |  xargs -d "\n" ext_edit'
@@ -1077,6 +1078,7 @@ alias d7='up 7'
 alias d8='up 8'
 alias d9='up 9'
 alias d='cd ..'
+# can be bad. but i dont use dd at the moment
 alias dd='up 2'
 alias ddd='up 3'
 alias dddd='up 4'
@@ -1092,3 +1094,6 @@ alias cn='git clone'
 alias vgit='cd ~/.vim/github/'
 
 alias mm='cd /srv/mage2/'
+
+# should be as script. if make inside bash function it will be recursion to itself by alias
+alias cp=simplecp

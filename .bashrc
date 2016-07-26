@@ -616,7 +616,7 @@ alias f5=vim_found_line5
 alias f0='vim $(tail -1 /tmp/findandvim)'
 alias fd='vim $(tail -1 /tmp/findandvim)'
 alias fg='vim $(tail -1 /tmp/findandvim)'
-alias fv='echo $(tail -1 /tmp/findandvim)'
+alias fv='vim $(tail -1 /tmp/findandvim)'
 alias dg='vim $(tail -1 /tmp/findandvim)'
 alias dfg='vim $(tail -1 /tmp/findandvim)'
 
@@ -1090,3 +1090,5 @@ alias andr='vim ~/mage/devenv/android.md'
 
 alias cn='git clone'
 alias vgit='cd ~/.vim/github/'
+
+alias mm='cd /srv/mage2/'

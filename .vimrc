@@ -25,11 +25,11 @@ inoremap <F1> <ESC>:w!<ENTER><ESC>i<ESC>
 nnoremap <F2> <ESC>:wq!<ENTER><ESC>
 inoremap <F2> <ESC>:wq!<ENTER><ESC>
 
-nnoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>
-inoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>
+nnoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>:q!<ENTER>
+inoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>:q!<ENTER>
 
-nnoremap <F4> <ENTER>:q!<ENTER><ESC>
-inoremap <F4> <ENTER>:q!<ENTER><ESC>
+nnoremap <F4> <ESC>:q!<ENTER>
+inoremap <F4> <ESC>:q!<ENTER>
 
 
 "toggle mouse with F7, F6

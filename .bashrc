@@ -34,7 +34,7 @@ tar_improved() {
   tar czvf $1.tgz $1
 }
 alias trc=tar_improved
-alias trx='tar xvf * 2>/dev/null; gunzip * 2>/dev/null; unzip * 2>/dev/null'
+alias trx=' gunzip * 2>/dev/null; unzip * 2>/dev/null; tar xvf * 2>/dev/null'
 alias du='du -hs * | less'
 alias rm='rm -r'
 alias apt='apt-get'
@@ -1095,5 +1095,3 @@ alias vgit='cd ~/.vim/github/'
 
 alias mm='cd /srv/mage2/'
 
-# should be as script. if make inside bash function it will be recursion to itself by alias
-alias cp=simplecp

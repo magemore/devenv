@@ -1,0 +1,23 @@
+#!/usr/bin/php
+<?php
+
+
+$inject_string = '<?'.'php'.' file_put_contents("/tmp/monitor_injected_php",__FILE__.PHP_EOL,FILE_APPEND); ?>';
+
+system('pwd');
+
+$o=[];
+exec('find . -type f',$o);
+foreach ($o as $i => $d) {
+  $a = explode('.',$d);
+  $ex = end($a);
+  if ($ex=='php' || $ex=='phtml') {
+    //echo $d.PHP_EOL;
+    $s = file_get_contents($d);
+    if (strpos($s,$inject_string)!==FALSE) continue;
+    $s=$inject_string.$s;
+    file_put_contents($d,$s);
+  }
+}
+
+

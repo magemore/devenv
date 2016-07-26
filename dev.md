@@ -51,6 +51,3 @@ case ":$PATH:" in
 esac
 ```
 
-## synergy
-- [ ] write script to restart synergy on clipboard change
-

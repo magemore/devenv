@@ -1,5 +1,13 @@
 # ubuntu
 
+## merge clipboards
+```
+autocutsel is what you want to sync between the primary X/X11 clipboard and the Gnome/GTK clipboard! Here's how:
+
+$ autocutsel &
+$ autocutsel -s PRIMARY & 
+```
+
 ##How to Run Your Own Git Server
 - [ ] https://www.linux.com/learn/how-run-your-own-git-server
 - [ ] setup git server on uc samsung laptop

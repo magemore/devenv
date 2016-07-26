@@ -1,1 +1,3 @@
-date +"%H:%M"
+NOW=$(date +"%H:%M")
+say $NOW
+

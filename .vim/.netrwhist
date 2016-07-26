@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/a/notes/payoneer'
 let g:netrw_dirhist_2='/srv/esf'
 let g:netrw_dirhist_3='/home/a/mage/devenv/php'
 let g:netrw_dirhist_4='/home/a/mage/devenv/bin'
+let g:netrw_dirhist_5='/data/data/com.termux/files/home/mage/devenv/bin'

@@ -366,7 +366,7 @@ alias cc='cd ..'
 cdandclear() {
   if [[ -n $1 ]]; then
     if [ ! -d "$1" ]; then
-      elif [[ -n $7 ]]; then
+      if [[ -n $7 ]]; then
         find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6|$7"
       elif [[ -n $6 ]]; then
         find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6"

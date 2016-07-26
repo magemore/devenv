@@ -485,12 +485,17 @@ alias cc1=cdandclear1
 
 
 cdfind_line() {
-  LINE=$(sed -n '3p' /tmp/cdfind)
+  LINE=$(sed -n "$1"'p' /tmp/cdfind)
   echo $LINE
   #cd $LINE
 }
 
 alias c1='cdfind_line 1'
+alias c2='cdfind_line 2'
+alias c3='cdfind_line 3'
+alias c4='cdfind_line 4'
+alias c5='cdfind_line 5'
+alias c6='cdfind_line 6'
 # last
 alias c0='cd $(tail -1 /tmp/cdfind)'
 alias cf='cd $(tail -1 /tmp/cdfind)'
@@ -612,6 +617,11 @@ alias f2=vim_found_line2
 alias f3=vim_found_line3
 alias f4=vim_found_line4
 alias f5=vim_found_line5
+alias v1=vim_found_line1
+alias v2=vim_found_line2
+alias v3=vim_found_line3
+alias v4=vim_found_line4
+alias v5=vim_found_line5
 
 # last and lazy missing fingers
 alias f0='vim $(tail -1 /tmp/findandvim)'

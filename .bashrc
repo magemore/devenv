@@ -366,10 +366,20 @@ alias cc='cd ..'
 cdandclear() {
   if [[ -n $1 ]]; then
     if [ ! -d "$1" ]; then
-      if [[ -n $2 ]]; then
-        find . -maxdepth 5 -type d -iname "*$1*" | grep -i $1 | grep -i $2 | tee /tmp/cdfind | egrep -i "$1|$2" 
+      elif [[ -n $7 ]]; then
+        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/cdfind | egrep -i "$1|$2"
+      elif [[ -n $6 ]]; then
+        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/cdfind | egrep -i "$1|$2"
+      elif [[ -n $5 ]]; then
+        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/cdfind | egrep -i "$1|$2"
+      elif [[ -n $4 ]]; then
+        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/cdfind | egrep -i "$1|$2"
+      elif [[ -n $3 ]]; then
+        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/cdfind | egrep -i "$1|$2"
+      elif [[ -n $2 ]]; then
+        find . -maxdepth 5 -type d | grep -i $1 | grep -i $2  | tee /tmp/cdfind | egrep -i "$1|$2"
       else
-        find . -maxdepth 5 -type d -iname "*$1*" | tee /tmp/cdfind | grep -i $1
+        find . -maxdepth 5 -type d | tee /tmp/cdfind | grep -i $1
       fi
       return
     fi
@@ -384,17 +394,14 @@ cdandclear() {
 alias c=cdandclear
 
 
-alias c1='cd $(head -1 /tmp/cdfind | tail -1)'
-alias c2='cd $(head -2 /tmp/cdfind | tail -1)'
-alias c3='cd $(head -3 /tmp/cdfind | tail -1)'
-alias c4='cd $(head -4 /tmp/cdfind | tail -1)'
-alias c5='cd $(head -5 /tmp/cdfind | tail -1)'
-alias c6='cd $(head -6 /tmp/cdfind | tail -1)'
-alias c7='cd $(head -7 /tmp/cdfind | tail -1)'
-alias c8='cd $(head -8 /tmp/cdfind | tail -1)'
-alias c9='cd $(head -9 /tmp/cdfind | tail -1)'
+cdfind_line() {
+  LINE=$(sed -n '3p' /tmp/cdfind)
+  echo $line
+}
+
+alias c1='cdfind_line 1'
 # last
-alias c0='cd $(head -99999 /tmp/cdfind | tail -1)'
+alias c0='cd $(tail -1 /tmp/cdfind)'
 
 
 alias ch='cd'
@@ -835,7 +842,7 @@ alias wa='watch -t -n 1'
 
 up() {
   DEEP=$1; [ -z "${DEEP}" ] && { DEEP=1; };
-  for i in $(seq 1 ${DEEP}); do 
+  for i in $(seq 1 ${DEEP}); do
     cd ../;
   done;
   pwd

@@ -396,7 +396,7 @@ alias c=cdandclear
 
 cdfind_line() {
   LINE=$(sed -n '3p' /tmp/cdfind)
-  echo $line
+  echo $LINE
 }
 
 alias c1='cdfind_line 1'
@@ -847,15 +847,15 @@ up() {
   done;
   pwd
 }
-alias c1='cd ..'
-alias c2='up 2'
-alias c3='up 3'
-alias c4='up 4'
-alias c5='up 5'
-alias c6='up 6'
-alias c7='up 7'
-alias c8='up 8'
-alias c9='up 9'
+alias d1='cd ..'
+alias d2='up 2'
+alias d3='up 3'
+alias d4='up 4'
+alias d5='up 5'
+alias d6='up 6'
+alias d7='up 7'
+alias d8='up 8'
+alias d9='up 9'
 
 alias diff='git diff'
 alias dif='git diff'

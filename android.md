@@ -16,8 +16,10 @@ allows to access and edit termux files
 - no ads, free, cool
 - https://play.google.com/store/apps/details?id=com.maskyn.fileeditor
 
-### contribute
-- https://github.com/vmihalachi/turbo-editor/issues
+### turbo editgithub 
+- https://github.com/vmihalachi/turbo-editor/
+- contribute
+  - https://github.com/vmihalachi/turbo-editor/issues
 
 
 ## Midnight Commander as sftp client

@@ -1,5 +1,9 @@
 #dev
 
+# inject_php_log
+bin/inject_php_log usecase to check what php and phtml files included in some CMS. It handles namespaces first error, so injected code placed after namespace.
+- [ ] maybe add additional log with print debug backtrace short for each file.
+- [ ] also inject inside function calls and make it filterable by grep. so it should be somehow one liner
 
 # terminator
 - [ ] make configs on all laptops as symbolic link to dev env

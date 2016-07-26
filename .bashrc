@@ -421,7 +421,7 @@ cdandclear_search() {
 	elif [[ -n $2 ]]; then
 	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2  | tee /tmp/cdfind | egrep -i "$1|$2"
 	else
-	  find . -maxdepth $MAXDEPTH -type d | tee /tmp/cdfind | grep -i $1
+	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | tee /tmp/cdfind | grep -i $1
 	fi
 	return
 }
@@ -541,7 +541,7 @@ findandvim() {
       elif [[ -n $2 ]]; then
         find . -maxdepth $MAXDEPTH -type f | grep -v 'tmp$' | grep -i $1 | grep -i $2  | tee /tmp/findandvim | egrep -i "$1|$2"
       else
-        find . -maxdepth $MAXDEPTH -type f | tee /tmp/findandvim | grep -i $1
+        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | tee /tmp/findandvim | grep -i $1
       fi
       return
     fi

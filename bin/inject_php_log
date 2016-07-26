@@ -14,8 +14,20 @@ foreach ($o as $i => $d) {
   if ($ex=='php' || $ex=='phtml') {
     //echo $d.PHP_EOL;
     $s = file_get_contents($d);
-    if (strpos($s,$inject_string)!==FALSE) continue;
-    $s=$inject_string.$s;
+    if (strpos($s,$inject_string)!==FALSE) {
+      if (strpos($s,"\nnamespace")!==FALSE) {
+        $s = str_replace($inject_string,'',$s);
+        $a = explode("\nnamespace",$s);
+        $na = explode("\n",$a[1]);
+        $nas = $na[0]."\n"."?>".$inject_string.'<?php';
+        unset($na[0]);
+        $nasp=implode("\n",$na);
+        $s=$a[0]."\nnamespace".$nas."\n".$nasp;
+      }
+    }
+    else {
+      $s=$inject_string.$s;
+    }
     file_put_contents($d,$s);
   }
 }

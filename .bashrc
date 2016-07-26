@@ -407,35 +407,49 @@ alias vgi='vim .gitignore'
 
 
 
+cdandclear_search() {
+	if [[ -n $7 ]]; then
+	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6|$7"
+	elif [[ -n $6 ]]; then
+	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6"
+	elif [[ -n $5 ]]; then
+	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5"
+	elif [[ -n $4 ]]; then
+	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4"
+	elif [[ -n $3 ]]; then
+	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/cdfind | egrep -i "$1|$2|$3"
+	elif [[ -n $2 ]]; then
+	  find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2  | tee /tmp/cdfind | egrep -i "$1|$2"
+	else
+	  find . -maxdepth $MAXDEPTH -type d | tee /tmp/cdfind | grep -i $1
+	fi
+	return
+}
+
 cdandclear() {
   if [[ -n $1 ]]; then
-    if [ ! -d "$1" ]; then
-      if [[ -n $7 ]]; then
-        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6|$7"
-      elif [[ -n $6 ]]; then
-        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5|$6"
-      elif [[ -n $5 ]]; then
-        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4|$5"
-      elif [[ -n $4 ]]; then
-        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/cdfind | egrep -i "$1|$2|$3|$4"
-      elif [[ -n $3 ]]; then
-        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/cdfind | egrep -i "$1|$2|$3"
-      elif [[ -n $2 ]]; then
-        find . -maxdepth $MAXDEPTH -type d | grep -i $1 | grep -i $2  | tee /tmp/cdfind | egrep -i "$1|$2"
-      else
-        find . -maxdepth $MAXDEPTH -type d | tee /tmp/cdfind | grep -i $1
-      fi
-      return
-    fi
-    cd $1;
-    pwd
-    ls
+  	# if 2 params than search
+  	if [[ -n $2 ]]; then
+  		cdandclear_search $@
+  	# if no dir than search
+    elif [ ! -d "$1" ]; then
+    	cdandclear_search $@
+    # cd to dir
+    else
+    	cd $1;
+    	ls -lhtra
+	    pwd
+  	fi
     return;
   fi
   clear
 #  date
 }
 
+cdandclear9() {
+	MAXDEPTH=9
+	cdandclear $@
+}
 cdandclear5() {
 	MAXDEPTH=5
 	cdandclear $@
@@ -449,15 +463,20 @@ cdandclear3() {
 	cdandclear $@
 }
 cdandclear2() {
-	MAXDEPTH=2
-	cdandclear $@
+	if [[ -n $1 ]]; then
+		MAXDEPTH=2
+		cdandclear $@
+	else
+		cd /srv/cc; ls -lhtra; pwd;
+	fi
 }
 cdandclear1() {
 	MAXDEPTH=1
 	cdandclear $@
 }
 
-alias c=cdandclear5
+alias c=cdandclear9
+#alias c=cdandclear5
 alias cc=cdandclear2
 alias ccc=cdandclear3
 alias cccc=cdandclear4
@@ -466,13 +485,17 @@ alias cc1=cdandclear1
 
 cdfind_line() {
   LINE=$(sed -n '3p' /tmp/cdfind)
-  echo $LINE
+  #echo $LINE
+  cd $LINE
 }
 
 alias c1='cdfind_line 1'
 # last
 alias c0='cd $(tail -1 /tmp/cdfind)'
-
+alias cf='cd $(tail -1 /tmp/cdfind)'
+alias cg='cd $(tail -1 /tmp/cdfind)'
+alias cv='cd $(tail -1 /tmp/cdfind)'
+alias cvb='cd $(tail -1 /tmp/cdfind)'
 
 
 
@@ -506,17 +529,17 @@ findandvim() {
   if [[ -n $1 ]]; then
     if [ ! -f "$1" ]; then
       if [[ -n $7 ]]; then
-        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5|$6|$7"
+        find . -maxdepth $MAXDEPTH -type f | grep -v 'tmp$' | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | grep -i $7 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5|$6|$7"
       elif [[ -n $6 ]]; then
-        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5|$6"
+        find . -maxdepth $MAXDEPTH -type f | grep -v 'tmp$' | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | grep -i $6 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5|$6"
       elif [[ -n $5 ]]; then
-        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5"
+        find . -maxdepth $MAXDEPTH -type f | grep -v 'tmp$' | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | grep -i $5 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4|$5"
       elif [[ -n $4 ]]; then
-        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4"
+        find . -maxdepth $MAXDEPTH -type f | grep -v 'tmp$' | grep -i $1 | grep -i $2 | grep -i $3 | grep -i $4 | tee /tmp/findandvim | egrep -i "$1|$2|$3|$4"
       elif [[ -n $3 ]]; then
-        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/findandvim | egrep -i "$1|$2|$3"
+        find . -maxdepth $MAXDEPTH -type f | grep -v 'tmp$' | grep -i $1 | grep -i $2 | grep -i $3 | tee /tmp/findandvim | egrep -i "$1|$2|$3"
       elif [[ -n $2 ]]; then
-        find . -maxdepth $MAXDEPTH -type f | grep -i $1 | grep -i $2  | tee /tmp/findandvim | egrep -i "$1|$2"
+        find . -maxdepth $MAXDEPTH -type f | grep -v 'tmp$' | grep -i $1 | grep -i $2  | tee /tmp/findandvim | egrep -i "$1|$2"
       else
         find . -maxdepth $MAXDEPTH -type f | tee /tmp/findandvim | grep -i $1
       fi
@@ -593,6 +616,9 @@ alias f5=vim_found_line5
 alias f0='vim $(tail -1 /tmp/findandvim)'
 alias fd='vim $(tail -1 /tmp/findandvim)'
 alias fg='vim $(tail -1 /tmp/findandvim)'
+alias fv='echo $(tail -1 /tmp/findandvim)'
+alias dg='vim $(tail -1 /tmp/findandvim)'
+alias dfg='vim $(tail -1 /tmp/findandvim)'
 
 
 

@@ -1,5 +1,9 @@
 #dev
 
+#git lab
+- [ ] https://www.turnkeylinux.org/gitlab
+- [ ] install as virtual machine on main pc to sync private projects
+
 # inject_php_log
 bin/inject_php_log usecase to check what php and phtml files included in some CMS. It handles namespaces first error, so injected code placed after namespace.
 - [ ] maybe add additional log with print debug backtrace short for each file.

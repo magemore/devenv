@@ -1,6 +1,9 @@
 #Angular
 
 
+## rsync
+- [ ] copy settings from lnb laptop to phone
+
 ## plunker for playing
 - [ ] https://plnkr.co/edit/SmqgTP3F77eKPFiPbBBv?p=preview
 

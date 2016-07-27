@@ -34,7 +34,7 @@ tar_improved() {
   tar czvf $1.tgz $1
 }
 alias trc=tar_improved
-alias trx=' gunzip * 2>/dev/null; unzip * 2>/dev/null; tar xvf * 2>/dev/null'
+alias tt='tar xvf'
 alias du='du -hs * | less'
 alias rm='rm -r'
 alias apt='apt-get'
@@ -1107,3 +1107,5 @@ alias vgit='cd ~/.vim/github/'
 
 alias mm='cd /srv/mage2/'
 
+alias dow='cd ~/Downloads; ls -lhtra'
+alias diff='git diff .'

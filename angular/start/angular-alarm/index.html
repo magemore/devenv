@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="alarmClock">
+<head>
+<title>Alarm Clock</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+</head>
+<body ng-controller="MainController" class="{{ goneOff }}">
+	<header>
+		<h1>Alarm Clock</h1>
+	</header>
+	<time class="hours-minutes">{{ currentTime.time | date:'h:mm a' }}</time>
+	<time class="month-day-year">{{ currentTime.time | date }}</time>
+	<section id="alarms">
+		<h2>Alarms</h2>
+		<ul class="alarms-list">
+			<li ng-repeat="alarm in alarms" class="{{ alarm.goneOff }}">
+				<span class="">{{alarm.time | date:'h:mm a MMM d, yyyy'}}</span>
+				<span class="dismiss-alarm" ng-click="removeAlarm($index)">X</span>
+			</li>
+		</ul>
+		<form ng-submit="addAlarm()">
+	        <input type="datetime-local" ng-model="alarmTime" placeholder="Ex: 5:00pm" required>
+	        <input class="btn-primary" type="submit" value="+ Add Alarm">
+		</form>
+	</section>
+	<audio src="sounds/alarm.wav" loop id="alarm_audio"></audio>
+</body>
+<script src="js/alarm.js"></script>
+</html>

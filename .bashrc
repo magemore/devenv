@@ -506,6 +506,11 @@ alias cv='cd $(tail -1 /tmp/cdfind)'
 alias cvb='cd $(tail -1 /tmp/cdfind)'
 
 
+my_pwd() {
+  pwd | tee /tmp/cdfind
+}
+
+alias p=my_pwd
 
 
 
@@ -560,7 +565,7 @@ findandvim() {
 }
 
 findandvim5() {
-	MAXDEPTH=5
+	MAXDEPTH=500
 	findandvim $@
 }
 findandvim4() {
@@ -1109,3 +1114,8 @@ alias mm='cd /srv/mage2/'
 
 alias dow='cd ~/Downloads; ls -lhtra'
 alias diff='git diff .'
+
+cp1() {
+  FILE_NAME=$(cat /tmp/cdfind)
+  cp -r $FILE_NAME .
+}

@@ -802,7 +802,7 @@ s_chrome_google(){
   google-chrome "https://google.co.uk/search?q=$1 $2 $3 $4 $5 $6 $7 $8" 2>/dev/null >/dev/null &
 }
 alias goo=s_google
-alias go=s_go_google
+alias go=goo
 
 alias R='R --no-save --slave'
 alias foo=s_firefox_google

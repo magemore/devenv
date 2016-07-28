@@ -45,6 +45,7 @@ noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 "bar with tags, list of functions and variables
 nmap <F8> :TagbarToggle<CR>
 
+nmap <F9> <ESC>V:w! /tmp/buff.txt<ENTER>
 
 nnoremap <Tab> <c-w>w
 nnoremap <bs> <c-w>W

@@ -1,5 +1,7 @@
 var auto_refresh = function(){
   function refresh() {
+      // delay because after file saved it can be formated with plugins and saved again
+      // to make less refreshes in seconds
       setTimeout(function(){location.reload();},500);
   }
 

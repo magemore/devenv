@@ -262,7 +262,10 @@ list_wrap_taskwarrior() {
 #alias a=idea_add_taskwarrior_like
 
 alias ww='watch -t -n 1'
-alias wp='watch -t -n 1 php '
+watch_php_tee() {
+  watch -t -n 1 php
+}
+alias wp=watch_php_tee
 
 #source /data/data/com.termux/files/home/mage/devenv/.bashrc
 

@@ -1,35 +1,20 @@
 [global_config]
-  window_state = maximise
-  handle_size = -3
-  title_hide_sizetext = True
   always_split_with_profile = True
+  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
-  title_transmit_fg_color = "#000000"
+  handle_size = -3
+  inactive_color_offset = 0.87
   scroll_tabbar = True
   suppress_multiple_term_dialog = True
-  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_receive_bg_color = "#484848"
-  title_transmit_bg_color = "#636363"
-  title_receive_fg_color = "#000000"
   tab_position = bottom
-  inactive_color_offset = 0.87
+  title_hide_sizetext = True
   title_inactive_bg_color = "#4c4c4c"
+  title_receive_bg_color = "#484848"
+  title_receive_fg_color = "#000000"
+  title_transmit_bg_color = "#636363"
+  title_transmit_fg_color = "#000000"
+  window_state = maximise
 [keybindings]
-[profiles]
-  [[default]]
-    foreground_color = "#dcdcdc"
-    palette = "#656565:#ff0087:#5fd75f:#5f87ff:#d1d1d1:#ff0087:#ffd700:#eee8d5:#e5e5e5:#ffd700:#5fd75f:#ff0087:#ff0087:#ffd700:#ff0087:#fdf6e3"
-    font = Anonymous Pro Bold 13
-    background_image = /home/a/Pictures/wallpapers.ws-9629.jpg
-    background_darkness = 0.94
-    use_system_font = False
-    split_to_group = True
-    scroll_background = False
-    scrollbar_position = hidden
-    show_titlebar = False
-    copy_on_selection = True
-    background_color = "#0a0a0a"
-    cursor_blink = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -45,3 +30,18 @@
       enabled = True
       name = dev
       position = 0
+[profiles]
+  [[default]]
+    background_color = "#0a0a0a"
+    background_darkness = 0.94
+    background_image = /home/a/Pictures/wallpapers.ws-9629.jpg
+    copy_on_selection = True
+    cursor_blink = False
+    font = Anonymous Pro Bold 13
+    foreground_color = "#dcdcdc"
+    palette = "#f5f5f5:#ff0087:#717171:#ff5100:#d1d1d1:#ff0000:#d067ff:#978756:#e5e5e5:#ffd700:#5fd75f:#efb7ff:#009eff:#ff9900:#ff00d4:#fdf6e3"
+    scroll_background = False
+    scrollbar_position = hidden
+    show_titlebar = False
+    split_to_group = True
+    use_system_font = False

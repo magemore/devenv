@@ -4,7 +4,8 @@ require 'short.php';
 
 $c = [];
 # find all files
-$c[] = "find $_SERVER[DOCUMENT_ROOT] -type f";
+$c[] = "find -L $_SERVER[DOCUMENT_ROOT] -type f";
+#print_r($c);
 
 # ignore some
 $c[] = "grep -v '.git' | grep -v '.swp' | grep -v logs | grep -v '-'";

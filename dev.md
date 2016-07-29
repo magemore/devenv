@@ -1,5 +1,10 @@
 #dev
 
+
+#virtual box windows
+i can use same file system between them if connect vdi file as linux mount when windows turned off
+but it's better to setup git server. or use something like rsync.
+
 #git lab
 - [ ] https://www.turnkeylinux.org/gitlab
 - [ ] install as virtual machine on main pc to sync private projects

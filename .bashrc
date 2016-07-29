@@ -1122,3 +1122,4 @@ cp1() {
   FILE_NAME=$(cat /tmp/cdfind)
   cp -r $FILE_NAME .
 }
+alias df='df -h'

@@ -1,0 +1,4 @@
+external document;
+
+document.write("Hello World");
+

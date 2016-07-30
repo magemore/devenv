@@ -1,0 +1,70 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'https://www.npmjs.com/package/mysql-to-rest' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData https://www.npmjs.com/package/mysql-to-rest
+8 silly fetchOtherPackageData https://www.npmjs.com/package/mysql-to-rest
+9 silly cache add args [ 'https://www.npmjs.com/package/mysql-to-rest', null ]
+10 verbose cache add spec https://www.npmjs.com/package/mysql-to-rest
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'https://www.npmjs.com/package/mysql-to-rest',
+11 silly cache add   scope: null,
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'https://www.npmjs.com/package/mysql-to-rest',
+11 silly cache add   spec: 'https://www.npmjs.com/package/mysql-to-rest',
+11 silly cache add   type: 'remote' }
+12 silly mapToRegistry name https://www.npmjs.com/package/mysql-to-rest
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry http://registry.npmjs.org/
+15 silly mapToRegistry uri https://www.npmjs.com/package/mysql-to-rest
+16 verbose addRemoteTarball https://www.npmjs.com/package/mysql-to-rest not in flight; adding
+17 verbose addRemoteTarball [ 'https://www.npmjs.com/package/mysql-to-rest', null ]
+18 info retry fetch attempt 1 at 2:05:23 AM
+19 info attempt registry request try #1 at 2:05:23 AM
+20 http fetch GET https://www.npmjs.com/package/mysql-to-rest
+21 verbose request id a7315a5fa9578131
+22 http fetch 200 https://www.npmjs.com/package/mysql-to-rest
+23 silly fetchAndShaCheck shasum 20ee222e04dfce6612b58f28f11bfe473013e038
+24 verbose addTmpTarball /tmp/npm-25897-be0217e5/www.npmjs.com/package/mysql-to-rest not in flight; adding
+25 verbose addTmpTarball validating metadata from /tmp/npm-25897-be0217e5/www.npmjs.com/package/mysql-to-rest
+26 verbose tar unpack /tmp/npm-25897-be0217e5/www.npmjs.com/package/mysql-to-rest
+27 verbose tar unpacking to /tmp/npm-25897-be0217e5/unpack-c630ca80
+28 silly gentlyRm /tmp/npm-25897-be0217e5/unpack-c630ca80 is being purged
+29 verbose gentlyRm don't care about contents; nuking /tmp/npm-25897-be0217e5/unpack-c630ca80
+30 silly gunzTarPerm modes [ '755', '644' ]
+31 error not a package /tmp/npm-25897-be0217e5/www.npmjs.com/package/mysql-to-rest
+32 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/tmp/npm-25897-be0217e5/unpack-c630ca80/package.json'
+32 silly fetchPackageMetaData     at Error (native)
+32 silly fetchPackageMetaData  error for https://www.npmjs.com/package/mysql-to-rest { [Error: ENOENT: no such file or directory, open '/tmp/npm-25897-be0217e5/unpack-c630ca80/package.json']
+32 silly fetchPackageMetaData   errno: -2,
+32 silly fetchPackageMetaData   code: 'ENOENT',
+32 silly fetchPackageMetaData   syscall: 'open',
+32 silly fetchPackageMetaData   path: '/tmp/npm-25897-be0217e5/unpack-c630ca80/package.json' }
+33 silly rollbackFailedOptional Starting
+34 silly rollbackFailedOptional Finishing
+35 silly runTopLevelLifecycles Starting
+36 silly runTopLevelLifecycles Finishing
+37 silly install printInstalled
+38 verbose stack Error: ENOENT: no such file or directory, open '/tmp/npm-25897-be0217e5/unpack-c630ca80/package.json'
+38 verbose stack     at Error (native)
+39 verbose cwd /home/a/mage/devenv/nodejs/js++
+40 error Linux 4.4.0-31-generic
+41 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "https://www.npmjs.com/package/mysql-to-rest"
+42 error node v4.2.6
+43 error npm  v3.5.2
+44 error path /tmp/npm-25897-be0217e5/unpack-c630ca80/package.json
+45 error code ENOENT
+46 error errno -2
+47 error syscall open
+48 error enoent ENOENT: no such file or directory, open '/tmp/npm-25897-be0217e5/unpack-c630ca80/package.json'
+49 error enoent ENOENT: no such file or directory, open '/tmp/npm-25897-be0217e5/unpack-c630ca80/package.json'
+49 error enoent This is most likely not a problem with npm itself
+49 error enoent and is related to npm not being able to find a file.
+50 verbose exit [ -2, true ]

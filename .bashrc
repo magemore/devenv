@@ -639,7 +639,8 @@ alias v5=vim_found_line5
 # last and lazy missing fingers
 alias f0='vim $(tail -1 /tmp/findandvim)'
 alias fd='vim $(tail -1 /tmp/findandvim)'
-alias fg='vim $(tail -1 /tmp/findandvim)'
+# don't use it restores after Ctrl-Z
+#alias fg='vim $(tail -1 /tmp/findandvim)'
 alias fv='vim $(tail -1 /tmp/findandvim)'
 alias dg='vim $(tail -1 /tmp/findandvim)'
 alias dfg='vim $(tail -1 /tmp/findandvim)'

@@ -5,7 +5,7 @@ require_once 'auto_refresh/short.php';
 
 class Exec {
 	
-	private $raw = [];
+	private $files = [];
 	private $total = false;
 
 	public function __construct($shellCommand=false)
@@ -15,12 +15,12 @@ class Exec {
 			$this->total = $a[0];
 			unset($a[0]);
 		}
-		$this->raw=$a;
+		$this->files=$a;
 		return $this;
 	}
 	
 	public function get() {
-	 	return ['total'=>$this->total,$rows);
+	 	return ['total'=>$this->total,$this->files];
 	}
 		
 }

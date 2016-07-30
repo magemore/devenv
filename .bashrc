@@ -1131,7 +1131,7 @@ alias jc='js2coffee'
 alias xjc='xargs -d "\n" js2coffee'
 
 vjc() {
-  js2coffee $1 | tee /tmp/$BASHPID.coffee
-  vim /tmp/$BASHPID.coffee
+  js2coffee $1 > /tmp/nice.coffee
+  vim /tmp/nice.coffee
 }
 

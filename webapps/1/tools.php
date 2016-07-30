@@ -14,7 +14,7 @@ class Exec {
 		if (strpos(strtolower($a[0]),'total')!==FALSE) {
 			$this->total = $a[0];
 		}
-		$this->$raw=$a;
+		$this->raw=$a;
 		return $this;
 	}
 	

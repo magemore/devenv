@@ -681,6 +681,7 @@ alias h=f_haml
 
 alias srv='cd /srv/'
 alias srm='cd /srv/misc/'
+alias srmd='cd /srv/misc/dreamviewer.io/; ll'
 alias srb='cd /srv/misc/bootstrap/'
 alias mage='cd /srv/magento'
 alias book='cd /home/a/play/bookshots'

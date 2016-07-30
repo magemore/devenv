@@ -13,13 +13,14 @@ class Exec {
 		$a = wrapper_over_exec($shellCommand);
 		if (strpos(strtolower($a[0]),'total')!==FALSE) {
 			$this->total = $a[0];
+			unset($a[0]);
 		}
 		$this->raw=$a;
 		return $this;
 	}
 	
 	public function get() {
-	 	return $this->total;
+	 	return ['total'=>$this->total,$rows);
 	}
 		
 }

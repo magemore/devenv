@@ -1127,3 +1127,11 @@ cp1() {
   cp -r $FILE_NAME .
 }
 alias df='df -h'
+alias jc='js2coffee'
+alias xjc='xargs -d "\n" js2coffee'
+
+vjc() {
+  js2coffee $1 > /tmp/$1.coffee
+  vim /tmp/$1.coffee
+}
+

@@ -2,7 +2,7 @@
 <html>
 <head>
 <?php
-require 'tools.php';
+require 'exec.php';
 $title = 'Scripts';
 ?>
 <meta charset="utf-8">

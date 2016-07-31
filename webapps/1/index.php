@@ -16,12 +16,7 @@ $title = 'Scripts';
 <script src="/js/angular.min.js"></script>
 </head>
 <body>
-<script>
-var app = angular.module('webshellApp', []);
-app.controller('shellFilesCtrl', function($scope, $http) {
-	$scope.files=<?=json_encode(getExecFiles('ls -l'))?>;
-});
-</script>
+<script src='js/app.js'></script>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">

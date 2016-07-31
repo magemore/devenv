@@ -2,7 +2,6 @@
 
 require_once 'auto_refresh/short.php';
 
-
 class Exec {
 	
 	private $files = [];
@@ -18,13 +17,24 @@ class Exec {
 		$this->files=$a;
 		return $this;
 	}
-	
+
+	private function prepare($files) {
+        /**
+         * fortmat. spluts string by colums
+         */
+        function clean() {
+
+        }
+	    foreach ($files as $file) {
+
+        }
+    }
+
 	public function get() {
 	 	return ['total'=>$this->total,$this->files];
 	}
 		
 }
-
 
 function getExecFiles($shellCommand) {
 	return (new Exec($shellCommand))->get();

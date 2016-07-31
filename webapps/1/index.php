@@ -29,6 +29,6 @@ $title = 'Scripts';
     </table>
   </div>
 </div>
-<div class='hidden' id="files"></div>
+<div id="total"></div>
 </body>
 </html>

@@ -1,0 +1,40 @@
+.kickoff-start {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100vw;
+
+  h1,
+  p {
+    color: $font-light;
+  }
+
+  a {
+    color: $font-link;
+    text-decoration: none;
+
+    &:hover,
+    &:link,
+    &:visited,
+    &:active {
+      color: $font-link;
+      text-decoration: none;
+    }
+  }
+
+  .angular-logo {
+    background-image: url('images/angular-logo.png');
+    height: 200px;
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  .warning {
+    background-color: $warning-color;
+    border-radius: 4px;
+    color: $font-dark;
+    display: inline;
+    padding: 10px;
+  }
+}

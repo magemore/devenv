@@ -1,0 +1,27 @@
+{
+  "name": "angular-kickoff",
+  "description": "Quickly start developing an angular application",
+  "main": "gulpfile.js",
+  "authors": [
+    "Nahuel A. Veron <nahuelav96@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Angular",
+    "kickoff",
+    "negan1911",
+    "start"
+  ],
+  "homepage": "https://github.com/Negan1911/angular-kickoff",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^4.1.1"
+  }
+}

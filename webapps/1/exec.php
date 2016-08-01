@@ -28,8 +28,8 @@ class Exec {
       $o=[];
       $o['permission']=substr($s,0,10);
       $o['user']=trim(substr($s,12,2));
-      $o['size']=substr($s,17,7);
-      $o['next']=substr($s,17,7);
+      $o['size']=trim(substr($s,17,7));
+      $o['next']=trim(substr($s,17,7));
       print_r($o);
       return $s;
     }

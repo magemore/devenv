@@ -24,15 +24,15 @@ class Exec {
     * fortmat. split string by colums
     */
     function clean($s) {
-      print_r($s);
+      //print_r($s);
       $o=[];
       $o['permission']=substr($s,0,10);
       $o['user']=trim(substr($s,12,2));
       $o['size']=trim(substr($s,17,7));
       $o['date']=trim(substr($s,24,12));
-      $o['next']=trim(substr($s,36));
-      print_r($o);
-      return $s;
+      $o['name']=trim(substr($s,36));
+      //print_r($o);
+      return $o;
     }
 	  foreach ($this->files as $i => $file) {
       $this->files[$i]=clean($file);

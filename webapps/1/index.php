@@ -24,15 +24,19 @@ $title = 'Scripts';
     </h3>
   </div>
   <div class="panel-body" ng-app="webshellApp" ng-controller="shellFilesCtrl">
-    <table class='table'>
+    <table class='table-striped table'>
       <tr>
         <th>name</th>
         <th>size</th>
+        <th>date</th>
+        <th>user</th>
         <th>permissions</th>
       </tr>
       <tr ng-repeat="file in files">
         <td>{{ file.name }}</td>
         <td>{{ file.size }}</td>
+        <td>{{ file.date }}</td>
+        <td>{{ file.user }}</td>
         <td>{{ file.permissions }}</td>
       </tr>
     </table>

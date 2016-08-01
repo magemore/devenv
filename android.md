@@ -1,7 +1,8 @@
 #Android
 
 - [ ] move my pc notes to termux and sync them using uc samsumg git server
-- [ ] copy esf code here even so php doesnt work fully here i can write unit test and for database use sqlight and nodejs as server for files. there extension to execute php from node server
+- [ ] copy esf code
+  - [ ] installed maria db app on phone test how it works with php termux
 
 
 

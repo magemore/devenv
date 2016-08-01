@@ -1,3 +1,3 @@
 function ag
-	ag --follow
+	/usr/bin/ag --follow $argv
 end

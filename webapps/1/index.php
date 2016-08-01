@@ -1,13 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<?php
-require 'exec.php';
-$title = 'Scripts';
-?>
 <meta charset="utf-8">
 <title>
-<?=$title?>
+Scripts
 </title>
 <script src="/auto_refresh/update.js"></script>
 <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -20,7 +16,7 @@ $title = 'Scripts';
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">
-      <?=$title?>
+      Explorer
     </h3>
   </div>
   <div class="panel-body" ng-app="webshellApp" ng-controller="shellFilesCtrl">

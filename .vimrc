@@ -19,8 +19,8 @@ set viminfo='20,<1000,s1000
 set mouse=
 set clipboard=unnamedplus
 
-nnoremap <F1> <ESC>:w!<ENTER><ESC><ESC>
-inoremap <F1> <ESC>:w!<ENTER><ESC>i<ESC>
+nnoremap <F1> <ESC>:w!<ENTER>
+inoremap <F1> <ESC>:w!<ENTER>
 
 nnoremap <F2> <ESC>:wq!<ENTER><ESC>
 inoremap <F2> <ESC>:wq!<ENTER><ESC>

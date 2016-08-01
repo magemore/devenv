@@ -15,6 +15,7 @@
   title_transmit_fg_color = "#000000"
   window_state = maximise
 [keybindings]
+  help = disabled
 [layouts]
   [[default]]
     [[[child1]]]

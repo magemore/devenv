@@ -1136,3 +1136,9 @@ vjc() {
   vim /tmp/nice.coffee
 }
 
+alias vim='vim -n'
+alias vi='vim -n'
+alias v='vim -n'
+
+
+alias to='vim -n ~/todo.md'

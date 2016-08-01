@@ -40,7 +40,7 @@ class Exec {
   }
 
 	public function get() {
-	 	return ['total'=>$this->total,$this->files];
+	 	return ['total'=>$this->total,'files'=>$this->files];
 	}
 		
 }

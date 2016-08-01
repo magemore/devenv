@@ -6,7 +6,7 @@ app.controller('shellFilesCtrl', function($scope, $http) {
 	}).then(function successCallback(response) {
       console.log(response.data);
       $scope.files=response.data.files;
-      $scope.files=response.data.total;
+      $scope.total=response.data.total;
 	  }, function errorCallback(response) {
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.

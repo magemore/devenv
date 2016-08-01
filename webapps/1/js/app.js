@@ -4,7 +4,9 @@ app.controller('shellFilesCtrl', function($scope, $http) {
 	  method: 'GET',
 	  url: '/files.php'
 	}).then(function successCallback(response) {
-			$scope.files=response.data;
+      console.log(response.data);
+      $scope.files=response.data.files;
+      $scope.files=response.data.total;
 	  }, function errorCallback(response) {
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.

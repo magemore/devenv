@@ -19,16 +19,16 @@ class Exec {
 	}
 
 	private function prepare($files) {
-        /**
-         * fortmat. spluts string by colums
-         */
-        function clean() {
-
-        }
-	    foreach ($files as $file) {
-
-        }
+    /**
+    * fortmat. split string by colums
+    */
+    function clean($s) {
+      return $s;
     }
+	  foreach ($files as $i => $file) {
+      $files[$i]=clean($file);
+    }
+  }
 
 	public function get() {
 	 	return ['total'=>$this->total,$this->files];

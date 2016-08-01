@@ -20,7 +20,7 @@ set mouse=
 set clipboard=unnamedplus
 
 nnoremap <F1> <ESC>:w!<ENTER>
-inoremap <F1> <ESC>:w!<ENTER>
+inoremap <F1> <ESC>:w!<ENTER>i
 
 nnoremap <F2> <ESC>:wq!<ENTER><ESC>
 inoremap <F2> <ESC>:wq!<ENTER><ESC>

@@ -1,0 +1,3 @@
+function cle
+	clear
+end

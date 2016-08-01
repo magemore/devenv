@@ -30,7 +30,7 @@ class Exec {
       $o['user']=trim(substr($s,12,2));
       $o['size']=trim(substr($s,17,7));
       $o['date']=trim(substr($s,24,12));
-      $o['next']=trim(substr($s,17,7));
+      $o['next']=trim(substr($s,36));
       print_r($o);
       return $s;
     }

@@ -26,7 +26,7 @@ class Exec {
     function clean($s) {
       //print_r($s);
       $o=[];
-      $o['permission']=substr($s,0,10);
+      $o['permissions']=substr($s,0,10);
       $o['user']=trim(substr($s,12,2));
       $o['size']=trim(substr($s,17,7));
       $o['date']=trim(substr($s,24,12));

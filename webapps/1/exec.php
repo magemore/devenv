@@ -28,9 +28,11 @@ class Exec {
       $o=[];
       $o['permissions']=substr($s,0,10);
       $o['user']=trim(substr($s,12,2));
-      $o['size']=trim(substr($s,17,7));
-      $o['date']=trim(substr($s,24,12));
-      $o['name']=trim(substr($s,36));
+      $o['size']=trim(substr($s,17,5));
+      $o['date']=trim(substr($s,22,12));
+      $o['name']=trim(substr($s,34));
+      $o['is_dir']=false;
+      if (strpos($o['permissions'],'d')!==FALSE) $o['is_dir']=true;
       //print_r($o);
       return $o;
     }

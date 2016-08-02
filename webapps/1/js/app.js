@@ -6,7 +6,9 @@ app.controller('shellFilesCtrl', function($scope, $http) {
 	}).then(function successCallback(response) {
       $scope.files=response.data.files;
       $scope.total=response.data.total;
-      $("#explorer").DataTable();
+      setTimeout(function(){
+        $("#explorer").DataTable();
+      },500);
 	  }, function errorCallback(response) {
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.

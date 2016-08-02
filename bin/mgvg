@@ -1,7 +1,3 @@
-ag
-
-
-
   a='$a'
   #ag='grep -rli '
   ag='ag -l  '

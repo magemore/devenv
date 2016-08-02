@@ -46,7 +46,6 @@ select {
           <th>name</th>
           <th>size</th>
           <th>date</th>
-          <th>user</th>
           <th>permissions</th>
         </tr>
       </thead>
@@ -55,7 +54,6 @@ select {
           <td>{{ file.name }}</td>
           <td>{{ file.size }}</td>
           <td>{{ file.date }}</td>
-          <td>{{ file.user }}</td>
           <td>{{ file.permissions }}</td>
         </tr>
       </tbody>

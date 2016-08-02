@@ -1,3 +1,3 @@
 function to
-	vim ~/todo.md
+	vim -n ~/todo.md
 end

@@ -7,10 +7,11 @@ app.controller('shellFilesCtrl', function($scope, $http) {
       $scope.files=response.data.files;
       $scope.total=response.data.total;
       setTimeout(function(){
-        $("#explorer").DataTable();
+        jQuery("#explorer").DataTable();
       },500);
 	  }, function errorCallback(response) {
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.
 	  });
 });
+

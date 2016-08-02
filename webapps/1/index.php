@@ -1,10 +1,13 @@
 <!doctype html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <title>Scripts</title>
 <script src="/auto_refresh/update.js"></script>
 <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/angular.min.js"></script>
@@ -13,6 +16,21 @@
 <style>
 .table-striped>tbody>tr:nth-of-type(odd).dir, .dir {
   color: #82ACD8;
+}
+.table {
+  cursor: pointer; 
+}
+.dataTables_length {
+  float: left; 
+}
+
+input,
+select {
+  border-color: grey;
+  background-color: black;
+  color: white; 
+  margin-left:5px;
+  margin-right:5px;
 }
 </style>
 </head>
@@ -33,7 +51,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="file in files" ng-class="{'dir': file.is_dir }">
+        <tr ng-repeat="file in files" ng-class="{'info': file.is_dir }">
           <td>{{ file.name }}</td>
           <td>{{ file.size }}</td>
           <td>{{ file.date }}</td>

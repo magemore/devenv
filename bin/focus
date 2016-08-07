@@ -1,5 +1,0 @@
-say 'dont do optimizations of dev env at the moment'
-sleep 20
-say 'just focus on finishing admin interface category tree magento'
-sleep 1200
-focus

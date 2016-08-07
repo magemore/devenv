@@ -1,4 +1,6 @@
 #!/usr/bin/php
 <?php
 
-echo file_get_contents($argv[1]);
+$str = file_get_contents($argv[1]);
+$str = preg_replace('/[[:^print:]]/', '', $str);
+echo $str;

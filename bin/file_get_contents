@@ -2,5 +2,7 @@
 <?php
 
 $str = file_get_contents($argv[1]);
+$str = str_replace("\n",'NEWLINENEWLINE',$str);
 $str = preg_replace('/[[:^print:]]/', '', $str);
+$str = str_replace('NEWLINENEWLINE',"\n",$str);
 echo $str;

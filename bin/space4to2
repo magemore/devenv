@@ -1,0 +1,21 @@
+#!/bin/bash
+
+is_file_exists() {
+    local f="$1"
+    [[ -f "$f" ]] && return 0 || return 1
+}
+
+usage() {
+    echo "Usage: $0 filename"
+    exit 1
+}
+
+[[ $# -eq 0 ]] && usage
+
+if (is_file_exists "$1")
+then
+    php /home/a/apps/t2s/convert_space4.php $1
+else
+    echo "File not found"
+fi
+

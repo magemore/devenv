@@ -6,8 +6,10 @@ set background=dark
 set t_Co=256            " use 256 colors in vim
 "colorscheme desert256   " an appropriate color scheme
 "colorscheme luna
-colorscheme highwayman
+"colorscheme highwayman
 "colorscheme spurs_away
+colorscheme gotham256
+
 
 set autoread
 
@@ -78,10 +80,17 @@ if has("autocmd")
 endif
 
 set nobackup
+set nowrap
 
 execute pathogen#infect()
 
 filetype plugin indent on
 
 set complete+=k~/.vim/dict/php.dict
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'whatyouhide/vim-gotham'
+
+call plug#end()
 

@@ -1,0 +1,4 @@
+#!/bin/sh 
+tmux new-session -d 'fish'
+tmux split-window -v 'fish'
+tmux attach-session -d

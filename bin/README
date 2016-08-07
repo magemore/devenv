@@ -1,0 +1,14 @@
+problem
+there bash functions
+i switched to fish
+
+on termux i still use bash...
+and if i set path for bash
+#!/bin/bash
+than it will not work from termux
+maybe rewrite everything as fish functions
+on make fish wrappers to call it as
+bash ~/mage/devenv/bin/some_bash_function
+
+at the moment it's hard to rewrite some bash functions for fish
+confused with fish if conditions and how to place argv inside quotes

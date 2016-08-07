@@ -1,3 +1,3 @@
 function gl
-  git log .
+  git log -p .
 end

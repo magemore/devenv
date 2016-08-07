@@ -1,3 +1,3 @@
 function xp
-	git pull .
+	git log -p
 end

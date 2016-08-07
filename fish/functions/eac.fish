@@ -1,3 +1,3 @@
 function eac
-	cd /srv/esf/system/application/controllers/
+	cd /srv/esf/application/controllers/
 end

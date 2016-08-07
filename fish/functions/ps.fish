@@ -1,3 +1,3 @@
 function ps
-	ps -aux
+	/bin/ps -aux
 end

@@ -1,3 +1,3 @@
 function xs
-	git status .
+	git status -s .
 end

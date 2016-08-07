@@ -1,3 +1,3 @@
 function go
-  ~/dev/bash/go.bash $argv
+	links2 "http://google.co.uk/search?q="$argv
 end

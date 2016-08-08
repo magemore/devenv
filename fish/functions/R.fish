@@ -1,3 +1,3 @@
 function R
-	R --no-save --slave
+	/usr/bin/R --no-save --slave
 end

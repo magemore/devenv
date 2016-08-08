@@ -1,3 +1,3 @@
 function eava
-	cd /srv/esf/system/application/views/admin/
+	cd /srv/esf/application/views/admin/
 end

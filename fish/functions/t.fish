@@ -1,3 +1,3 @@
 function t
-	cd ¬/tdd/
+	cd ~/tdd/
 end

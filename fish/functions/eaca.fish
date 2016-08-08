@@ -1,3 +1,3 @@
 function eaca
-	cd /srv/esf/system/application/controllers/admin/
+	cd /srv/esf/application/controllers/admin/
 end

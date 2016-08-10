@@ -1,3 +1,3 @@
 function wl
-	~/play/timep/timep log | tail
+	~/play/timep/timep log | less
 end

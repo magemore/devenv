@@ -1,3 +1,3 @@
 function eav
-	cd /srv/esf/system/application/views/
+	cd /srv/esf/application/views/
 end

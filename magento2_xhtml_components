@@ -1,0 +1,5 @@
+./vendor/magento/module-ui/view/base/ui_component/templates/listing/default.xhtml
+./vendor/magento/module-ui/view/base/ui_component/templates/form/default.xhtml
+./vendor/magento/module-ui/view/base/ui_component/templates/form/collapsible.xhtml
+./vendor/magento/module-ui/view/base/ui_component/templates/export/button.xhtml
+./vendor/magento/module-ui/view/base/ui_component/templates/container/default.xhtml

@@ -1,6 +1,6 @@
 
 
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 "set background=dark
 
 set t_Co=256            " use 256 colors in vim
@@ -8,7 +8,7 @@ set t_Co=256            " use 256 colors in vim
 "colorscheme luna
 "colorscheme highwayman
 "colorscheme spurs_away
-colorscheme gotham256
+"colorscheme gotham256
 
 
 set autoread
@@ -47,7 +47,8 @@ noremap <F7> <esc>:r! cat /tmp/share<ENTER><esc>j-i
 "bar with tags, list of functions and variables
 nmap <F8> :TagbarToggle<CR>
 
-nmap <F9> <ESC>V:w! /tmp/buff.txt<ENTER>
+nnoremap <F9> <ESC>V:w! /tmp/buff.txt<ENTER>
+inoremap <F9> <ESC>V:w! /tmp/buff.txt<ENTER>
 
 nnoremap <Tab> <c-w>w
 nnoremap <bs> <c-w>W

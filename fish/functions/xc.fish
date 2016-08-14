@@ -3,7 +3,7 @@ function xc
     if test (count $argv) -gt 0;
         git commit -m $argv
     else
-        git commit -m 'no comment'
+        git commit -m 'x'
     end
     git push origin ^/dev/null >/dev/null &
 end

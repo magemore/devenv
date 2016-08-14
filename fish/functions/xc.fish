@@ -3,7 +3,7 @@ function xc
     if test (count $argv) -gt 0;
         git commit -m $argv
     else
-        git commit -m 'x'
+        git commit -m (git status -s .)
     end
     git push origin ^/dev/null >/dev/null &
 end

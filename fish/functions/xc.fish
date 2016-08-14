@@ -1,5 +1,5 @@
 function xc
 	git add .
-git commit -m 'xc'
+git commit -m $argv
 git push origin ^/dev/null >/dev/null
 end

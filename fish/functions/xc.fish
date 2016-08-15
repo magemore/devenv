@@ -2,11 +2,12 @@ function xc
     git add .
     if test (count $argv) -gt 0;
         git commit -m (string join ' ' $argv)
-        timep (string join ' ' $argv)
+        timep git commit (string join ' ' $argv)
     else
         set STA (git status -s .)
-        timep (string join '; ' $STA)
+        if test (count $STA) -gt 0;
+            timep git commit (string join '; ' $STA)
+        end
     end
     git push origin ^/dev/null >/dev/null &
 end
-

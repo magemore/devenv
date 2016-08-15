@@ -1,3 +1,3 @@
 function qwl
-	watch -t '~/play/timep/timep log | head -n 50'
+	watch -t '~/play/timep/timep log | head -n 100 | less'
 end

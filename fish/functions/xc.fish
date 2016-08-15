@@ -7,3 +7,4 @@ function xc
     end
     git push origin ^/dev/null >/dev/null &
 end
+

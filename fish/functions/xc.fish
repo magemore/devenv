@@ -1,7 +1,7 @@
 function xc
     git add .
     if test (count $argv) -gt 0;
-        git commit -m $argv
+        git commit -m (string join ' ' $argv)
     else
         set STA (git status -s .)
         git commit -m (string join '; ' $STA)

@@ -1,3 +1,3 @@
 function esf
-	f_mosh  $argv;
+    echo 'run from bash'
 end

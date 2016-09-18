@@ -1,3 +1,7 @@
 function t
-	cd ~/tdd/
+	if test (count $argv) -gt 0;
+        task $argv;
+    else
+        task active
+    end
 end

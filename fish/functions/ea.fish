@@ -1,3 +1,3 @@
 function ea
-	cd /srv/esf/system/application/
+	cd /srv/esf/application/
 end

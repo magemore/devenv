@@ -100,3 +100,7 @@ call plug#end()
 set statusline+=%F
 set laststatus=2
 
+
+set backupdir-=.
+set backupdir^=~/tmp,/tmp
+set nobackup

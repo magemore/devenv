@@ -104,3 +104,6 @@ set laststatus=2
 set backupdir-=.
 set backupdir^=~/tmp,/tmp
 set nobackup
+set nowritebackup
+set noswapfile
+

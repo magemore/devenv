@@ -8,7 +8,7 @@ set t_Co=256            " use 256 colors in vim
 "colorscheme luna
 "colorscheme highwayman
 "colorscheme spurs_away
-"colorscheme gotham256
+colorscheme gotham256
 
 
 set autoread
@@ -82,6 +82,8 @@ endif
 
 set nobackup
 set nowrap
+"set matchtime=2
+"set number
 
 execute pathogen#infect()
 
@@ -94,4 +96,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'whatyouhide/vim-gotham'
 
 call plug#end()
+
+set statusline+=%F
+set laststatus=2
 

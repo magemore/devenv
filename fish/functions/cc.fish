@@ -1,3 +1,3 @@
 function cc
-	cd /srv/c/
+	cd /srv/cc/
 end

@@ -1,4 +1,4 @@
 function wake
 	cd /srv/esf/application/
-    ag '@wake'
+    ag '@wakeup'
 end

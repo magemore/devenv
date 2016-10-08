@@ -6,9 +6,11 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set t_Co=256            " use 256 colors in vim
 "colorscheme desert256   " an appropriate color scheme
 "colorscheme luna
+"colorscheme pyte
+"colorscheme proton
 "colorscheme highwayman
-"colorscheme spurs_away
-colorscheme gotham256
+colorscheme spurs_away
+"colorscheme gotham256
 
 
 set autoread

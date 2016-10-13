@@ -8,8 +8,11 @@ set t_Co=256            " use 256 colors in vim
 "colorscheme luna
 "colorscheme pyte
 "colorscheme proton
-"colorscheme highwayman
-colorscheme spurs_away
+
+" nice the for xml files
+colorscheme highwayman
+
+"colorscheme spurs_away
 "colorscheme gotham256
 
 

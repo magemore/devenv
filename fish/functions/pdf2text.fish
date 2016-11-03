@@ -1,3 +1,3 @@
 function pdf2text
-	cd pdftotext $argv;
+	pdftotext $argv;
 end

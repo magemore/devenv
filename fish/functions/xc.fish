@@ -10,5 +10,6 @@ function xc
             git commit -m (string join '; ' $STA)
         end
     end
+    date
     git push origin ^/dev/null >/dev/null &
 end

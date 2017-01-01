@@ -1,3 +1,3 @@
 function cc
-	cd /srv/cc/
+	cd /srv/github/costcut
 end

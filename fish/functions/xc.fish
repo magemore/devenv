@@ -7,7 +7,7 @@ function xc
         set STA (git status -s .)
         if test (count $STA) -gt 0;
             timep (pwd) git commit (string join '; ' $STA)
-            git commit -m (string join '; ' $STA)
+            git commit -m 'fix'
         end
     end
     date

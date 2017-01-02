@@ -1,3 +1,3 @@
 function e
-	cd /srv/esf/
+	cd /srv/github/esf/
 end

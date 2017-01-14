@@ -1,6 +1,6 @@
 
 
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 "set background=dark
 
 set t_Co=256            " use 256 colors in vim
@@ -10,7 +10,7 @@ set t_Co=256            " use 256 colors in vim
 "colorscheme proton
 
 " nice the for xml files
-colorscheme highwayman
+"colorscheme highwayman
 
 "colorscheme spurs_away
 "colorscheme gotham256
@@ -86,7 +86,7 @@ if has("autocmd")
 endif
 
 set nobackup
-set nowrap
+"set nowrap
 "set matchtime=2
 "set number
 
@@ -102,8 +102,8 @@ Plug 'whatyouhide/vim-gotham'
 
 call plug#end()
 
-set statusline+=%F
-set laststatus=2
+"set statusline+=%F
+"set laststatus=2
 
 
 set backupdir-=.

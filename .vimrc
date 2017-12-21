@@ -32,8 +32,8 @@ inoremap <F1> <ESC>:w!<ENTER>
 nnoremap <F2> <ESC>:wq!<ENTER><ESC>
 inoremap <F2> <ESC>:wq!<ENTER><ESC>
 
-nnoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>:q!<ENTER>
-inoremap <F3> <ESC>:r! ext_edit '%:p'<ENTER>dd<ESC>:q!<ENTER>
+nnoremap <F3> <ESC>:r! code '%:p'<ENTER>dd<ESC>:q!<ENTER>
+inoremap <F3> <ESC>:r! code '%:p'<ENTER>dd<ESC>:q!<ENTER>
 
 nnoremap <F4> <ESC>:q!<ENTER>
 inoremap <F4> <ESC>:q!<ENTER>

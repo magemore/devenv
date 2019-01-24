@@ -1,2 +1,0 @@
-termux-clipboard-set $(date)
-date

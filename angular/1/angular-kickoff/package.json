@@ -34,7 +34,7 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
     "connect-history-api-fallback": "^1.2.0",
-    "eslint": "^2.11.1",
+    "eslint": "^6.6.0",
     "eslint-config-angular": "^0.5.0",
     "eslint-plugin-angular": "^1.0.1",
     "gulp": "^3.9.1",

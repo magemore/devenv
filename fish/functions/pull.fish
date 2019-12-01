@@ -1,4 +1,5 @@
 function pull
-    git pull
+    git pull origin
+    git checkout .
 end
 

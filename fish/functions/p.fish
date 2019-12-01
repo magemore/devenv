@@ -1,3 +1,5 @@
 function p
-	pwd
+    git pull origin
+    git checkout .
 end
+

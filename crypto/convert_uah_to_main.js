@@ -1,3 +1,5 @@
+// This code is used to convert UAH to MAIN, using the CoinMarketCap API. It uses the axios library to make an API call to the CoinMarketCap API. It then uses the response data to calculate the price of MAIN and then logs the result to the console.
+
 const axios = require('axios');
 
 const getPrice = async function() {

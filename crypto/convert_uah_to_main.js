@@ -17,16 +17,16 @@ const getPrice = async function() {
 	return result;
 };
 
-const convertMainToUah = async function() {
-	let mainQty = 1;
+const convertUahToMain = async function() {
+	let uahQty = 1;
 	if (process.argv.length > 2) {
-		mainQty = parseFloat(process.argv[2]);
+		uahQty = parseFloat(process.argv[2]);
 	}
 	const usdToUah = 40;
 	let price = await getPrice();
-	let priceUah = price*usdToUah*mainQty;
-	priceUah = priceUah.toFixed(2);
-	console.log(priceUah);
+	let priceMain = uahQty / (price*usdToUah);
+	priceMain = priceMain.toFixed(2);
+	console.log(priceMain);
 }
 
-convertMainToUah();
+convertUahToMain();

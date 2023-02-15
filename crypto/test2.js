@@ -19,13 +19,15 @@ const getPrice = async function() {
 
 const convertMainToUah = async function() {
 	let mainQty = 1;
+	console.log(process.argv.length); return;
 	if (process.argv.length > 2) {
 		mainQty = parseFloat(process.argv[2]);
 	}
 	const usdToUah = 40;
 	let price = await getPrice();
-	let priceUah = price*usdToUah;
+	let priceUah = price*usdToUah*mainQty;
 	console.log(priceUah);
 }
 
-convertMainToUah();
+console.log(process.argv.length); return;
+// convertMainToUah();

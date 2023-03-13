@@ -1,4 +1,4 @@
 function chat
-    npx terminalgpt chat
+    tgpt chat
 end
 

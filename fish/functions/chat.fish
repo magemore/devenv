@@ -1,4 +1,4 @@
 function chat
-    tgpt chat
+    tgpt chat (string join ' ' $argv)
 end
 

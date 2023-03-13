@@ -1,3 +1,3 @@
 function a
-	atom $argv
+	tgpt answer (string join ' ' $argv)
 end

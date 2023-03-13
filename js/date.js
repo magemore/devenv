@@ -1,10 +1,5 @@
 const currentDate = new Date();
-const formattedDate = currentDate.toLocaleString('en-US', {
-  weekday: 'short',
-  day: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-  hour12: false
-});
+const options = {weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false};
+const formattedDate = currentDate.toLocaleString('en-US', options);
 
 console.log(formattedDate);

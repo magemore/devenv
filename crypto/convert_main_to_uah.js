@@ -22,7 +22,7 @@ const convertMainToUah = async function() {
 	if (process.argv.length > 2) {
 		mainQty = parseFloat(process.argv[2]);
 	}
-	const usdToUah = 40;
+	const usdToUah = 39;
 	let price = await getPrice();
 	let priceUah = price*usdToUah*mainQty;
 	priceUah = priceUah.toFixed(2);
